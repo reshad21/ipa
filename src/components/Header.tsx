@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight, Languages } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { PageId } from '../types';
 import { NAV_ITEMS, ORGANIZATION } from '../data/navigation';
@@ -13,7 +13,7 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { language, setLanguage, isBn, t } = useLanguage();
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -115,40 +115,6 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
 
             {/* Right Action Controls: Language Toggle & CTA Button */}
             <div className="flex items-center gap-2 sm:gap-3">
-              {/* Language Switcher Pill (Bangla & English) */}
-              <div
-                className="flex items-center bg-surface p-1 rounded-full border border-line text-xs font-mono font-bold shadow-2xs"
-                role="group"
-                aria-label="Language selection"
-              >
-                <button
-                  type="button"
-                  onClick={() => setLanguage('bn')}
-                  className={`px-2.5 py-1 rounded-full transition-all cursor-pointer ${
-                    isBn
-                      ? 'bg-brand-dark text-accent shadow-xs'
-                      : 'text-muted hover:text-brand-dark'
-                  }`}
-                  aria-pressed={isBn}
-                  aria-label="বাংলা ভাষায় পরিবর্তন করুন"
-                >
-                  বাংলা
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setLanguage('en')}
-                  className={`px-2.5 py-1 rounded-full transition-all cursor-pointer ${
-                    !isBn
-                      ? 'bg-brand-dark text-accent shadow-xs'
-                      : 'text-muted hover:text-brand-dark'
-                  }`}
-                  aria-pressed={!isBn}
-                  aria-label="Switch to English language"
-                >
-                  EN
-                </button>
-              </div>
-
               {/* Contact Us Pill CTA (Desktop) */}
               <button
                 onClick={() => handleNavClick('contact')}
@@ -192,26 +158,6 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
                   <span>{t('Navigation', 'নেভিগেশন')}</span>
                 </div>
 
-                {/* Mobile Language Switcher inside drawer */}
-                <div className="flex items-center gap-1.5 bg-surface p-1 rounded-full border border-line text-xs font-mono font-bold">
-                  <Languages className="w-3.5 h-3.5 text-muted ml-1.5" />
-                  <button
-                    onClick={() => setLanguage('bn')}
-                    className={`px-2.5 py-0.5 rounded-full transition-all cursor-pointer ${
-                      isBn ? 'bg-brand-dark text-accent' : 'text-muted'
-                    }`}
-                  >
-                    বাংলা
-                  </button>
-                  <button
-                    onClick={() => setLanguage('en')}
-                    className={`px-2.5 py-0.5 rounded-full transition-all cursor-pointer ${
-                      !isBn ? 'bg-brand-dark text-accent' : 'text-muted'
-                    }`}
-                  >
-                    EN
-                  </button>
-                </div>
               </div>
 
               <nav className="flex flex-col space-y-2">
