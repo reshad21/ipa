@@ -68,7 +68,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 print:hidden ${
           isScrolled
             ? 'bg-white/95 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.04)] py-3.5 border-b border-[#E2EAE4]'
             : 'bg-white/90 backdrop-blur-sm py-4 sm:py-5 border-b border-[#E2EAE4]/60'

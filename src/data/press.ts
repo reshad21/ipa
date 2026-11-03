@@ -8,6 +8,19 @@ export type PressRelease = {
   image: string;
   body: string[];
   bodyBn: string[];
+  dateline?: string;
+  datelineBn?: string;
+  documentUrl?: string;
+  contact?: {
+    name: string;
+    nameBn: string;
+    role: string;
+    roleBn: string;
+    phone: string;
+    email: string;
+  };
+  topics?: string[];
+  topicsBn?: string[];
 };
 
 export const PRESS_RELEASES: PressRelease[] = [
@@ -29,6 +42,19 @@ export const PRESS_RELEASES: PressRelease[] = [
       'ড্যাশবোর্ডটি ১৮টি টেলিভিশন চ্যানেল, ৩২টি জাতীয় দৈনিক ও ১২০টি ডিজিটাল পোর্টাল থেকে সংকেত সংগ্রহ করে, যা গবেষক ও সাংবাদিকদের উদীয়মান বর্ণনার গতিপথ তাৎক্ষণিকভাবে পর্যবেক্ষণের সুযোগ দেয়।',
       'আইপিএ গবেষক, সংবাদকক্ষ ও নাগরিক প্রতিষ্ঠানগুলোকে ওপেন বেটা সময়কালে ড্যাশবোর্ড অন্বেষণ ও মতামত দেওয়ার আমন্ত্রণ জানিয়েছে।',
     ],
+    dateline: 'Dhaka, 1 November 2026:',
+    datelineBn: 'ঢাকা, ১ নভেম্বর ২০২৬:',
+    documentUrl: 'https://example.com/sample-research-documents',
+    contact: {
+      name: 'Sample Media Contact',
+      nameBn: 'নমুনা মিডিয়া যোগাযোগ',
+      role: 'Communications Officer',
+      roleBn: 'যোগাযোগ কর্মকর্তা',
+      phone: '+880 1700-000000',
+      email: 'media@example.com',
+    },
+    topics: ['Media Trust', 'Public Opinion', 'Research'],
+    topicsBn: ['গণমাধ্যমে আস্থা', 'জনমত', 'গবেষণা'],
   },
   {
     id: 'press-2',
