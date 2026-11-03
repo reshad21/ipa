@@ -22,17 +22,21 @@ import { CTASection } from '../components/CTASection';
 import { useLanguage } from '../context/LanguageContext';
 import { APPROACH_STEPS_BN, TEAM_MEMBERS_BN } from '../data/translations';
 import VideoHighlights from '../components/VideoHighlights';
+import { FeaturedResearch } from '../components/FeaturedResearch';
+import { PressReleases } from '../components/PressReleases';
 
 interface HomeProps {
   onNavigate: (page: PageId) => void;
   onSelectTeamMember: (member: TeamMember) => void;
   onSelectInvestigation?: (id: string) => void;
+  onSelectPress?: (id: string) => void;
 }
 
 export const Home: React.FC<HomeProps> = ({
   onNavigate,
   onSelectTeamMember,
   onSelectInvestigation,
+  onSelectPress,
 }) => {
   const { isBn, t } = useLanguage();
   const previewTeam = TEAM_MEMBERS.slice(0, 4);
@@ -772,7 +776,13 @@ export const Home: React.FC<HomeProps> = ({
       {/* 15. FINAL CTA */}
       <CTASection onNavigate={onNavigate} />
 
-      {/* 16. Video Highlights */}
+      {/* 16. Featured Research */}
+      <FeaturedResearch onNavigate={onNavigate} />
+
+      {/* 17. Press Releases */}
+      <PressReleases onNavigate={onNavigate} onSelectPress={onSelectPress ?? (() => {})} />
+
+      {/* 18. Video Highlights */}
       <VideoHighlights/>
     </div>
   );

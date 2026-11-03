@@ -14,6 +14,8 @@ import { Work } from './pages/Work';
 import { Team } from './pages/Team';
 import { Contact } from './pages/Contact';
 import { InvestigationDetail } from './pages/InvestigationDetail';
+import { PressList } from './pages/PressList';
+import { PressDetail } from './pages/PressDetail';
 import { ScrollProgress } from './components/ScrollProgress';
 import { LanguageProvider } from './context/LanguageContext';
 
@@ -21,6 +23,7 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState<PageId>('home');
   const [selectedTeamMember, setSelectedTeamMember] = useState<TeamMember | null>(null);
   const [selectedInvestigationId, setSelectedInvestigationId] = useState<string>('media-journalism');
+  const [selectedPressId, setSelectedPressId] = useState<string>('press-1');
 
   // Sync with browser URL hash
   useEffect(() => {
@@ -34,7 +37,17 @@ export default function App() {
         setCurrentPage('investigation');
         return;
       }
-      if (['home', 'about', 'work', 'team', 'contact', 'investigation'].includes(rawHash)) {
+      if (rawHash.startsWith('press')) {
+        const parts = rawHash.split('/');
+        if (parts[0] === 'press-detail' && parts[1]) {
+          setSelectedPressId(parts[1]);
+          setCurrentPage('press-detail');
+        } else {
+          setCurrentPage('press');
+        }
+        return;
+      }
+      if (['home', 'about', 'work', 'team', 'contact', 'investigation', 'press', 'press-detail'].includes(rawHash)) {
         setCurrentPage(rawHash as PageId);
       }
     };
@@ -62,6 +75,12 @@ export default function App() {
     window.location.hash = `investigation/${id}`;
   };
 
+  const handleSelectPress = (id: string) => {
+    setSelectedPressId(id);
+    window.location.hash = `press-detail/${id}`;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <LanguageProvider>
       <div className="min-h-screen flex flex-col bg-[#F6F9F4] text-[#0D1F18] font-sans selection:bg-[#0B2A20] selection:text-[#D2F843]">
@@ -75,7 +94,13 @@ export default function App() {
         <main className="flex-1" id="main-content">
           <AnimatePresence mode="wait">
             <motion.div
-              key={currentPage === 'investigation' ? `investigation-${selectedInvestigationId}` : currentPage}
+              key={
+                currentPage === 'investigation'
+                  ? `investigation-${selectedInvestigationId}`
+                  : currentPage === 'press-detail'
+                  ? `press-detail-${selectedPressId}`
+                  : currentPage
+              }
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
@@ -91,6 +116,10 @@ export default function App() {
                   onSelectInvestigation={(id) => {
                     handleSelectInvestigation(id);
                     navigateTo('investigation');
+                  }}
+                  onSelectPress={(id) => {
+                    handleSelectPress(id);
+                    navigateTo('press-detail');
                   }}
                 />
               )}
@@ -111,6 +140,21 @@ export default function App() {
                   investigationId={selectedInvestigationId}
                   onNavigate={navigateTo}
                   onSelectInvestigation={handleSelectInvestigation}
+                />
+              )}
+
+              {currentPage === 'press' && (
+                <PressList
+                  onNavigate={navigateTo}
+                  onSelectPress={handleSelectPress}
+                />
+              )}
+
+              {currentPage === 'press-detail' && (
+                <PressDetail
+                  id={selectedPressId}
+                  onNavigate={navigateTo}
+                  onSelectPress={handleSelectPress}
                 />
               )}
 
