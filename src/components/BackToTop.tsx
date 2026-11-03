@@ -34,7 +34,7 @@ export const BackToTop: React.FC = () => {
           exit={{ opacity: 0, scale: 0.8, y: 16 }}
           transition={{ duration: 0.25, ease: 'easeOut' }}
           onClick={scrollToTop}
-          className="group inline-flex items-center gap-2 px-4 py-3 rounded-full bg-[#0B2A20] text-[#D2F843] border border-[#144234] shadow-2xl hover:bg-[#195642] hover:scale-105 active:scale-95 transition-all cursor-pointer select-none"
+          className="group inline-flex items-center gap-2 px-4 py-3 rounded-full bg-brand-dark text-accent border border-brand shadow-2xl hover:bg-brand hover:scale-105 active:scale-95 transition-all cursor-pointer select-none"
           aria-label="Back to top of page"
         >
           <ArrowUp className="w-4 h-4 transition-transform group-hover:-translate-y-0.5" />

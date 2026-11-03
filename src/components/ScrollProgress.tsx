@@ -11,7 +11,7 @@ export const ScrollProgress: React.FC = () => {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 right-0 h-[3px] bg-[#D2F843] z-50 origin-left pointer-events-none shadow-[0_0_10px_rgba(210,248,67,0.7)]"
+      className="fixed top-0 left-0 right-0 h-[3px] bg-accent z-50 origin-left pointer-events-none shadow-[0_0_10px_rgba(210,248,67,0.7)]"
       style={{ scaleX }}
       aria-hidden="true"
     />

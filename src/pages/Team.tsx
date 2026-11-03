@@ -53,7 +53,7 @@ export const Team: React.FC<TeamProps> = ({
   const researchers = TEAM_MEMBERS.filter((m) => m.category === 'research');
 
   return (
-    <div className="bg-[#F6F9F4] text-[#0D1F18]">
+    <div className="bg-surface text-ink">
       {/* 24. HERO */}
       <PageHero
         backgroundImage="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=2200&q=85"
@@ -67,10 +67,10 @@ export const Team: React.FC<TeamProps> = ({
       />
 
       {/* FILTER BAR */}
-      <div className="border-b border-[#E2EAE4] bg-[#FFFFFF] py-4 sticky top-16 sm:top-20 z-20 backdrop-blur-md bg-white/95">
+      <div className="border-b border-line bg-[#FFFFFF] py-4 sticky top-16 sm:top-20 z-20 backdrop-blur-md bg-white/95">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <span className="text-xs font-mono uppercase tracking-wider text-[#556B62] font-semibold">
+            <span className="text-xs font-mono uppercase tracking-wider text-muted font-semibold">
               {t('Filter Corps:', 'ফিল্টার করুন:')}
             </span>
             <div className="flex items-center gap-2 text-xs font-mono">
@@ -78,8 +78,8 @@ export const Team: React.FC<TeamProps> = ({
                 onClick={() => handleFilterChange('all')}
                 className={`px-3.5 py-1.5 rounded-full border transition-all cursor-pointer font-bold uppercase tracking-wider ${
                   filterRole === 'all'
-                    ? 'bg-[#0B2A20] text-[#D2F843] border-[#0B2A20] shadow-sm'
-                    : 'bg-[#F6F9F4] text-[#556B62] border-[#E2EAE4] hover:border-[#0B2A20]'
+                    ? 'bg-brand-dark text-accent border-brand-dark shadow-sm'
+                    : 'bg-surface text-muted border-line hover:border-brand-dark'
                 }`}
               >
                 {t('All Fellows (8)', 'সকল ফেলো (৮)')}
@@ -88,8 +88,8 @@ export const Team: React.FC<TeamProps> = ({
                 onClick={() => handleFilterChange('leadership')}
                 className={`px-3.5 py-1.5 rounded-full border transition-all cursor-pointer font-bold uppercase tracking-wider ${
                   filterRole === 'leadership'
-                    ? 'bg-[#0B2A20] text-[#D2F843] border-[#0B2A20] shadow-sm'
-                    : 'bg-[#F6F9F4] text-[#556B62] border-[#E2EAE4] hover:border-[#0B2A20]'
+                    ? 'bg-brand-dark text-accent border-brand-dark shadow-sm'
+                    : 'bg-surface text-muted border-line hover:border-brand-dark'
                 }`}
               >
                 {t('Leadership (3)', 'পরিচালনা পরিষদ (৩)')}
@@ -98,8 +98,8 @@ export const Team: React.FC<TeamProps> = ({
                 onClick={() => handleFilterChange('research')}
                 className={`px-3.5 py-1.5 rounded-full border transition-all cursor-pointer font-bold uppercase tracking-wider ${
                   filterRole === 'research'
-                    ? 'bg-[#0B2A20] text-[#D2F843] border-[#0B2A20] shadow-sm'
-                    : 'bg-[#F6F9F4] text-[#556B62] border-[#E2EAE4] hover:border-[#0B2A20]'
+                    ? 'bg-brand-dark text-accent border-brand-dark shadow-sm'
+                    : 'bg-surface text-muted border-line hover:border-brand-dark'
                 }`}
               >
                 {t('Researchers (5)', 'গবেষকবৃন্দ (৫)')}
@@ -108,7 +108,7 @@ export const Team: React.FC<TeamProps> = ({
           </div>
 
           <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 text-xs font-mono text-[#556B62]">
+            <span className="inline-flex items-center gap-1.5 text-xs font-mono text-muted">
               <span className={`w-2 h-2 rounded-full ${isLoading || isFilterLoading ? 'bg-amber-400 animate-pulse' : 'bg-emerald-500'}`} />
               {isLoading || isFilterLoading
                 ? t('Synchronizing directory...', 'ডিরেক্টরি সিনক্রোনাইজ হচ্ছে...')
@@ -117,9 +117,9 @@ export const Team: React.FC<TeamProps> = ({
             <button
               onClick={handleReload}
               title={t('Refresh Directory Roster', 'রোস্টার রিফ্রেশ করুন')}
-              className="p-1.5 rounded-full border border-[#E2EAE4] bg-[#F6F9F4] text-[#556B62] hover:text-[#0B2A20] hover:border-[#0B2A20] transition-colors cursor-pointer"
+              className="p-1.5 rounded-full border border-line bg-surface text-muted hover:text-brand-dark hover:border-brand-dark transition-colors cursor-pointer"
             >
-              <RotateCw className={`w-3.5 h-3.5 ${isLoading || isFilterLoading ? 'animate-spin text-[#0B2A20]' : ''}`} />
+              <RotateCw className={`w-3.5 h-3.5 ${isLoading || isFilterLoading ? 'animate-spin text-brand-dark' : ''}`} />
             </button>
           </div>
         </div>
@@ -127,17 +127,17 @@ export const Team: React.FC<TeamProps> = ({
 
       {/* 25. TEAM LAYOUT: LEADERSHIP */}
       {(filterRole === 'all' || filterRole === 'leadership') && (
-        <section className="py-20 sm:py-28 border-b border-[#E2EAE4] bg-[#FFFFFF]">
+        <section className="py-20 sm:py-28 border-b border-line bg-[#FFFFFF]">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
             <div className="max-w-3xl mb-12">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0B2A20]/5 text-[#0B2A20] text-xs font-bold uppercase tracking-wider border border-[#0B2A20]/10 mb-4">
-                <span className="w-2 h-2 rounded-full bg-[#D2F843]" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-dark/5 text-brand-dark text-xs font-bold uppercase tracking-wider border border-brand-dark/10 mb-4">
+                <span className="w-2 h-2 rounded-full bg-accent" />
                 <span>{t('INSTITUTE GOVERNANCE', 'প্রাতিষ্ঠানিক পরিচালনা')}</span>
               </div>
-              <h2 className="font-sans text-3xl sm:text-4xl lg:text-5xl text-[#0B2A20] font-extrabold tracking-tight mb-3">
+              <h2 className="font-sans text-3xl sm:text-4xl lg:text-5xl text-brand-dark font-extrabold tracking-tight mb-3">
                 {t('Directorate & Leadership', 'পরিচালনা পরিষদ ও নেতৃত্ব')}
               </h2>
-              <p className="text-sm sm:text-base text-[#556B62] font-sans font-normal">
+              <p className="text-sm sm:text-base text-muted font-sans font-normal">
                 {t(
                   'Guiding institutional strategy, methodological standards, and collaborative scientific governance.',
                   'প্রাতিষ্ঠানিক কৌশল, গবেষণা পদ্ধতি এবং বৈজ্ঞানিক মান নিশ্চিতকরণে নিবেদিত নেতৃত্ব।'
@@ -173,17 +173,17 @@ export const Team: React.FC<TeamProps> = ({
 
       {/* RESEARCHERS & ANALYSTS */}
       {(filterRole === 'all' || filterRole === 'research') && (
-        <section className="py-20 sm:py-28 border-b border-[#E2EAE4] bg-[#F6F9F4]">
+        <section className="py-20 sm:py-28 border-b border-line bg-surface">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
             <div className="max-w-3xl mb-12">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0B2A20]/5 text-[#0B2A20] text-xs font-bold uppercase tracking-wider border border-[#0B2A20]/10 mb-4">
-                <span className="w-2 h-2 rounded-full bg-[#D2F843]" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-dark/5 text-brand-dark text-xs font-bold uppercase tracking-wider border border-brand-dark/10 mb-4">
+                <span className="w-2 h-2 rounded-full bg-accent" />
                 <span>{t('INVESTIGATIVE CORPS', 'গবেষক ও বিশ্লেষক দল')}</span>
               </div>
-              <h2 className="font-sans text-3xl sm:text-4xl lg:text-5xl text-[#0B2A20] font-extrabold tracking-tight mb-3">
+              <h2 className="font-sans text-3xl sm:text-4xl lg:text-5xl text-brand-dark font-extrabold tracking-tight mb-3">
                 {t('Researchers & Analysts', 'গবেষক ও বিশ্লেষকবৃন্দ')}
               </h2>
-              <p className="text-sm sm:text-base text-[#556B62] font-sans font-normal">
+              <p className="text-sm sm:text-base text-muted font-sans font-normal">
                 {t(
                   'Specialists conducting continuous multi-channel monitoring, computational audits, and representative survey analyses.',
                   'সার্বক্ষণিক সম্প্রচার ও ডিজিটাল মনিটরিং, কম্পিউটেশনাল অডিট এবং জনমত জরিপে নিয়োজিত বিশেষজ্ঞবৃন্দ।'
@@ -220,12 +220,12 @@ export const Team: React.FC<TeamProps> = ({
       {/* VISITING FELLOWSHIPS & SCIENTIFIC ADVISORY */}
       <section className="hidden">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="rounded-3xl border border-[#144234] bg-[#0B2A20] p-8 sm:p-12 relative overflow-hidden text-white shadow-xl">
-            <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-[#D2F843]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="rounded-3xl border border-brand bg-brand-dark p-8 sm:p-12 relative overflow-hidden text-white shadow-xl">
+            <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-8 space-y-4">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-[#D2F843] text-xs font-bold uppercase tracking-wider border border-white/15">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#D2F843]" />
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-accent text-xs font-bold uppercase tracking-wider border border-white/15">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                   <span>{t('Visiting Scholar Programme', 'ভিজিটিং স্কলার প্রোগ্রাম')}</span>
                 </div>
                 <h3 className="font-sans text-2xl sm:text-4xl text-white font-extrabold tracking-tight">
@@ -247,7 +247,7 @@ export const Team: React.FC<TeamProps> = ({
                     onNavigate('contact');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className="px-7 py-4 rounded-full bg-[#D2F843] text-[#0B2A20] hover:bg-white transition-all text-xs font-mono font-bold uppercase tracking-wider cursor-pointer shadow-lg hover:shadow-xl hover:scale-105"
+                  className="px-7 py-4 rounded-full bg-accent text-brand-dark hover:bg-white transition-all text-xs font-mono font-bold uppercase tracking-wider cursor-pointer shadow-lg hover:shadow-xl hover:scale-105"
                 >
                   {t('Inquire About Fellowships', 'ফেলোশিপ সম্পর্কে জানতে যোগাযোগ করুন')}
                 </button>

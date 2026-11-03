@@ -38,13 +38,13 @@ export const PressDetail: React.FC<PressDetailProps> = ({ id, onNavigate, onSele
     return (
       <div className="py-24">
         <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
-          <p className="text-[#556B62] mb-6">
+          <p className="text-muted mb-6">
             {t('Press release not found.', 'প্রেস বিজ্ঞপ্তি পাওয়া যায়নি।')}
           </p>
           <button
             type="button"
             onClick={() => onNavigate('press')}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0B2A20] text-white text-xs font-bold uppercase tracking-wider"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-dark text-white text-xs font-bold uppercase tracking-wider"
           >
             <ArrowLeft className="w-4 h-4" />
             {t('All Press Releases', 'সব প্রেস বিজ্ঞপ্তি')}
@@ -70,12 +70,12 @@ export const PressDetail: React.FC<PressDetailProps> = ({ id, onNavigate, onSele
 
   return (
     <div>
-      <section className="bg-[#0B2A20] text-white py-8 sm:py-10">
+      <section className="bg-brand-dark text-white py-8 sm:py-10">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <button
             type="button"
             onClick={() => onNavigate('press')}
-            className="inline-flex items-center gap-2 text-[#D2F843] text-sm font-semibold mb-4 hover:underline print:hidden"
+            className="inline-flex items-center gap-2 text-accent text-sm font-semibold mb-4 hover:underline print:hidden"
           >
             <ArrowLeft className="w-4 h-4" />
             {t('All Press Releases', 'সব প্রেস বিজ্ঞপ্তি')}
@@ -88,12 +88,12 @@ export const PressDetail: React.FC<PressDetailProps> = ({ id, onNavigate, onSele
 
       <section className="bg-white py-10 sm:py-14">
         <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 print:max-w-none">
-          <div className="text-center text-sm font-semibold uppercase tracking-wider text-[#556B62] mb-6">
+          <div className="text-center text-sm font-semibold uppercase tracking-wider text-muted mb-6">
             {t('Press Release', 'প্রেস বিজ্ঞপ্তি')}
           </div>
 
           {item.image && (
-            <div className="aspect-[16/9] overflow-hidden rounded-3xl border border-[#E2EAE4] mb-8">
+            <div className="aspect-[16/9] overflow-hidden rounded-3xl border border-line mb-8">
               <img
                 src={item.image}
                 alt={title}
@@ -103,7 +103,7 @@ export const PressDetail: React.FC<PressDetailProps> = ({ id, onNavigate, onSele
             </div>
           )}
 
-          <div className="space-y-5 text-justify text-[15px] sm:text-base leading-relaxed text-[#0D1F18]">
+          <div className="space-y-5 text-justify text-[15px] sm:text-base leading-relaxed text-ink">
             {body.map((para, idx) => (
               <p key={idx}>
                 {idx === 0 && dateline ? <strong>{dateline} </strong> : null}
@@ -118,7 +118,7 @@ export const PressDetail: React.FC<PressDetailProps> = ({ id, onNavigate, onSele
                 href={item.documentUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-bold text-[#195642] hover:underline"
+                className="font-bold text-brand hover:underline"
               >
                 {t('Link to the research documents', 'গবেষণা নথির লিংক')}
               </a>
@@ -126,7 +126,7 @@ export const PressDetail: React.FC<PressDetailProps> = ({ id, onNavigate, onSele
           )}
 
           {item.contact && (
-            <div className="mt-8 text-sm text-[#0D1F18]">
+            <div className="mt-8 text-sm text-ink">
               <div className="font-bold mb-1">{t('Media Contact:', 'মিডিয়া যোগাযোগ:')}</div>
               <div>{isBn ? item.contact.nameBn : item.contact.name}</div>
               <div>{isBn ? item.contact.roleBn : item.contact.role}</div>
@@ -134,7 +134,7 @@ export const PressDetail: React.FC<PressDetailProps> = ({ id, onNavigate, onSele
               <div>
                 <a
                   href={`mailto:${item.contact.email}`}
-                  className="text-[#195642] hover:underline"
+                  className="text-brand hover:underline"
                 >
                   {item.contact.email}
                 </a>
@@ -147,7 +147,7 @@ export const PressDetail: React.FC<PressDetailProps> = ({ id, onNavigate, onSele
               {topics.map((topic, idx) => (
                 <span
                   key={idx}
-                  className="bg-[#F6F9F4] border border-[#E2EAE4] text-[#0B2A20] rounded-lg px-3 py-1.5 text-sm"
+                  className="bg-surface border border-line text-brand-dark rounded-lg px-3 py-1.5 text-sm"
                 >
                   {topic}
                 </span>
@@ -208,9 +208,9 @@ export const PressDetail: React.FC<PressDetailProps> = ({ id, onNavigate, onSele
       </section>
 
       {others.length > 0 && (
-        <section className="bg-[#F6F9F4] border-t border-[#E2EAE4] py-12 print:hidden">
+        <section className="bg-surface border-t border-line py-12 print:hidden">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-            <h2 className="text-center text-[#0B2A20] font-extrabold text-2xl mb-8">
+            <h2 className="text-center text-brand-dark font-extrabold text-2xl mb-8">
               {t('Previous Press Release', 'পূর্ববর্তী প্রেস বিজ্ঞপ্তি')}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">

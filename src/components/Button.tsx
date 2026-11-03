@@ -25,10 +25,10 @@ export const Button: React.FC<ButtonProps> = ({
   };
 
   const variantStyles = {
-    primary: 'bg-[#0B2A20] text-[#D2F843] hover:bg-[#195642] active:bg-[#071d16] border border-[#0B2A20] font-semibold shadow-sm hover:shadow-md',
-    secondary: 'bg-[#FFFFFF] text-[#0B2A20] border border-[#E2EAE4] hover:border-[#0B2A20] hover:bg-[#F6F9F4] font-semibold shadow-sm',
-    ghost: 'bg-transparent text-[#0B2A20] hover:text-[#195642] underline-offset-4 hover:underline p-0 font-medium',
-    dark: 'bg-[#D2F843] text-[#0B2A20] hover:bg-[#c4ea38] active:bg-[#b2d825] border border-[#D2F843] font-bold shadow-md hover:shadow-lg',
+    primary: 'bg-brand-dark text-accent hover:bg-brand active:bg-[#071d16] border border-brand-dark font-semibold shadow-sm hover:shadow-md',
+    secondary: 'bg-[#FFFFFF] text-brand-dark border border-line hover:border-brand-dark hover:bg-surface font-semibold shadow-sm',
+    ghost: 'bg-transparent text-brand-dark hover:text-brand underline-offset-4 hover:underline p-0 font-medium',
+    dark: 'bg-accent text-brand-dark hover:bg-[#c4ea38] active:bg-[#b2d825] border border-accent font-bold shadow-md hover:shadow-lg',
   };
 
   return (

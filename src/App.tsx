@@ -83,7 +83,7 @@ export default function App() {
 
   return (
     <LanguageProvider>
-      <div className="min-h-screen flex flex-col bg-[#F6F9F4] text-[#0D1F18] font-sans selection:bg-[#0B2A20] selection:text-[#D2F843]">
+      <div className="min-h-screen flex flex-col bg-surface text-ink font-sans selection:bg-brand-dark selection:text-accent">
         {/* Fixed Scroll Progress Bar (Framer Motion) */}
         <ScrollProgress />
 

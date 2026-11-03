@@ -24,7 +24,7 @@ export const WorkCardSkeleton: React.FC<{ index?: number }> = ({ index = 0 }) =>
   const isEven = index % 2 === 0;
 
   return (
-    <div className="rounded-3xl border border-[#E2EAE4] bg-[#FFFFFF] overflow-hidden shadow-sm">
+    <div className="rounded-3xl border border-line bg-[#FFFFFF] overflow-hidden shadow-sm">
       <div className={`grid grid-cols-1 lg:grid-cols-12 ${isEven ? '' : 'lg:flex-row-reverse'}`}>
         {/* Visual Column Skeleton */}
         <div
@@ -69,7 +69,7 @@ export const WorkCardSkeleton: React.FC<{ index?: number }> = ({ index = 0 }) =>
             </div>
 
             {/* Methodologies */}
-            <div className="pt-5 border-t border-[#E2EAE4] space-y-3 mb-6">
+            <div className="pt-5 border-t border-line space-y-3 mb-6">
               <Skeleton className="w-36 h-3 rounded" />
               <div className="flex flex-wrap gap-2">
                 <Skeleton className="w-28 h-7 rounded-xl" />
@@ -80,7 +80,7 @@ export const WorkCardSkeleton: React.FC<{ index?: number }> = ({ index = 0 }) =>
             </div>
 
             {/* Sample Inquiries */}
-            <div className="pt-5 border-t border-[#E2EAE4] space-y-2.5">
+            <div className="pt-5 border-t border-line space-y-2.5">
               <Skeleton className="w-44 h-3 rounded mb-2" />
               <Skeleton className="w-full h-3 rounded" />
               <Skeleton className="w-5/6 h-3 rounded" />
@@ -88,7 +88,7 @@ export const WorkCardSkeleton: React.FC<{ index?: number }> = ({ index = 0 }) =>
           </div>
 
           {/* Card Footer */}
-          <div className="pt-6 border-t border-[#E2EAE4] flex items-center justify-between">
+          <div className="pt-6 border-t border-line flex items-center justify-between">
             <Skeleton className="w-36 h-4 rounded" />
             <Skeleton className="w-40 h-8 rounded-full" />
           </div>
@@ -103,11 +103,11 @@ export const WorkCardSkeleton: React.FC<{ index?: number }> = ({ index = 0 }) =>
  */
 export const TeamCardSkeleton: React.FC = () => {
   return (
-    <div className="rounded-3xl border border-[#E2EAE4] bg-[#FFFFFF] flex flex-col justify-between overflow-hidden shadow-sm">
+    <div className="rounded-3xl border border-line bg-[#FFFFFF] flex flex-col justify-between overflow-hidden shadow-sm">
       <div>
         {/* Photo Container */}
-        <div className="relative aspect-[4/5] overflow-hidden bg-[#F0F5F2] border-b border-[#E2EAE4]">
-          <Skeleton className="w-full h-full rounded-none bg-[#E2EAE4]" />
+        <div className="relative aspect-[4/5] overflow-hidden bg-[#F0F5F2] border-b border-line">
+          <Skeleton className="w-full h-full rounded-none bg-line" />
           <div className="absolute top-3 right-3">
             <Skeleton className="w-24 h-5 rounded-full" />
           </div>
@@ -126,7 +126,7 @@ export const TeamCardSkeleton: React.FC = () => {
           </div>
 
           {/* Research tags */}
-          <div className="pt-4 border-t border-[#E2EAE4] space-y-2">
+          <div className="pt-4 border-t border-line space-y-2">
             <Skeleton className="w-32 h-3 rounded" />
             <div className="flex flex-wrap gap-1.5">
               <Skeleton className="w-20 h-6 rounded-lg" />
@@ -139,7 +139,7 @@ export const TeamCardSkeleton: React.FC = () => {
 
       {/* Card Action Footer */}
       <div className="p-6 sm:p-7 pt-0">
-        <div className="pt-4 border-t border-[#E2EAE4] flex items-center justify-between">
+        <div className="pt-4 border-t border-line flex items-center justify-between">
           <Skeleton className="w-24 h-4 rounded" />
           <Skeleton className="w-4 h-4 rounded-full" />
         </div>
@@ -153,7 +153,7 @@ export const TeamCardSkeleton: React.FC = () => {
  */
 export const PillarCardSkeleton: React.FC = () => {
   return (
-    <div className="rounded-3xl border border-[#E2EAE4] bg-[#FFFFFF] p-7 sm:p-8 flex flex-col justify-between shadow-sm space-y-6">
+    <div className="rounded-3xl border border-line bg-[#FFFFFF] p-7 sm:p-8 flex flex-col justify-between shadow-sm space-y-6">
       <div>
         <div className="flex items-center justify-between mb-4">
           <Skeleton className="w-20 h-5 rounded-full" />
@@ -166,7 +166,7 @@ export const PillarCardSkeleton: React.FC = () => {
           <Skeleton className="w-5/6 h-3.5 rounded" />
         </div>
       </div>
-      <div className="pt-4 border-t border-[#E2EAE4] space-y-2">
+      <div className="pt-4 border-t border-line space-y-2">
         <Skeleton className="w-24 h-3 rounded" />
         <Skeleton className="w-3/4 h-3.5 rounded" />
         <Skeleton className="w-2/3 h-3.5 rounded" />

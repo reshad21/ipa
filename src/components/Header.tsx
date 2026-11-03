@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight, Compass, Languages } from 'lucide-react';
+import { Menu, X, ArrowRight, Languages } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { PageId } from '../types';
 import { NAV_ITEMS, ORGANIZATION } from '../data/navigation';
@@ -70,8 +70,8 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 print:hidden ${
           isScrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.04)] py-3.5 border-b border-[#E2EAE4]'
-            : 'bg-white/90 backdrop-blur-sm py-4 sm:py-5 border-b border-[#E2EAE4]/60'
+            ? 'bg-white/95 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.04)] py-3.5 border-b border-line'
+            : 'bg-white/90 backdrop-blur-sm py-4 sm:py-5 border-b border-line/60'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
@@ -82,17 +82,14 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
               className="text-left group cursor-pointer focus:outline-none flex items-center gap-2.5"
               aria-label="Institute of Public Accountability Home"
             >
-              <div className="w-8 h-8 rounded-full bg-black text-[#D2F843] flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
-                <Compass className="w-4 h-4 stroke-[2.2]" />
-              </div>
-              <div className="flex items-center gap-2.5">
-                <span className="text-xl sm:text-2xl font-black tracking-tight text-[#0B2A20]">
-                  IPA
-                </span>
-                <span className="hidden lg:inline-block text-xs font-medium text-[#556B62] border-l border-[#E2EAE4] pl-2.5">
-                  {t(ORGANIZATION.name, ORGANIZATION.nameBn)}
-                </span>
-              </div>
+              <img
+                src="/ipa%20logo.svg"
+                alt={t(ORGANIZATION.name, ORGANIZATION.nameBn)}
+                className="h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform"
+              />
+              <span className="hidden lg:inline-block text-xs font-medium text-muted border-l border-line pl-2.5">
+                {t(ORGANIZATION.name, ORGANIZATION.nameBn)}
+              </span>
             </button>
 
             {/* Desktop Navigation Links */}
@@ -106,8 +103,8 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
                     onClick={() => handleNavClick(item.id)}
                     className={`text-sm font-semibold transition-colors cursor-pointer relative py-1 ${
                       isActive
-                        ? 'text-[#0B2A20] font-bold after:content-[""] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-4 after:h-0.5 after:bg-[#0B2A20] after:rounded-full'
-                        : 'text-[#0D1F18]/65 hover:text-[#0B2A20]'
+                        ? 'text-brand-dark font-bold after:content-[""] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-4 after:h-0.5 after:bg-brand-dark after:rounded-full'
+                        : 'text-ink/65 hover:text-brand-dark'
                     }`}
                   >
                     {label}
@@ -120,7 +117,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
             <div className="flex items-center gap-2 sm:gap-3">
               {/* Language Switcher Pill (Bangla & English) */}
               <div
-                className="flex items-center bg-[#F6F9F4] p-1 rounded-full border border-[#E2EAE4] text-xs font-mono font-bold shadow-2xs"
+                className="flex items-center bg-surface p-1 rounded-full border border-line text-xs font-mono font-bold shadow-2xs"
                 role="group"
                 aria-label="Language selection"
               >
@@ -129,8 +126,8 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
                   onClick={() => setLanguage('bn')}
                   className={`px-2.5 py-1 rounded-full transition-all cursor-pointer ${
                     isBn
-                      ? 'bg-[#0B2A20] text-[#D2F843] shadow-xs'
-                      : 'text-[#556B62] hover:text-[#0B2A20]'
+                      ? 'bg-brand-dark text-accent shadow-xs'
+                      : 'text-muted hover:text-brand-dark'
                   }`}
                   aria-pressed={isBn}
                   aria-label="বাংলা ভাষায় পরিবর্তন করুন"
@@ -142,8 +139,8 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
                   onClick={() => setLanguage('en')}
                   className={`px-2.5 py-1 rounded-full transition-all cursor-pointer ${
                     !isBn
-                      ? 'bg-[#0B2A20] text-[#D2F843] shadow-xs'
-                      : 'text-[#556B62] hover:text-[#0B2A20]'
+                      ? 'bg-brand-dark text-accent shadow-xs'
+                      : 'text-muted hover:text-brand-dark'
                   }`}
                   aria-pressed={!isBn}
                   aria-label="Switch to English language"
@@ -155,7 +152,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
               {/* Contact Us Pill CTA (Desktop) */}
               <button
                 onClick={() => handleNavClick('contact')}
-                className="hidden sm:inline-flex group items-center gap-3 pl-4 sm:pl-5 pr-1.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-[#D2F843] text-[#0B2A20] hover:bg-[#bef024] hover:shadow-lg hover:scale-[1.02] transition-all cursor-pointer"
+                className="hidden sm:inline-flex group items-center gap-3 pl-4 sm:pl-5 pr-1.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-accent text-brand-dark hover:bg-brand-dark hover:shadow-lg hover:scale-[1.02] transition-all cursor-pointer"
               >
                 <span>{t('Contact Us', 'যোগাযোগ')}</span>
                 <span className="w-7 h-7 rounded-full bg-black text-white flex items-center justify-center transition-transform group-hover:translate-x-0.5">
@@ -166,7 +163,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
               {/* Mobile Menu Toggle Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="md:hidden p-2 rounded-xl bg-[#F6F9F4] text-[#0B2A20] hover:bg-[#E2EAE4] focus:outline-none cursor-pointer"
+                className="md:hidden p-2 rounded-xl bg-surface text-brand-dark hover:bg-line focus:outline-none cursor-pointer"
                 aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
                 aria-expanded={isMobileMenuOpen}
               >
@@ -185,23 +182,23 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="fixed inset-0 z-30 bg-[#FFFFFF] pt-24 px-6 pb-10 flex flex-col justify-between md:hidden border-b border-[#E2EAE4] overflow-y-auto"
+            className="fixed inset-0 z-30 bg-[#FFFFFF] pt-24 px-6 pb-10 flex flex-col justify-between md:hidden border-b border-line overflow-y-auto"
           >
             <div>
               {/* Header inside mobile drawer */}
-              <div className="flex items-center justify-between pb-4 mb-5 border-b border-[#E2EAE4]">
-                <div className="flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-[#0B2A20]">
-                  <span className="w-2 h-2 rounded-full bg-[#D2F843]" />
+              <div className="flex items-center justify-between pb-4 mb-5 border-b border-line">
+                <div className="flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-brand-dark">
+                  <span className="w-2 h-2 rounded-full bg-accent" />
                   <span>{t('Navigation', 'নেভিগেশন')}</span>
                 </div>
 
                 {/* Mobile Language Switcher inside drawer */}
-                <div className="flex items-center gap-1.5 bg-[#F6F9F4] p-1 rounded-full border border-[#E2EAE4] text-xs font-mono font-bold">
-                  <Languages className="w-3.5 h-3.5 text-[#556B62] ml-1.5" />
+                <div className="flex items-center gap-1.5 bg-surface p-1 rounded-full border border-line text-xs font-mono font-bold">
+                  <Languages className="w-3.5 h-3.5 text-muted ml-1.5" />
                   <button
                     onClick={() => setLanguage('bn')}
                     className={`px-2.5 py-0.5 rounded-full transition-all cursor-pointer ${
-                      isBn ? 'bg-[#0B2A20] text-[#D2F843]' : 'text-[#556B62]'
+                      isBn ? 'bg-brand-dark text-accent' : 'text-muted'
                     }`}
                   >
                     বাংলা
@@ -209,7 +206,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
                   <button
                     onClick={() => setLanguage('en')}
                     className={`px-2.5 py-0.5 rounded-full transition-all cursor-pointer ${
-                      !isBn ? 'bg-[#0B2A20] text-[#D2F843]' : 'text-[#556B62]'
+                      !isBn ? 'bg-brand-dark text-accent' : 'text-muted'
                     }`}
                   >
                     EN
@@ -227,14 +224,14 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
                       onClick={() => handleNavClick(item.id)}
                       className={`flex items-center justify-between text-left p-4 rounded-2xl transition-all cursor-pointer ${
                         isActive
-                          ? 'bg-[#0B2A20] text-[#D2F843]'
-                          : 'bg-[#F6F9F4] text-[#0D1F18] hover:bg-[#E2EAE4]'
+                          ? 'bg-brand-dark text-accent'
+                          : 'bg-surface text-ink hover:bg-line'
                       }`}
                     >
                       <div className="flex items-center gap-3">
                         <span
                           className={`text-xs font-mono font-bold ${
-                            isActive ? 'text-[#D2F843]' : 'text-[#556B62]'
+                            isActive ? 'text-accent' : 'text-muted'
                           }`}
                         >
                           0{idx + 1}
@@ -242,7 +239,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
                         <span className="font-sans font-bold text-lg">{label}</span>
                       </div>
                       <ArrowRight
-                        className={`w-4 h-4 ${isActive ? 'text-[#D2F843]' : 'text-[#556B62]'}`}
+                        className={`w-4 h-4 ${isActive ? 'text-accent' : 'text-muted'}`}
                       />
                     </button>
                   );
@@ -250,10 +247,10 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
               </nav>
             </div>
 
-            <div className="pt-6 border-t border-[#E2EAE4] space-y-4">
+            <div className="pt-6 border-t border-line space-y-4">
               <button
                 onClick={() => handleNavClick('contact')}
-                className="w-full flex items-center justify-between pl-6 pr-2 py-2.5 rounded-full bg-[#D2F843] text-[#0B2A20] text-xs font-bold uppercase tracking-wider hover:bg-[#bef024] shadow-md transition-colors"
+                className="w-full flex items-center justify-between pl-6 pr-2 py-2.5 rounded-full bg-accent text-brand-dark text-xs font-bold uppercase tracking-wider hover:bg-brand-dark shadow-md transition-colors"
               >
                 <span>{t('Contact Us', 'যোগাযোগ করুন')}</span>
                 <span className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center">
@@ -261,7 +258,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
                 </span>
               </button>
 
-              <div className="text-center text-xs text-[#556B62]">
+              <div className="text-center text-xs text-muted">
                 {t(ORGANIZATION.tagline, ORGANIZATION.taglineBn)}
               </div>
             </div>

@@ -50,8 +50,8 @@ export const FocusAreaList: React.FC<FocusAreaListProps> = ({ onSelectArea }) =>
               onMouseEnter={() => setHoveredIdx(idx)}
               className={`rounded-2xl border transition-all duration-300 ${
                 isHovered
-                  ? 'border-[#0B2A20] bg-white shadow-md'
-                  : 'border-[#E2EAE4] bg-[#FFFFFF] hover:border-[#556B62]'
+                  ? 'border-brand-dark bg-white shadow-md'
+                  : 'border-line bg-[#FFFFFF] hover:border-muted'
               }`}
             >
               <div
@@ -63,14 +63,14 @@ export const FocusAreaList: React.FC<FocusAreaListProps> = ({ onSelectArea }) =>
               >
                 <div className="space-y-2 flex-1">
                   <div className="flex items-center gap-3 sm:gap-4">
-                    <span className="w-8 h-8 rounded-xl bg-[#0B2A20] text-[#D2F843] flex items-center justify-center font-mono text-xs font-bold shrink-0">
+                    <span className="w-8 h-8 rounded-xl bg-brand-dark text-accent flex items-center justify-center font-mono text-xs font-bold shrink-0">
                       {item.number}
                     </span>
-                    <h3 className="font-sans text-xl sm:text-2xl text-[#0B2A20] font-extrabold tracking-tight group-hover:text-[#0B2A20] transition-colors">
+                    <h3 className="font-sans text-xl sm:text-2xl text-brand-dark font-extrabold tracking-tight group-hover:text-brand-dark transition-colors">
                       {item.topic}
                     </h3>
                   </div>
-                  <p className="font-sans text-sm sm:text-[15px] text-[#556B62] pl-11 max-w-xl leading-relaxed font-normal">
+                  <p className="font-sans text-sm sm:text-[15px] text-muted pl-11 max-w-xl leading-relaxed font-normal">
                     {item.description}
                   </p>
                 </div>
@@ -79,10 +79,10 @@ export const FocusAreaList: React.FC<FocusAreaListProps> = ({ onSelectArea }) =>
                   <button
                     type="button"
                     aria-label={`Toggle details for ${item.topic}`}
-                    className="w-8 h-8 rounded-full bg-[#F6F9F4] flex items-center justify-center text-[#0B2A20] hover:bg-[#D2F843] transition-colors cursor-pointer"
+                    className="w-8 h-8 rounded-full bg-surface flex items-center justify-center text-brand-dark hover:bg-accent transition-colors cursor-pointer"
                   >
                     {isExpanded ? (
-                      <ChevronUp className="w-4 h-4 text-[#0B2A20]" />
+                      <ChevronUp className="w-4 h-4 text-brand-dark" />
                     ) : (
                       <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                     )}
@@ -98,16 +98,16 @@ export const FocusAreaList: React.FC<FocusAreaListProps> = ({ onSelectArea }) =>
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="px-5 sm:px-7 pb-6 pt-2 pl-12 sm:pl-16 border-t border-[#E2EAE4]"
+                    className="px-5 sm:px-7 pb-6 pt-2 pl-12 sm:pl-16 border-t border-line"
                   >
-                    <div className="text-xs font-bold tracking-wider uppercase text-[#0B2A20] mb-3 flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#D2F843]" />
+                    <div className="text-xs font-bold tracking-wider uppercase text-brand-dark mb-3 flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                       {t('Core Lines of Investigation', 'মূল অনুসন্ধানের ক্ষেত্রসমূহ')}
                     </div>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-sans text-[#0D1F18]">
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-sans text-ink">
                       {item.expandedDetails?.map((detail, dIdx) => (
                         <li key={dIdx} className="flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#0B2A20] shrink-0" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-brand-dark shrink-0" />
                           <span>{detail}</span>
                         </li>
                       ))}
@@ -122,7 +122,7 @@ export const FocusAreaList: React.FC<FocusAreaListProps> = ({ onSelectArea }) =>
 
       {/* Side Visual Preview Column (Sticky on Desktop) */}
       <div className="hidden lg:block lg:col-span-5 sticky top-32">
-        <div className="rounded-3xl border border-[#E2EAE4] bg-white p-4 shadow-xl overflow-hidden">
+        <div className="rounded-3xl border border-line bg-white p-4 shadow-xl overflow-hidden">
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-neutral-200">
             <motion.img
               key={activeItem.number}
@@ -134,7 +134,7 @@ export const FocusAreaList: React.FC<FocusAreaListProps> = ({ onSelectArea }) =>
               className="w-full h-full object-cover"
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0B2A20]/80 via-[#0B2A20]/20 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/20 to-transparent pointer-events-none" />
             <div className="absolute bottom-5 left-5 right-5 text-white">
               <span className="hidden">
                 {t(`Domain ${activeItem.number}`, `ক্ষেত্র ${activeItem.number}`)}
@@ -145,8 +145,8 @@ export const FocusAreaList: React.FC<FocusAreaListProps> = ({ onSelectArea }) =>
 
           <div className="hidden">
             <span>{t('Systematic Inquiry', 'পদ্ধতিগত অনুসন্ধান')}</span>
-            <span className="text-[#0B2A20] font-bold flex items-center gap-1">
-              <Sparkles className="w-3 h-3 text-[#D2F843] fill-current" />
+            <span className="text-brand-dark font-bold flex items-center gap-1">
+              <Sparkles className="w-3 h-3 text-accent fill-current" />
               {t('Continuous Research', 'ধারাবাহিক গবেষণা')}
             </span>
           </div>

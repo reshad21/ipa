@@ -78,16 +78,16 @@ export const ContactForm: React.FC = () => {
   };
 
   return (
-    <div className="rounded-3xl border border-[#E2EAE4] bg-[#FFFFFF] p-8 sm:p-10 lg:p-12 shadow-sm">
+    <div className="rounded-3xl border border-line bg-[#FFFFFF] p-8 sm:p-10 lg:p-12 shadow-sm">
       <div className="mb-8">
-        <div className="mb-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0B2A20]/5 text-[#0B2A20] text-xs font-bold uppercase tracking-wider border border-[#0B2A20]/10">
-          <span className="w-2 h-2 rounded-full bg-[#D2F843]" />
+        <div className="mb-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-dark/5 text-brand-dark text-xs font-bold uppercase tracking-wider border border-brand-dark/10">
+          <span className="w-2 h-2 rounded-full bg-accent" />
           <span>{t('Direct Communication', 'সরাসরি যোগাযোগ')}</span>
         </div>
-        <h3 className="font-sans text-3xl sm:text-4xl text-[#0B2A20] font-extrabold tracking-tight">
+        <h3 className="font-sans text-3xl sm:text-4xl text-brand-dark font-extrabold tracking-tight">
           {t('Send Us a Message', 'আমাদের বার্তা পাঠান')}
         </h3>
-        <p className="text-sm font-sans text-[#556B62] mt-2">
+        <p className="text-sm font-sans text-muted mt-2">
           {t(
             'We welcome inquiries from academic researchers, journalists, civic institutions, and potential collaborators.',
             'গবেষক, সাংবাদিক, নাগরিক সংগঠন এবং সহযোগীদের অনুসন্ধান ও যোগাযোগকে আমরা আন্তরিকভাবে স্বাগত জানাই।'
@@ -96,14 +96,14 @@ export const ContactForm: React.FC = () => {
       </div>
 
       {isSubmitted ? (
-        <div className="p-8 bg-[#F6F9F4] border border-[#E2EAE4] rounded-2xl text-center space-y-4">
-          <div className="w-14 h-14 mx-auto rounded-full bg-[#0B2A20] text-[#D2F843] flex items-center justify-center shadow-lg">
-            <CheckCircle2 className="w-7 h-7 text-[#D2F843]" />
+        <div className="p-8 bg-surface border border-line rounded-2xl text-center space-y-4">
+          <div className="w-14 h-14 mx-auto rounded-full bg-brand-dark text-accent flex items-center justify-center shadow-lg">
+            <CheckCircle2 className="w-7 h-7 text-accent" />
           </div>
-          <h4 className="font-sans font-extrabold text-2xl text-[#0B2A20]">
+          <h4 className="font-sans font-extrabold text-2xl text-brand-dark">
             {t('Message Received', 'বার্তাটি গৃহীত হয়েছে')}
           </h4>
-          <p className="text-sm font-sans text-[#556B62] max-w-md mx-auto leading-relaxed">
+          <p className="text-sm font-sans text-muted max-w-md mx-auto leading-relaxed">
             {t(
               "Thank you for contacting us. We'll get back to you as soon as possible. Our secretariat typically responds within two business days.",
               'আমাদের সাথে যোগাযোগ করার জন্য ধন্যবাদ। আমাদের সচিবালয় সাধারণত দুই কার্যদিবসের মধ্যে উত্তর প্রদান করে থাকে।'
@@ -111,7 +111,7 @@ export const ContactForm: React.FC = () => {
           </p>
           <button
             onClick={() => setIsSubmitted(false)}
-            className="mt-4 px-6 py-2.5 rounded-full bg-[#0B2A20] text-[#D2F843] text-xs font-mono font-bold uppercase tracking-wider hover:bg-[#195642] transition-colors cursor-pointer"
+            className="mt-4 px-6 py-2.5 rounded-full bg-brand-dark text-accent text-xs font-mono font-bold uppercase tracking-wider hover:bg-brand transition-colors cursor-pointer"
           >
             {t('← Send another message', '← আরেকটি বার্তা পাঠান')}
           </button>
@@ -123,7 +123,7 @@ export const ContactForm: React.FC = () => {
             <div>
               <label
                 htmlFor="fullName"
-                className="block text-xs font-mono uppercase tracking-wider text-[#0B2A20] font-semibold mb-2"
+                className="block text-xs font-mono uppercase tracking-wider text-brand-dark font-semibold mb-2"
               >
                 {t('Full Name', 'পুরো নাম')} <span className="text-red-600">*</span>
               </label>
@@ -134,10 +134,10 @@ export const ContactForm: React.FC = () => {
                 value={formData.fullName}
                 onChange={handleChange}
                 placeholder={isBn ? 'মো. আরিফুল ইসলাম' : 'Dr. Eleanor Vance'}
-                className={`w-full px-4 py-3 rounded-xl bg-[#F6F9F4] text-sm text-[#0D1F18] placeholder:text-[#556B62]/60 border transition-all outline-none ${
+                className={`w-full px-4 py-3 rounded-xl bg-surface text-sm text-ink placeholder:text-muted/60 border transition-all outline-none ${
                   errors.fullName
                     ? 'border-red-500 focus:border-red-600'
-                    : 'border-[#E2EAE4] focus:border-[#0B2A20]'
+                    : 'border-line focus:border-brand-dark'
                 }`}
               />
               {errors.fullName && (
@@ -151,7 +151,7 @@ export const ContactForm: React.FC = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-xs font-mono uppercase tracking-wider text-[#0B2A20] font-semibold mb-2"
+                className="block text-xs font-mono uppercase tracking-wider text-brand-dark font-semibold mb-2"
               >
                 {t('Email Address', 'ইমেইল ঠিকানা')} <span className="text-red-600">*</span>
               </label>
@@ -162,10 +162,10 @@ export const ContactForm: React.FC = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="name@example.com"
-                className={`w-full px-4 py-3 rounded-xl bg-[#F6F9F4] text-sm text-[#0D1F18] placeholder:text-[#556B62]/60 border transition-all outline-none ${
+                className={`w-full px-4 py-3 rounded-xl bg-surface text-sm text-ink placeholder:text-muted/60 border transition-all outline-none ${
                   errors.email
                     ? 'border-red-500 focus:border-red-600'
-                    : 'border-[#E2EAE4] focus:border-[#0B2A20]'
+                    : 'border-line focus:border-brand-dark'
                 }`}
               />
               {errors.email && (
@@ -181,7 +181,7 @@ export const ContactForm: React.FC = () => {
             <div>
               <label
                 htmlFor="organization"
-                className="block text-xs font-mono uppercase tracking-wider text-[#0B2A20] font-semibold mb-2"
+                className="block text-xs font-mono uppercase tracking-wider text-brand-dark font-semibold mb-2"
               >
                 {t('Organization / Institution', 'প্রতিষ্ঠান / সংস্থা')}
               </label>
@@ -192,7 +192,7 @@ export const ContactForm: React.FC = () => {
                 value={formData.organization}
                 onChange={handleChange}
                 placeholder={isBn ? 'বিশ্ববিদ্যালয়, গণমাধ্যম, এনজিও বা ব্যক্তিগত' : 'University, Newsroom, NGO, or Independent'}
-                className="w-full px-4 py-3 rounded-xl bg-[#F6F9F4] text-sm text-[#0D1F18] placeholder:text-[#556B62]/60 border border-[#E2EAE4] focus:border-[#0B2A20] transition-all outline-none"
+                className="w-full px-4 py-3 rounded-xl bg-surface text-sm text-ink placeholder:text-muted/60 border border-line focus:border-brand-dark transition-all outline-none"
               />
             </div>
 
@@ -200,7 +200,7 @@ export const ContactForm: React.FC = () => {
             <div>
               <label
                 htmlFor="subject"
-                className="block text-xs font-mono uppercase tracking-wider text-[#0B2A20] font-semibold mb-2"
+                className="block text-xs font-mono uppercase tracking-wider text-brand-dark font-semibold mb-2"
               >
                 {t('Subject', 'বিষয়')} <span className="text-red-600">*</span>
               </label>
@@ -211,10 +211,10 @@ export const ContactForm: React.FC = () => {
                 value={formData.subject}
                 onChange={handleChange}
                 placeholder={isBn ? 'গবেষণা অনুসন্ধান / মিডিয়া মন্তব্য / ফেলোশিপ' : 'Research Inquiry / Media Request / Fellowship'}
-                className={`w-full px-4 py-3 rounded-xl bg-[#F6F9F4] text-sm text-[#0D1F18] placeholder:text-[#556B62]/60 border transition-all outline-none ${
+                className={`w-full px-4 py-3 rounded-xl bg-surface text-sm text-ink placeholder:text-muted/60 border transition-all outline-none ${
                   errors.subject
                     ? 'border-red-500 focus:border-red-600'
-                    : 'border-[#E2EAE4] focus:border-[#0B2A20]'
+                    : 'border-line focus:border-brand-dark'
                 }`}
               />
               {errors.subject && (
@@ -230,11 +230,11 @@ export const ContactForm: React.FC = () => {
             <div className="flex justify-between items-center mb-2">
               <label
                 htmlFor="contact-message-editor"
-                className="block text-xs font-mono uppercase tracking-wider text-[#0B2A20] font-semibold"
+                className="block text-xs font-mono uppercase tracking-wider text-brand-dark font-semibold"
               >
                 {t('Message', 'বার্তা')} <span className="text-red-600">*</span>
               </label>
-              <span className="text-[11px] font-mono text-[#556B62]">
+              <span className="text-[11px] font-mono text-muted">
                 {isBn
                   ? `${getCleanText(formData.message).trim().length} অক্ষর · রিচ টেক্সট সক্রিয়`
                   : `${getCleanText(formData.message).trim().length} chars · Rich Text Enabled`}
@@ -263,7 +263,7 @@ export const ContactForm: React.FC = () => {
                 <AlertCircle className="w-3 h-3" /> {errors.message}
               </p>
             )}
-            <p className="mt-1.5 text-[11px] text-[#556B62]">
+            <p className="mt-1.5 text-[11px] text-muted">
               {t(
                 'Supports rich text styling: bold, italic, underline, lists, quotes, and links.',
                 'রিচ টেক্সট ফরম্যাটিং সমর্থিত: বোল্ড, ইটালিক, আন্ডারলাইন, তালিকা, উদ্ধৃতি ও লিঙ্ক।'
@@ -272,7 +272,7 @@ export const ContactForm: React.FC = () => {
           </div>
 
           <div className="pt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <p className="text-xs font-sans text-[#556B62] max-w-sm">
+            <p className="text-xs font-sans text-muted max-w-sm">
               {t(
                 'Inquiries are processed in accordance with institutional confidentiality protocols.',
                 'সকল বার্তা প্রাতিষ্ঠানিক গোপনীয়তা নীতি অনুসারে বিবেচনা করা হয়।'
@@ -282,12 +282,12 @@ export const ContactForm: React.FC = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full sm:w-auto rounded-full px-8 py-3.5 text-xs font-mono font-bold uppercase tracking-wider bg-[#0B2A20] text-[#D2F843] hover:bg-[#195642] shadow-md hover:shadow-lg transition-all cursor-pointer disabled:opacity-50 whitespace-nowrap shrink-0 inline-flex items-center justify-center gap-2"
+              className="w-full sm:w-auto rounded-full px-8 py-3.5 text-xs font-mono font-bold uppercase tracking-wider bg-brand-dark text-accent hover:bg-brand shadow-md hover:shadow-lg transition-all cursor-pointer disabled:opacity-50 whitespace-nowrap shrink-0 inline-flex items-center justify-center gap-2"
             >
               <span className="whitespace-nowrap">
                 {isSubmitting ? t('Transmitting...', 'প্রেরণ করা হচ্ছে...') : t('Send Message', 'বার্তা পাঠান')}
               </span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#D2F843] shrink-0" />
+              <ArrowRight className="w-3.5 h-3.5 text-accent shrink-0" />
             </button>
           </div>
         </form>

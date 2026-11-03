@@ -59,7 +59,7 @@ export const Work: React.FC<WorkProps> = ({ onNavigate, onSelectInvestigation })
   });
 
   return (
-    <div className="bg-[#F6F9F4] text-[#0D1F18]">
+    <div className="bg-surface text-ink">
       {/* 21. HERO */}
       <PageHero
         backgroundImage="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2200&q=85"
@@ -76,14 +76,14 @@ export const Work: React.FC<WorkProps> = ({ onNavigate, onSelectInvestigation })
       <section className="hidden">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-3xl mb-12">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0B2A20]/5 text-[#0B2A20] text-xs font-bold uppercase tracking-wider border border-[#0B2A20]/10 mb-4">
-              <span className="w-2 h-2 rounded-full bg-[#D2F843]" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-dark/5 text-brand-dark text-xs font-bold uppercase tracking-wider border border-brand-dark/10 mb-4">
+              <span className="w-2 h-2 rounded-full bg-accent" />
               <span>{t('CORE MODALITIES', 'মূল কর্মপদ্ধতি')}</span>
             </div>
-            <h2 className="font-sans text-3xl sm:text-5xl lg:text-6xl text-[#0B2A20] font-extrabold tracking-tight mb-4">
+            <h2 className="font-sans text-3xl sm:text-5xl lg:text-6xl text-brand-dark font-extrabold tracking-tight mb-4">
               {t('What Our Work Looks Like', 'আমাদের কাজের রূপরেখা')}
             </h2>
-            <p className="text-base sm:text-lg text-[#556B62] font-sans font-normal">
+            <p className="text-base sm:text-lg text-muted font-sans font-normal">
               {t(
                 'We execute research through four distinct operational pillars, spanning long-term scientific inquiry to real-time broadcast monitoring.',
                 'আমরা চারটি পৃথক স্তম্ভের মাধ্যমে গবেষণা পরিচালনা করি—দীর্ঘমেয়াদী বৈজ্ঞানিক অনুসন্ধান থেকে শুরু করে রিয়েল-টাইম সম্প্রচার পর্যবেক্ষণ।'
@@ -104,31 +104,31 @@ export const Work: React.FC<WorkProps> = ({ onNavigate, onSelectInvestigation })
                   return (
                     <div
                       key={pillar.id}
-                      className="rounded-3xl border border-[#E2EAE4] bg-[#FFFFFF] p-7 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-[#0B2A20] transition-all"
+                      className="rounded-3xl border border-line bg-[#FFFFFF] p-7 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-brand-dark transition-all"
                     >
                       <div>
-                        <div className="flex items-center justify-between text-xs font-mono text-[#0B2A20] mb-4 font-bold">
-                          <span className="px-2.5 py-1 rounded-full bg-[#0B2A20] text-[#D2F843]">
+                        <div className="flex items-center justify-between text-xs font-mono text-brand-dark mb-4 font-bold">
+                          <span className="px-2.5 py-1 rounded-full bg-brand-dark text-accent">
                             {isBn ? `স্তম্ভ ০${pillar.number}` : `PILLAR ${pillar.number}`}
                           </span>
-                          <span className="text-[#556B62] uppercase">{pillar.id}</span>
+                          <span className="text-muted uppercase">{pillar.id}</span>
                         </div>
 
-                        <h3 className="font-sans text-2xl sm:text-3xl text-[#0B2A20] font-extrabold mb-1">
+                        <h3 className="font-sans text-2xl sm:text-3xl text-brand-dark font-extrabold mb-1">
                           {localizedPillar ? localizedPillar.titleBn : pillar.title}
                         </h3>
 
-                        <div className="text-xs font-mono uppercase text-[#556B62] font-semibold mb-3">
+                        <div className="text-xs font-mono uppercase text-muted font-semibold mb-3">
                           {localizedPillar ? localizedPillar.subtitleBn : pillar.subtitle}
                         </div>
 
-                        <p className="font-sans text-xs sm:text-sm text-[#556B62] leading-relaxed mb-6 font-normal">
+                        <p className="font-sans text-xs sm:text-sm text-muted leading-relaxed mb-6 font-normal">
                           {localizedPillar ? localizedPillar.descriptionBn : pillar.description}
                         </p>
                       </div>
 
-                      <div className="pt-4 border-t border-[#E2EAE4] space-y-2">
-                        <span className="text-[10px] font-mono tracking-wider uppercase text-[#556B62] font-semibold block">
+                      <div className="pt-4 border-t border-line space-y-2">
+                        <span className="text-[10px] font-mono tracking-wider uppercase text-muted font-semibold block">
                           {t('Core Outputs', 'মূল ফলাফল')}
                         </span>
                         {(localizedPillar
@@ -137,9 +137,9 @@ export const Work: React.FC<WorkProps> = ({ onNavigate, onSelectInvestigation })
                         ).map((item, idx) => (
                           <div
                             key={idx}
-                            className="flex items-center gap-2 text-xs font-sans text-[#0D1F18]"
+                            className="flex items-center gap-2 text-xs font-sans text-ink"
                           >
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#0B2A20]" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-brand-dark" />
                             <span>{item}</span>
                           </div>
                         ))}
@@ -152,25 +152,25 @@ export const Work: React.FC<WorkProps> = ({ onNavigate, onSelectInvestigation })
       </section>
 
       {/* 22. WORK AREAS */}
-      <section className="py-24 sm:py-32 border-b border-[#E2EAE4] bg-[#F6F9F4]">
+      <section className="py-24 sm:py-32 border-b border-line bg-surface">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           {/* Section Header with Filter Controls */}
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
             <div>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0B2A20]/5 text-[#0B2A20] text-xs font-bold uppercase tracking-wider border border-[#0B2A20]/10 mb-4">
-                <span className="w-2 h-2 rounded-full bg-[#D2F843]" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-dark/5 text-brand-dark text-xs font-bold uppercase tracking-wider border border-brand-dark/10 mb-4">
+                <span className="w-2 h-2 rounded-full bg-accent" />
                 <span>{t('SIX RESEARCH AREAS', 'ছয়টি প্রধান গবেষণা ক্ষেত্র')}</span>
               </div>
               <div className="flex items-center gap-3">
-                <h2 className="font-sans text-3xl sm:text-5xl lg:text-6xl text-[#0B2A20] font-extrabold tracking-tight">
+                <h2 className="font-sans text-3xl sm:text-5xl lg:text-6xl text-brand-dark font-extrabold tracking-tight">
                   {t('Areas of Investigation', 'অনুসন্ধানের ক্ষেত্রসমূহ')}
                 </h2>
                 <button
                   onClick={handleReload}
                   title={t('Refresh Research Catalog', 'গবেষণা তালিকা রিফ্রেশ করুন')}
-                  className="p-2 rounded-full border border-[#E2EAE4] bg-white text-[#556B62] hover:text-[#0B2A20] hover:border-[#0B2A20] transition-colors cursor-pointer text-xs"
+                  className="p-2 rounded-full border border-line bg-white text-muted hover:text-brand-dark hover:border-brand-dark transition-colors cursor-pointer text-xs"
                 >
-                  <RotateCw className={`w-3.5 h-3.5 ${isFilterLoading || isLoading ? 'animate-spin text-[#0B2A20]' : ''}`} />
+                  <RotateCw className={`w-3.5 h-3.5 ${isFilterLoading || isLoading ? 'animate-spin text-brand-dark' : ''}`} />
                 </button>
               </div>
             </div>
@@ -181,8 +181,8 @@ export const Work: React.FC<WorkProps> = ({ onNavigate, onSelectInvestigation })
                 onClick={() => handleFilterChange('all')}
                 className={`px-4 py-2 rounded-full border transition-all cursor-pointer font-bold uppercase tracking-wider whitespace-nowrap shrink-0 ${
                   selectedFilter === 'all'
-                    ? 'bg-[#0B2A20] text-[#D2F843] border-[#0B2A20] shadow-sm'
-                    : 'bg-[#FFFFFF] text-[#556B62] border-[#E2EAE4] hover:border-[#0B2A20]'
+                    ? 'bg-brand-dark text-accent border-brand-dark shadow-sm'
+                    : 'bg-[#FFFFFF] text-muted border-line hover:border-brand-dark'
                 }`}
               >
                   {t('All Research Areas (6)', 'সকল গবেষণা ক্ষেত্র (৬)')}
@@ -191,8 +191,8 @@ export const Work: React.FC<WorkProps> = ({ onNavigate, onSelectInvestigation })
                 onClick={() => handleFilterChange('journalism')}
                 className={`px-4 py-2 rounded-full border transition-all cursor-pointer font-bold uppercase tracking-wider whitespace-nowrap shrink-0 ${
                   selectedFilter === 'journalism'
-                    ? 'bg-[#0B2A20] text-[#D2F843] border-[#0B2A20] shadow-sm'
-                    : 'bg-[#FFFFFF] text-[#556B62] border-[#E2EAE4] hover:border-[#0B2A20]'
+                    ? 'bg-brand-dark text-accent border-brand-dark shadow-sm'
+                    : 'bg-[#FFFFFF] text-muted border-line hover:border-brand-dark'
                 }`}
               >
                 {t('Journalism & Newsrooms', 'সাংবাদিকতা ও নিউজরুম')}
@@ -201,8 +201,8 @@ export const Work: React.FC<WorkProps> = ({ onNavigate, onSelectInvestigation })
                 onClick={() => handleFilterChange('platforms')}
                 className={`px-4 py-2 rounded-full border transition-all cursor-pointer font-bold uppercase tracking-wider whitespace-nowrap shrink-0 ${
                   selectedFilter === 'platforms'
-                    ? 'bg-[#0B2A20] text-[#D2F843] border-[#0B2A20] shadow-sm'
-                    : 'bg-[#FFFFFF] text-[#556B62] border-[#E2EAE4] hover:border-[#0B2A20]'
+                    ? 'bg-brand-dark text-accent border-brand-dark shadow-sm'
+                    : 'bg-[#FFFFFF] text-muted border-line hover:border-brand-dark'
                 }`}
               >
                 {t('Platforms & AI', 'প্ল্যাটফর্ম ও এআই')}
@@ -211,8 +211,8 @@ export const Work: React.FC<WorkProps> = ({ onNavigate, onSelectInvestigation })
                 onClick={() => handleFilterChange('public')}
                 className={`px-4 py-2 rounded-full border transition-all cursor-pointer font-bold uppercase tracking-wider whitespace-nowrap shrink-0 ${
                   selectedFilter === 'public'
-                    ? 'bg-[#0B2A20] text-[#D2F843] border-[#0B2A20] shadow-sm'
-                    : 'bg-[#FFFFFF] text-[#556B62] border-[#E2EAE4] hover:border-[#0B2A20]'
+                    ? 'bg-brand-dark text-accent border-brand-dark shadow-sm'
+                    : 'bg-[#FFFFFF] text-muted border-line hover:border-brand-dark'
                 }`}
               >
                 {t('Public & Democracy', 'জনমত ও গণতন্ত্র')}

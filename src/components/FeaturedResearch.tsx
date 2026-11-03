@@ -74,7 +74,7 @@ export const FeaturedResearch: React.FC<FeaturedResearchProps> = ({ onNavigate }
   const featuredDate = isBn ? featured.dateBn : featured.date;
 
   return (
-    <section className="py-12 sm:py-16 border-b border-[#E2EAE4] bg-[#F6F9F4]">
+    <section className="py-12 sm:py-16 border-b border-line bg-surface">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <SectionHeading
           label={t('FEATURED RESEARCH', 'বিশেষ গবেষণা')}
@@ -98,7 +98,7 @@ export const FeaturedResearch: React.FC<FeaturedResearchProps> = ({ onNavigate }
               type="button"
               onClick={handleClick}
               aria-label={featuredTitle}
-              className="relative group w-full h-full text-left rounded-2xl overflow-hidden border border-[#E2EAE4] shadow-md min-h-[260px] lg:min-h-[300px]"
+              className="relative group w-full h-full text-left rounded-2xl overflow-hidden border border-line shadow-md min-h-[260px] lg:min-h-[300px]"
             >
               <img
                 src={featured.image}
@@ -106,9 +106,9 @@ export const FeaturedResearch: React.FC<FeaturedResearchProps> = ({ onNavigate }
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#061A13]/90 via-[#0B2A20]/40 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-deep/90 via-brand-dark/40 to-transparent pointer-events-none" />
 
-              <div className="absolute top-0 right-0 bg-[#D2F843] text-[#0B2A20] font-bold text-[10px] uppercase tracking-wider px-4 py-2 rounded-bl-xl">
+              <div className="absolute top-0 right-0 bg-accent text-brand-dark font-bold text-[10px] uppercase tracking-wider px-4 py-2 rounded-bl-xl">
                 {featuredCategory}
               </div>
 
@@ -137,7 +137,7 @@ export const FeaturedResearch: React.FC<FeaturedResearchProps> = ({ onNavigate }
                   type="button"
                   onClick={handleClick}
                   aria-label={itemTitle}
-                  className="group flex-1 flex items-stretch bg-white rounded-2xl border border-[#E2EAE4] overflow-hidden hover:shadow-lg hover:border-[#0B2A20] transition-all text-left w-full"
+                  className="group flex-1 flex items-stretch bg-white rounded-2xl border border-line overflow-hidden hover:shadow-lg hover:border-brand-dark transition-all text-left w-full"
                 >
                   <div className="w-2/5 shrink-0 overflow-hidden">
                     <img
@@ -148,11 +148,11 @@ export const FeaturedResearch: React.FC<FeaturedResearchProps> = ({ onNavigate }
                     />
                   </div>
                   <div className="p-4 flex flex-col flex-1 min-w-0">
-                    <h3 className="text-[#0B2A20] font-extrabold text-sm sm:text-base line-clamp-3 mb-1">
+                    <h3 className="text-brand-dark font-extrabold text-sm sm:text-base line-clamp-3 mb-1">
                       {itemTitle}
                     </h3>
-                    <div className="font-mono text-xs text-[#556B62]">{itemDate}</div>
-                    <div className="mt-auto pt-2 flex items-center justify-between text-[11px] font-mono uppercase tracking-wider text-[#0B2A20] font-bold group-hover:text-[#195642] transition-colors">
+                    <div className="font-mono text-xs text-muted">{itemDate}</div>
+                    <div className="mt-auto pt-2 flex items-center justify-between text-[11px] font-mono uppercase tracking-wider text-brand-dark font-bold group-hover:text-brand transition-colors">
                       <span>{t('Read Report', 'প্রতিবেদন পড়ুন')}</span>
                       <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                     </div>

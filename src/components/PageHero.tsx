@@ -18,16 +18,16 @@ export const PageHero: React.FC<PageHeroProps> = ({
   backgroundImage,
 }) => {
   return (
-    <section className="relative pt-36 pb-20 md:pt-44 md:pb-28 bg-[#0B2A20] text-white overflow-hidden border-b border-[#144234]">
+    <section className="relative pt-36 pb-20 md:pt-44 md:pb-28 bg-brand-deep text-white overflow-hidden border-b border-brand-dark">
       {backgroundImage && (
         <>
           <img src={backgroundImage} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover opacity-35 mix-blend-screen pointer-events-none" />
-          <div className="absolute inset-0 bg-[#0B2A20]/65 pointer-events-none" />
+          <div className="absolute inset-0 bg-brand-deep/65 pointer-events-none" />
         </>
       )}
       {/* Modern ambient gradient and subtle geometric line texture */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#195642]/30 rounded-full blur-3xl pointer-events-none -mr-32 -mt-32" />
-      <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-[#D2F843]/10 rounded-full blur-3xl pointer-events-none -ml-20 -mb-20" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-3xl pointer-events-none -mr-32 -mt-32" />
+      <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-accent/10 rounded-full blur-3xl pointer-events-none -ml-20 -mb-20" />
       <div className="absolute inset-0 bg-[radial-gradient(#1B4E3E_1px,transparent_1px)] [background-size:24px_24px] opacity-20 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
@@ -38,8 +38,8 @@ export const PageHero: React.FC<PageHeroProps> = ({
           className="max-w-4xl"
         >
           <div className="mb-6 flex flex-wrap items-center gap-3">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white/10 text-[#D2F843] border border-white/15 backdrop-blur-md">
-              <span className="w-2 h-2 rounded-full bg-[#D2F843] shadow-[0_0_8px_#D2F843]" />
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white/10 text-accent border border-white/15 backdrop-blur-md">
+              <span className="w-2 h-2 rounded-full bg-accent shadow-[0_0_8px_#f5b82e]" />
               {label}
             </span>
             {metadata && (

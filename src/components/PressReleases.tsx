@@ -20,7 +20,7 @@ export const PressReleases: React.FC<PressReleasesProps> = ({ onNavigate, onSele
     .slice(0, 4);
 
   return (
-    <section className="py-12 sm:py-16 bg-white border-b border-[#E2EAE4]">
+    <section className="py-12 sm:py-16 bg-white border-b border-line">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <SectionHeading
           title={t('Press Releases', 'প্রেস বিজ্ঞপ্তি')}
@@ -53,10 +53,10 @@ export const PressReleases: React.FC<PressReleasesProps> = ({ onNavigate, onSele
               onNavigate('press');
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0B2A20] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#144234] transition-all cursor-pointer"
+            className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-dark text-white text-xs font-bold uppercase tracking-wider hover:bg-brand transition-all cursor-pointer"
           >
             <span>{t('View All Press Releases', 'সব প্রেস বিজ্ঞপ্তি দেখুন')}</span>
-            <ArrowRight className="w-4 h-4 text-[#D2F843] transition-transform group-hover:translate-x-1" />
+            <ArrowRight className="w-4 h-4 text-accent transition-transform group-hover:translate-x-1" />
           </button>
         </div>
       </div>

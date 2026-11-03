@@ -79,9 +79,9 @@ export const Home: React.FC<HomeProps> = ({
       ];
 
   return (
-    <div className="bg-[#F6F9F4] text-[#0D1F18]">
+    <div className="bg-surface text-ink">
       {/* FULL-WIDTH HERO SECTION */}
-      <section className="relative w-full overflow-hidden bg-[#061A13] text-white border-b border-[#144234]">
+      <section className="relative w-full overflow-hidden bg-brand-deep text-white border-b border-brand">
         {/* Full-Bleed Background Photography (Media observatory & journalism research center) */}
         <img
           src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=2400&q=85"
@@ -90,8 +90,8 @@ export const Home: React.FC<HomeProps> = ({
         />
 
         {/* Atmospheric Emerald & Deep Forest Vignette Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0B2A20]/90 via-[#0B2A20]/65 to-[#061A13]/95 mix-blend-multiply pointer-events-none" />
-        <div className="absolute inset-0 bg-radial-[at_center_top] from-transparent via-[#061A13]/25 to-[#061A13]/85 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/90 via-brand-dark/65 to-brand-deep/95 mix-blend-multiply pointer-events-none" />
+        <div className="absolute inset-0 bg-radial-[at_center_top] from-transparent via-brand-deep/25 to-brand-deep/85 pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16 lg:pb-20 flex flex-col justify-between text-center items-center">
           {/* Top Block: Badges & Headings */}
@@ -102,8 +102,8 @@ export const Home: React.FC<HomeProps> = ({
             className="max-w-4xl mx-auto flex flex-col items-center mb-6 sm:mb-8"
           >
             {/* Pill Badge matching Greenset style */}
-            <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-[#D2F843] text-[11px] sm:text-xs font-bold uppercase tracking-wider">
-              <span className="w-2 h-2 rounded-full bg-[#D2F843] shadow-[0_0_8px_#D2F843]" />
+            <div className="mb-4 sm:mb-6 inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-accent text-[11px] sm:text-xs font-bold uppercase tracking-wider">
+              <span className="w-2 h-2 rounded-full bg-accent shadow-[0_0_8px_#f5b82e]" />
               <span>
                 {t(
                   `Independent Observatory · Est. ${ORGANIZATION.established}`,
@@ -117,12 +117,12 @@ export const Home: React.FC<HomeProps> = ({
               {isBn ? (
                 <>
                   গণমাধ্যম নিয়ে গবেষণা। <br className="hidden xs:inline" />
-                  <span className="text-[#D2F843]">সমাজের গভীর</span> অনুধাবন।
+                  <span className="text-accent">সমাজের গভীর</span> অনুধাবন।
                 </>
               ) : (
                 <>
                   Researching Media.<br className="hidden xs:inline" />
-                  <span className="text-[#D2F843]">Understanding</span> Society.
+                  <span className="text-accent">Understanding</span> Society.
                 </>
               )}
             </h1>
@@ -141,7 +141,7 @@ export const Home: React.FC<HomeProps> = ({
                 onNavigate('work');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="inline-flex items-center gap-3 pl-6 pr-2 py-2 sm:pl-7 sm:pr-2.5 sm:py-2.5 rounded-full bg-white text-[#0B2A20] hover:bg-[#D2F843] hover:scale-105 font-extrabold text-xs sm:text-sm tracking-wide shadow-2xl transition-all cursor-pointer group"
+              className="inline-flex items-center gap-3 pl-6 pr-2 py-2 sm:pl-7 sm:pr-2.5 sm:py-2.5 rounded-full bg-white text-brand-dark hover:bg-accent hover:scale-105 font-extrabold text-xs sm:text-sm tracking-wide shadow-2xl transition-all cursor-pointer group"
             >
               <span>{t('Explore Researches', 'গবেষণাসমূহ দেখুন')}</span>
               <span className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center transition-transform group-hover:translate-x-0.5">
@@ -158,9 +158,9 @@ export const Home: React.FC<HomeProps> = ({
             className="w-full grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 lg:gap-5 mt-12 sm:mt-16 lg:mt-20 text-left"
           >
             {/* Card 1: Years of Experience */}
-            <div className="rounded-2xl sm:rounded-3xl bg-[#0B2A20]/90 backdrop-blur-md border border-white/20 p-3 sm:p-5 lg:p-6 flex flex-col justify-between shadow-xl hover:border-[#D2F843]/50 transition-all group">
+            <div className="rounded-2xl sm:rounded-3xl bg-white/10 backdrop-blur-md border border-white/25 p-3 sm:p-5 lg:p-6 flex flex-col justify-between shadow-xl hover:border-accent/50 transition-all group">
               <div className="flex items-center justify-between mb-2 sm:mb-4">
-                <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-white/10 text-[#D2F843] flex items-center justify-center border border-white/10 group-hover:scale-105 group-hover:bg-[#D2F843] group-hover:text-[#0B2A20] transition-all">
+                <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-white/15 text-accent flex items-center justify-center border border-white/10 group-hover:scale-105 group-hover:bg-accent group-hover:text-brand-deep transition-all">
                   <Calendar className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
                 </div>
                 <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-full bg-white/10 text-white/80 border border-white/10">
@@ -168,10 +168,10 @@ export const Home: React.FC<HomeProps> = ({
                 </span>
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-none mb-1 group-hover:text-[#D2F843] transition-colors">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-none mb-1 group-hover:text-accent transition-colors">
                   {t('12+ Years', '১২+ বছর')}
                 </div>
-                <div className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#D2F843] mb-0.5 sm:mb-1">
+                <div className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-accent mb-0.5 sm:mb-1">
                   {t('Experience', 'অভিজ্ঞতা')}
                 </div>
                 <p className="text-[10px] sm:text-xs text-white/75 leading-tight sm:leading-relaxed line-clamp-2">
@@ -184,9 +184,9 @@ export const Home: React.FC<HomeProps> = ({
             </div>
 
             {/* Card 2: Total Inquiries */}
-            <div className="rounded-2xl sm:rounded-3xl bg-[#0B2A20]/90 backdrop-blur-md border border-white/20 p-3 sm:p-5 lg:p-6 flex flex-col justify-between shadow-xl hover:border-[#D2F843]/50 transition-all group">
+            <div className="rounded-2xl sm:rounded-3xl bg-white/10 backdrop-blur-md border border-white/25 p-3 sm:p-5 lg:p-6 flex flex-col justify-between shadow-xl hover:border-accent/50 transition-all group">
               <div className="flex items-center justify-between mb-2 sm:mb-4">
-                <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-white/10 text-[#D2F843] flex items-center justify-center border border-white/10 group-hover:scale-105 group-hover:bg-[#D2F843] group-hover:text-[#0B2A20] transition-all">
+                <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-white/15 text-accent flex items-center justify-center border border-white/10 group-hover:scale-105 group-hover:bg-accent group-hover:text-brand-deep transition-all">
                   <FileText className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
                 </div>
                 <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-full bg-white/10 text-white/80 border border-white/10">
@@ -194,10 +194,10 @@ export const Home: React.FC<HomeProps> = ({
                 </span>
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-none mb-1 group-hover:text-[#D2F843] transition-colors">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-none mb-1 group-hover:text-accent transition-colors">
                   160+
                 </div>
-                <div className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#D2F843] mb-0.5 sm:mb-1">
+                <div className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-accent mb-0.5 sm:mb-1">
                   {t('Total Inquiries', 'গবেষণা ও প্রতিবেদন')}
                 </div>
                 <p className="text-[10px] sm:text-xs text-white/75 leading-tight sm:leading-relaxed line-clamp-2">
@@ -207,20 +207,20 @@ export const Home: React.FC<HomeProps> = ({
             </div>
 
             {/* Card 3: Datasets Monitored */}
-            <div className="rounded-2xl sm:rounded-3xl bg-[#0B2A20]/90 backdrop-blur-md border border-white/20 p-3 sm:p-5 lg:p-6 flex flex-col justify-between shadow-xl hover:border-[#D2F843]/50 transition-all group">
+            <div className="rounded-2xl sm:rounded-3xl bg-white/10 backdrop-blur-md border border-white/25 p-3 sm:p-5 lg:p-6 flex flex-col justify-between shadow-xl hover:border-accent/50 transition-all group">
               <div className="flex items-center justify-between mb-2 sm:mb-4">
-                <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-white/10 text-[#D2F843] flex items-center justify-center border border-white/10 group-hover:scale-105 group-hover:bg-[#D2F843] group-hover:text-[#0B2A20] transition-all">
+                <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-white/15 text-accent flex items-center justify-center border border-white/10 group-hover:scale-105 group-hover:bg-accent group-hover:text-brand-deep transition-all">
                   <Database className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
                 </div>
-                <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-full bg-[#D2F843]/20 text-[#D2F843] border border-[#D2F843]/30">
+                <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-full bg-accent/20 text-accent border border-accent/30">
                   {t('Live Logging', 'লাইভ লগিং')}
                 </span>
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-none mb-1 group-hover:text-[#D2F843] transition-colors">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-none mb-1 group-hover:text-accent transition-colors">
                   12.4k+
                 </div>
-                <div className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#D2F843] mb-0.5 sm:mb-1">
+                <div className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-accent mb-0.5 sm:mb-1">
                   {t('Datasets', 'ডেটাসেট')}
                 </div>
                 <p className="text-[10px] sm:text-xs text-white/75 leading-tight sm:leading-relaxed line-clamp-2">
@@ -230,9 +230,9 @@ export const Home: React.FC<HomeProps> = ({
             </div>
 
             {/* Card 4: Verification Rigor */}
-            <div className="rounded-2xl sm:rounded-3xl bg-[#0B2A20]/90 backdrop-blur-md border border-white/20 p-3 sm:p-5 lg:p-6 flex flex-col justify-between shadow-xl hover:border-[#D2F843]/50 transition-all group">
+            <div className="rounded-2xl sm:rounded-3xl bg-white/10 backdrop-blur-md border border-white/25 p-3 sm:p-5 lg:p-6 flex flex-col justify-between shadow-xl hover:border-accent/50 transition-all group">
               <div className="flex items-center justify-between mb-2 sm:mb-4">
-                <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-white/10 text-[#D2F843] flex items-center justify-center border border-white/10 group-hover:scale-105 group-hover:bg-[#D2F843] group-hover:text-[#0B2A20] transition-all">
+                <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-white/15 text-accent flex items-center justify-center border border-white/10 group-hover:scale-105 group-hover:bg-accent group-hover:text-brand-deep transition-all">
                   <ShieldCheck className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
                 </div>
                 <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-full bg-white/10 text-white/80 border border-white/10">
@@ -240,10 +240,10 @@ export const Home: React.FC<HomeProps> = ({
                 </span>
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-none mb-1 group-hover:text-[#D2F843] transition-colors">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-none mb-1 group-hover:text-accent transition-colors">
                   98.4%
                 </div>
-                <div className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#D2F843] mb-0.5 sm:mb-1">
+                <div className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-accent mb-0.5 sm:mb-1">
                   {t('Verification', 'নির্ভুলতা')}
                 </div>
                 <p className="text-[10px] sm:text-xs text-white/75 leading-tight sm:leading-relaxed line-clamp-2">
@@ -256,24 +256,24 @@ export const Home: React.FC<HomeProps> = ({
       </section>
 
       {/* BUILT FOR PUBLIC INTEREST SECTION WITH CONTEXTUAL IMAGE */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-[#F6F9F4] border-b border-[#E2EAE4]" id="public-interest">
+      <section className="py-12 sm:py-16 lg:py-20 bg-surface border-b border-line" id="public-interest">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Column: Mission Narrative and Methodological Safeguards */}
             <div className="lg:col-span-7 space-y-5">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-[#0B2A20]/5 text-[#0B2A20] border border-[#0B2A20]/10 text-[11px] sm:text-xs font-bold uppercase tracking-wider">
-                <span className="w-2 h-2 rounded-full bg-[#D2F843] shadow-[0_0_8px_#D2F843]" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-brand-dark/5 text-brand-dark border border-brand-dark/10 text-[11px] sm:text-xs font-bold uppercase tracking-wider">
+                <span className="w-2 h-2 rounded-full bg-accent shadow-[0_0_8px_#f5b82e]" />
                 <span>{t('Built for Public Interest', 'জনস্বার্থে নিবেদিত')}</span>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0B2A20] leading-snug sm:leading-tight tracking-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-brand-dark leading-snug sm:leading-tight tracking-tight">
                 {t(
                   'Started as an independent research observatory, now monitoring across 6 key inquiry beats for society.',
                   'একটি স্বাধীন গবেষণা মানমন্দির হিসেবে যাত্রা শুরু করে বর্তমানে সমাজের জন্য ৬টি গুরুত্বপূর্ণ ক্ষেত্রে নিয়োজিত।'
                 )}
               </h2>
 
-              <p className="text-sm sm:text-base text-[#556B62] leading-relaxed max-w-2xl font-normal">
+              <p className="text-sm sm:text-base text-muted leading-relaxed max-w-2xl font-normal">
                 {t(
                   'We investigate information integrity, algorithmic amplification, and press sustainability. All investigative findings and microdata are released open-access to empower journalists, policymakers, and civic institutions with verified evidence.',
                   'আমরা তথ্যের বস্তুনিষ্ঠতা, অ্যালগরিদম বিস্তার এবং গণমাধ্যমের টেকসই রূপান্তর নিরীক্ষণ করি। আমাদের সকল গবেষণা প্রতিবেদন ও ডেটাসেট উন্মুক্তভাবে প্রকাশিত হয় যাতে সাংবাদিক ও নাগরিক প্রতিষ্ঠানগুলো যাচাইকৃত প্রমাণাদি ব্যবহার করতে পারে।'
@@ -282,20 +282,20 @@ export const Home: React.FC<HomeProps> = ({
 
               {/* Trust Indicators */}
               <div className="pt-2 flex flex-wrap items-center gap-3">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white border border-[#E2EAE4] text-xs font-medium text-[#0B2A20] shadow-2xs">
-                  <CheckCircle className="w-3.5 h-3.5 text-[#195642]" />
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white border border-line text-xs font-medium text-brand-dark shadow-2xs">
+                  <CheckCircle className="w-3.5 h-3.5 text-brand" />
                   <span>{t('100% Non-Partisan & Open-Access', '১০০% নিরপেক্ষ ও উন্মুক্ত গবেষণা')}</span>
                 </div>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white border border-[#E2EAE4] text-xs font-medium text-[#0B2A20] shadow-2xs">
-                  <CheckCircle className="w-3.5 h-3.5 text-[#195642]" />
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white border border-line text-xs font-medium text-brand-dark shadow-2xs">
+                  <CheckCircle className="w-3.5 h-3.5 text-brand" />
                   <span>{t('IRB-Approved Scientific Ethics', 'আইআরবি-স্বীকৃত বৈজ্ঞানিক নীতিমালা')}</span>
                 </div>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white border border-[#E2EAE4] text-xs font-medium text-[#0B2A20] shadow-2xs">
-                  <CheckCircle className="w-3.5 h-3.5 text-[#195642]" />
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white border border-line text-xs font-medium text-brand-dark shadow-2xs">
+                  <CheckCircle className="w-3.5 h-3.5 text-brand" />
                   <span>{t('Open Microdata Standards', 'উন্মুক্ত মাইক্রোডেটা মানদণ্ড')}</span>
                 </div>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white border border-[#E2EAE4] text-xs font-medium text-[#0B2A20] shadow-2xs">
-                  <CheckCircle className="w-3.5 h-3.5 text-[#195642]" />
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white border border-line text-xs font-medium text-brand-dark shadow-2xs">
+                  <CheckCircle className="w-3.5 h-3.5 text-brand" />
                   <span>{t('Independent Editorial Oversight', 'স্বাধীন সম্পাদকীয় তদারকি')}</span>
                 </div>
               </div>
@@ -303,7 +303,7 @@ export const Home: React.FC<HomeProps> = ({
 
             {/* Right Column: Contextual Image Feature */}
             <div className="lg:col-span-5">
-              <div className="relative rounded-3xl overflow-hidden shadow-lg border border-[#E2EAE4] bg-white group aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3]">
+              <div className="relative rounded-3xl overflow-hidden shadow-lg border border-line bg-white group aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3]">
                 <img
                   src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=85"
                   alt="Public interest media researchers analyzing datasets and societal impact"
@@ -312,8 +312,8 @@ export const Home: React.FC<HomeProps> = ({
                 />
                 {/* Floating Image Badges */}
                 <div className="hidden">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0B2A20]/90 backdrop-blur-md text-[#D2F843] text-[10px] font-mono font-bold uppercase tracking-wider border border-[#D2F843]/30">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#D2F843] animate-pulse" />
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-dark/90 backdrop-blur-md text-accent text-[10px] font-mono font-bold uppercase tracking-wider border border-accent/30">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
                     <span>{t('PUBLIC REPOSITORY', 'উন্মুক্ত সংগ্রহশালা')}</span>
                   </span>
                 </div>
@@ -336,7 +336,7 @@ export const Home: React.FC<HomeProps> = ({
       </section>
 
       {/* ANIMATED CONTINUOUS SCROLLING TICKER BANNER (Infinite Marquee) */}
-      <div className="bg-[#D2F843] text-[#0B2A20] py-3.5 overflow-hidden border-b border-[#c0e82c] select-none flex shadow-inner">
+      <div className="bg-accent text-brand-dark py-3.5 overflow-hidden border-b border-brand-dark select-none flex shadow-inner">
         <motion.div
           className="flex whitespace-nowrap items-center flex-shrink-0"
           animate={{ x: ['0%', '-50%'] }}
@@ -353,7 +353,7 @@ export const Home: React.FC<HomeProps> = ({
                 key={`t1-${idx}`}
                 className="flex items-center gap-3 text-xs sm:text-sm font-black tracking-widest uppercase"
               >
-                <span className="text-[#0B2A20] text-sm">✦</span>
+                <span className="text-brand-dark text-sm">✦</span>
                 <span>{item}</span>
               </span>
             ))}
@@ -369,7 +369,7 @@ export const Home: React.FC<HomeProps> = ({
                 key={`t2-${idx}`}
                 className="flex items-center gap-3 text-xs sm:text-sm font-black tracking-widest uppercase"
               >
-                <span className="text-[#0B2A20] text-sm">✦</span>
+                <span className="text-brand-dark text-sm">✦</span>
                 <span>{item}</span>
               </span>
             ))}
@@ -378,35 +378,35 @@ export const Home: React.FC<HomeProps> = ({
       </div>
 
       {/* 9. INTRODUCTION: WHO WE ARE */}
-      <section className="py-20 sm:py-28 border-b border-[#E2EAE4] bg-[#FFFFFF]">
+      <section className="py-20 sm:py-28 border-b border-line bg-[#FFFFFF]">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left: Large Heading & Label */}
             <div className="lg:col-span-6 space-y-6">
-              <div className="flex items-center justify-between text-xs font-bold tracking-widest uppercase text-[#0B2A20]">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0B2A20]/5 text-[#0B2A20] border border-[#0B2A20]/10">
-                  <span className="w-2 h-2 rounded-full bg-[#D2F843] shadow-[0_0_8px_#D2F843]" />
+              <div className="flex items-center justify-between text-xs font-bold tracking-widest uppercase text-brand-dark">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-dark/5 text-brand-dark border border-brand-dark/10">
+                  <span className="w-2 h-2 rounded-full bg-accent shadow-[0_0_8px_#f5b82e]" />
                   <span>{t('WHO WE ARE', 'আমাদের পরিচিতি')}</span>
                 </div>
-                <span className="font-mono text-[#556B62]">01 / 05</span>
+                <span className="font-mono text-muted">01 / 05</span>
               </div>
 
-              <h2 className="font-sans text-4xl sm:text-5xl lg:text-[54px] text-[#0B2A20] font-extrabold leading-[1.08] tracking-tight">
+              <h2 className="font-sans text-4xl sm:text-5xl lg:text-[54px] text-brand-dark font-extrabold leading-[1.08] tracking-tight">
                 {isBn ? (
                   <>
                     গণমাধ্যম নিয়ে গবেষণা। <br />
-                    <span className="text-[#195642]">সামাজিক প্রভাবের বিশ্লেষণ।</span>
+                    <span className="text-brand">সামাজিক প্রভাবের বিশ্লেষণ।</span>
                   </>
                 ) : (
                   <>
                     Researching the Media. <br />
-                    <span className="text-[#195642]">Understanding Its Impact.</span>
+                    <span className="text-brand">Understanding Its Impact.</span>
                   </>
                 )}
               </h2>
 
               <div className="pt-2">
-                <div className="inline-block px-4 py-2 bg-[#F6F9F4] rounded-xl border border-[#E2EAE4] font-mono text-xs text-[#556B62] tracking-wider uppercase font-bold">
+                <div className="inline-block px-4 py-2 bg-surface rounded-xl border border-line font-mono text-xs text-muted tracking-wider uppercase font-bold">
                   {t(
                     'INDEPENDENT RESEARCH · EVIDENCE-DRIVEN',
                     'স্বাধীন গবেষণা · তথ্য-প্রমাণ নির্ভর'
@@ -416,7 +416,7 @@ export const Home: React.FC<HomeProps> = ({
             </div>
 
             {/* Right: Description & CTA */}
-            <div className="lg:col-span-6 space-y-6 text-base sm:text-lg text-[#0D1F18] font-sans font-normal leading-relaxed pt-2">
+            <div className="lg:col-span-6 space-y-6 text-base sm:text-lg text-ink font-sans font-normal leading-relaxed pt-2">
               <p>
                 <strong>{t(ORGANIZATION.name, ORGANIZATION.nameBn)}</strong>{' '}
                 {t(
@@ -425,7 +425,7 @@ export const Home: React.FC<HomeProps> = ({
                 )}
               </p>
 
-              <p className="text-[#556B62]">
+              <p className="text-muted">
                 {t(
                   'Through research, monitoring, and analysis, we examine how information is produced, distributed, consumed, and understood in a rapidly changing digital environment.',
                   'গবেষণা, নিবিড় নিরীক্ষণ ও বিশ্লেষণের মাধ্যমে আমরা খতিয়ে দেখি কীভাবে দ্রুত পরিবর্তনশীল ডিজিটাল বিশ্বে তথ্য উৎপাদিত, পরিবেশিত ও জনমানসে গৃহীত হয়।'
@@ -438,10 +438,10 @@ export const Home: React.FC<HomeProps> = ({
                     onNavigate('about');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0B2A20] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#144234] transition-all cursor-pointer"
+                  className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-dark text-white text-xs font-bold uppercase tracking-wider hover:bg-brand transition-all cursor-pointer"
                 >
                   <span>{t('Discover Our Organization', 'আমাদের সম্পর্কে জানুন')}</span>
-                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 text-[#D2F843]" />
+                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 text-accent" />
                 </button>
               </div>
             </div>
@@ -450,7 +450,7 @@ export const Home: React.FC<HomeProps> = ({
       </section>
 
       {/* 10. WHAT WE DO: EXACTLY 3 KEY BOXES, WHERE ONE IS A DEDICATED IMAGE BOX */}
-      <section className="py-20 sm:py-28 border-b border-[#E2EAE4] bg-[#F6F9F4]" id="what-we-do">
+      <section className="py-20 sm:py-28 border-b border-line bg-surface" id="what-we-do">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <SectionHeading
             label={t('WHAT WE DO', 'আমাদের কার্যক্রম')}
@@ -465,22 +465,22 @@ export const Home: React.FC<HomeProps> = ({
           {/* 3 Key Boxes Grid (Content Box 1 + Dedicated Visual Image Box + Content Box 3) */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
             {/* Key Box 1: Media Research & Investigative Inquiry (Content Box) */}
-            <div className="rounded-3xl border border-[#E2EAE4] bg-white text-[#0D1F18] p-8 sm:p-9 transition-all duration-300 hover:shadow-md hover:border-[#0B2A20] flex flex-col justify-between group">
+            <div className="rounded-3xl border border-line bg-white text-ink p-8 sm:p-9 transition-all duration-300 hover:shadow-md hover:border-brand-dark flex flex-col justify-between group">
               <div>
-                <div className="flex items-center justify-between pb-6 mb-6 border-b border-[#E2EAE4]">
-                  <span className="font-mono text-3xl font-extrabold text-[#0B2A20]">
+                <div className="flex items-center justify-between pb-6 mb-6 border-b border-line">
+                  <span className="font-mono text-3xl font-extrabold text-brand-dark">
                     01
                   </span>
-                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center bg-[#F6F9F4] text-[#0B2A20] group-hover:bg-[#0B2A20] group-hover:text-[#D2F843] transition-colors">
+                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center bg-surface text-brand-dark group-hover:bg-brand-dark group-hover:text-accent transition-colors">
                     <Search className="w-6 h-6" />
                   </div>
                 </div>
 
-                <h3 className="font-sans text-2xl font-extrabold tracking-tight mb-3 text-[#0B2A20]">
+                <h3 className="font-sans text-2xl font-extrabold tracking-tight mb-3 text-brand-dark">
                   {t('MEDIA RESEARCH & INQUIRY', 'গণমাধ্যম গবেষণা ও অনুসন্ধান')}
                 </h3>
 
-                <p className="font-sans text-sm leading-relaxed mb-6 text-[#556B62]">
+                <p className="font-sans text-sm leading-relaxed mb-6 text-muted">
                   {t(
                     'We study emerging trends, newsroom editorial autonomy, and structural pressures through rigorous qualitative fieldwork, ethnography, and structured academic inquiry.',
                     'আমরা মাঠপর্যায়ের সমীক্ষা, গবেষণামূলক সাক্ষাৎকার এবং কাঠামোগত পর্যালোচনার মাধ্যমে গণমাধ্যমের স্বাধীনতা ও রূপান্তর বিশ্লেষণ করি।'
@@ -491,7 +491,7 @@ export const Home: React.FC<HomeProps> = ({
             </div>
 
             {/* Key Box 2: Visual 24/7 Media Observatory (DEDICATED IMAGE BOX) */}
-            <div className="rounded-3xl border border-[#E2EAE4] overflow-hidden relative group min-h-[380px] sm:min-h-[420px] flex flex-col justify-between shadow-md">
+            <div className="rounded-3xl border border-line overflow-hidden relative group min-h-[380px] sm:min-h-[420px] flex flex-col justify-between shadow-md">
               {/* Full-Bleed High-Definition Observatory Image */}
               <img
                 src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=85"
@@ -501,7 +501,7 @@ export const Home: React.FC<HomeProps> = ({
               />
 
               {/* Contrast Gradient Scrim Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#061A13]/95 via-[#0B2A20]/45 to-black/30 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-deep/95 via-brand-dark/45 to-black/30 pointer-events-none" />
 
               {/* Top Bar of Image Box */}
               <div className="relative z-10 p-6 sm:p-7 flex items-center justify-between">
@@ -529,22 +529,22 @@ export const Home: React.FC<HomeProps> = ({
             </div>
 
             {/* Key Box 3: Monitoring & Public Insights (Content Box with Bold Theme) */}
-            <div className="rounded-3xl border border-[#c0e82c] bg-[#D2F843] text-[#0B2A20] p-8 sm:p-9 transition-all duration-300 hover:shadow-lg hover:scale-[1.01] flex flex-col justify-between group">
+            <div className="rounded-3xl border border-brand-dark bg-accent text-brand-dark p-8 sm:p-9 transition-all duration-300 hover:shadow-lg hover:scale-[1.01] flex flex-col justify-between group">
               <div>
-                <div className="flex items-center justify-between pb-6 mb-6 border-b border-[#0B2A20]/20">
-                  <span className="font-mono text-3xl font-extrabold text-[#0B2A20]">
+                <div className="flex items-center justify-between pb-6 mb-6 border-b border-brand-dark/20">
+                  <span className="font-mono text-3xl font-extrabold text-brand-dark">
                     02
                   </span>
-                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center bg-[#0B2A20] text-[#D2F843] shadow-sm">
+                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center bg-brand-dark text-accent shadow-sm">
                     <Radio className="w-6 h-6" />
                   </div>
                 </div>
 
-                <h3 className="font-sans text-2xl font-extrabold tracking-tight mb-3 text-[#0B2A20]">
+                <h3 className="font-sans text-2xl font-extrabold tracking-tight mb-3 text-brand-dark">
                   {t('MONITORING & PUBLIC INSIGHTS', 'মনিটরিং ও জনস্বার্থ ইনসাইট')}
                 </h3>
 
-                <p className="font-sans text-sm leading-relaxed mb-6 text-[#0B2A20]/85">
+                <p className="font-sans text-sm leading-relaxed mb-6 text-brand-dark/85">
                   {t(
                     'We monitor news narratives, algorithmic distribution, and audience perception across broadcast and digital platforms, producing reproducible open datasets for civic accountability.',
                     'আমরা প্রচার মাধ্যম ও প্ল্যাটফর্ম অ্যালগরিদম নিরীক্ষণ করে নাগরিক দায়বদ্ধতার জন্য উন্মুক্ত ও নির্ভরযোগ্য তথ্য-উপাত্ত তৈরি করি।'
@@ -558,7 +558,7 @@ export const Home: React.FC<HomeProps> = ({
       </section>
 
       {/* 11. AREAS OF FOCUS */}
-      <section className="py-20 sm:py-28 border-b border-[#E2EAE4] bg-[#FFFFFF]">
+      <section className="py-20 sm:py-28 border-b border-line bg-[#FFFFFF]">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <SectionHeading
             label={t('AREAS OF FOCUS', 'গবেষণার ক্ষেত্রসমূহ')}
@@ -595,20 +595,20 @@ export const Home: React.FC<HomeProps> = ({
       </section>
 
       {/* 12. LARGE STATEMENT (Deep Green with Electric Lime accents) */}
-      <section className="py-24 sm:py-32 bg-[#0B2A20] text-white border-b border-[#144234] relative overflow-hidden">
+      <section className="py-24 sm:py-32 bg-brand-deep text-white border-b border-brand-dark relative overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=2200&q=85"
           alt=""
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover opacity-35 mix-blend-screen pointer-events-none"
         />
-        <div className="absolute inset-0 bg-[#0B2A20]/60 pointer-events-none" />
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#16513E]/40 rounded-full blur-3xl pointer-events-none -mr-32 -mt-32" />
-        <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-[#D2F843]/10 rounded-full blur-3xl pointer-events-none -ml-20 -mb-20" />
+        <div className="absolute inset-0 bg-brand-dark/60 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-3xl pointer-events-none -mr-32 -mt-32" />
+        <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-accent/10 rounded-full blur-3xl pointer-events-none -ml-20 -mb-20" />
 
         <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 text-center space-y-8 relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-[#D2F843] text-xs font-bold uppercase tracking-widest border border-white/15">
-            <span className="w-2 h-2 rounded-full bg-[#D2F843] shadow-[0_0_8px_#D2F843]" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-accent text-xs font-bold uppercase tracking-widest border border-white/15">
+            <span className="w-2 h-2 rounded-full bg-accent shadow-[0_0_8px_#f5b82e]" />
             {t('INSTITUTIONAL CORE TENET', 'প্রতিষ্ঠানের মূল দর্শন')}
           </div>
 
@@ -632,7 +632,7 @@ export const Home: React.FC<HomeProps> = ({
                 onNavigate('about');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#D2F843] text-[#0B2A20] text-xs font-extrabold uppercase tracking-widest hover:bg-[#bef024] transition-all cursor-pointer shadow-lg"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent text-brand-dark text-xs font-extrabold uppercase tracking-widest hover:bg-brand-dark transition-all cursor-pointer shadow-lg"
             >
               <span>{t('Explore Our Methodological Commitments →', 'আমাদের গবেষণা পদ্ধতি ও প্রতিশ্রুতিসমূহ →')}</span>
             </button>
@@ -641,7 +641,7 @@ export const Home: React.FC<HomeProps> = ({
       </section>
 
       {/* 13. OUR APPROACH */}
-      <section className="py-20 sm:py-28 border-b border-[#E2EAE4] bg-[#F6F9F4]">
+      <section className="py-20 sm:py-28 border-b border-line bg-surface">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <SectionHeading
             label={t('OUR APPROACH', 'আমাদের কর্মপদ্ধতি')}
@@ -658,33 +658,33 @@ export const Home: React.FC<HomeProps> = ({
             {currentApproachSteps.map((step) => (
               <div
                 key={step.number}
-                className="rounded-3xl border border-[#E2EAE4] bg-[#FFFFFF] p-7 flex flex-col justify-between shadow-sm hover:shadow-md hover:border-[#0B2A20] transition-all"
+                className="rounded-3xl border border-line bg-[#FFFFFF] p-7 flex flex-col justify-between shadow-sm hover:shadow-md hover:border-brand-dark transition-all"
               >
                 <div>
-                  <div className="flex items-center justify-between text-xs font-bold text-[#0B2A20] mb-4">
-                    <span className="w-8 h-8 rounded-xl bg-[#0B2A20] text-[#D2F843] flex items-center justify-center font-mono text-xs font-bold">
+                  <div className="flex items-center justify-between text-xs font-bold text-brand-dark mb-4">
+                    <span className="w-8 h-8 rounded-xl bg-brand-dark text-accent flex items-center justify-center font-mono text-xs font-bold">
                       {step.number}
                     </span>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#556B62]">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-muted">
                       {t('PIPELINE', 'পর্যায়')}
                     </span>
                   </div>
 
-                  <h3 className="font-sans text-2xl text-[#0B2A20] font-extrabold mb-1">
+                  <h3 className="font-sans text-2xl text-brand-dark font-extrabold mb-1">
                     {step.title}
                   </h3>
 
-                  <div className="text-xs font-mono uppercase text-[#556B62] font-semibold mb-3">
+                  <div className="text-xs font-mono uppercase text-muted font-semibold mb-3">
                     {step.subtitle}
                   </div>
 
-                  <p className="font-sans text-xs sm:text-sm text-[#556B62] leading-relaxed">
+                  <p className="font-sans text-xs sm:text-sm text-muted leading-relaxed">
                     {step.description}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[#E2EAE4] flex items-center gap-1.5 text-[11px] font-mono text-[#0B2A20] font-bold">
-                  <CheckCircle className="w-4 h-4 text-[#195642]" />
+                <div className="mt-6 pt-4 border-t border-line flex items-center gap-1.5 text-[11px] font-mono text-brand-dark font-bold">
+                  <CheckCircle className="w-4 h-4 text-brand" />
                   <span>{t('Standardized Review', 'মানসম্মত পর্যালোচনা')}</span>
                 </div>
               </div>
@@ -694,7 +694,7 @@ export const Home: React.FC<HomeProps> = ({
       </section>
 
       {/* 14. TEAM PREVIEW */}
-      <section className="py-20 sm:py-28 border-b border-[#E2EAE4] bg-[#FFFFFF]">
+      <section className="py-20 sm:py-28 border-b border-line bg-[#FFFFFF]">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <SectionHeading
@@ -714,10 +714,10 @@ export const Home: React.FC<HomeProps> = ({
                   onNavigate('team');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#F6F9F4] hover:bg-[#E2EAE4] text-xs font-bold uppercase tracking-wider text-[#0B2A20] transition-colors cursor-pointer border border-[#E2EAE4]"
+                className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-surface hover:bg-line text-xs font-bold uppercase tracking-wider text-brand-dark transition-colors cursor-pointer border border-line"
               >
                 <span className="font-bold">{t('Meet Our Entire Team', 'সম্পূর্ণ টিম দেখুন')}</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 text-[#0B2A20]" />
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 text-brand-dark" />
               </button>
             </div>
           </div>
@@ -732,10 +732,10 @@ export const Home: React.FC<HomeProps> = ({
               return (
                 <div
                   key={member.id}
-                  className="group rounded-3xl border border-[#E2EAE4] bg-[#FFFFFF] flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:border-[#0B2A20] overflow-hidden"
+                  className="group rounded-3xl border border-line bg-[#FFFFFF] flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:border-brand-dark overflow-hidden"
                 >
                   <div>
-                    <div className="aspect-[4/5] overflow-hidden bg-neutral-100 border-b border-[#E2EAE4]">
+                    <div className="aspect-[4/5] overflow-hidden bg-neutral-100 border-b border-line">
                       <img
                         src={member.image}
                         alt={displayName}
@@ -745,13 +745,13 @@ export const Home: React.FC<HomeProps> = ({
                     </div>
 
                     <div className="p-6">
-                      <span className="inline-block px-2.5 py-1 rounded-full bg-[#0B2A20]/5 text-[10px] font-bold uppercase tracking-wider text-[#0B2A20] mb-2">
+                      <span className="inline-block px-2.5 py-1 rounded-full bg-brand-dark/5 text-[10px] font-bold uppercase tracking-wider text-brand-dark mb-2">
                         {displayRole}
                       </span>
-                      <h3 className="font-sans text-xl sm:text-2xl text-[#0B2A20] font-extrabold mb-2">
+                      <h3 className="font-sans text-xl sm:text-2xl text-brand-dark font-extrabold mb-2">
                         {displayName}
                       </h3>
-                      <p className="text-xs text-[#556B62] font-sans leading-relaxed line-clamp-2">
+                      <p className="text-xs text-muted font-sans leading-relaxed line-clamp-2">
                         {displayBio}
                       </p>
                     </div>
@@ -760,7 +760,7 @@ export const Home: React.FC<HomeProps> = ({
                   <div className="p-6 pt-0">
                     <button
                       onClick={() => onSelectTeamMember(member)}
-                      className="w-full pt-3 border-t border-[#E2EAE4] flex items-center justify-between text-xs font-mono uppercase tracking-wider text-[#0B2A20] font-bold group-hover:text-[#195642] transition-colors cursor-pointer"
+                      className="w-full pt-3 border-t border-line flex items-center justify-between text-xs font-mono uppercase tracking-wider text-brand-dark font-bold group-hover:text-brand transition-colors cursor-pointer"
                     >
                       <span>{t('View Profile', 'প্রোফাইল দেখুন')}</span>
                       <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />

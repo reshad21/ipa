@@ -3,18 +3,16 @@
 @theme {
   --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
   --font-sans: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  
-  --color-primary: #0B2A20;
-  --color-primary-dark: #061A13;
-  --color-canvas: #F6F9F4;
-  --color-paper: #FFFFFF;
-  --color-ink: #0D1F18;
-  --color-muted: #556B62;
-  --color-border: #E2EAE4;
-  --color-border-dark: #1A3E32;
-  --color-accent: #D2F843;
-  --color-accent-hover: #C0E931;
-  --color-accent-dark: #0B2A20;
+
+  --color-brand: #0C57A5;
+  --color-brand-dark: #0A4A8F;
+  --color-brand-deep: #0A2A5E;
+  --color-accent: #F5B82E;
+  --color-accent-hover: #E0A520;
+  --color-surface: #F3F7FD;
+  --color-line: #DCE6F5;
+  --color-muted: #5B6B85;
+  --color-ink: #0B1B33;
 }
 
 :root {
@@ -23,8 +21,8 @@
 
 body {
   margin: 0;
-  background-color: #F6F9F4;
-  color: #0D1F18;
+  background-color: #F0F5FA;
+  color: #0F172A;
   font-family: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -33,8 +31,8 @@ body {
 
 /* Modern selection */
 ::selection {
-  background-color: #D2F843;
-  color: #0B2A20;
+  background-color: #F5B82E;
+  color: #0A2A5E;
 }
 
 .font-serif {

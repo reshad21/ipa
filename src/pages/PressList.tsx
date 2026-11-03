@@ -44,7 +44,7 @@ export const PressList: React.FC<PressListProps> = ({ onNavigate, onSelectPress 
 
   return (
     <div>
-      <section className="bg-[#0B2A20] text-white py-16 sm:py-20">
+      <section className="bg-brand-dark text-white py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <h1 className="font-sans text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
             {t('Press Releases', 'প্রেস বিজ্ঞপ্তি')}
@@ -52,21 +52,21 @@ export const PressList: React.FC<PressListProps> = ({ onNavigate, onSelectPress 
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 bg-[#F6F9F4]">
+      <section className="py-12 sm:py-16 bg-surface">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="relative mb-8">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#556B62]" />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted" />
             <input
               type="text"
               value={query}
               onChange={(e) => handleQueryChange(e.target.value)}
               placeholder={t('Search press releases...', 'প্রেস বিজ্ঞপ্তি খুঁজুন...')}
-              className="w-full pl-11 pr-4 py-3 rounded-2xl border border-[#E2EAE4] bg-white text-[#0B2A20] placeholder:text-[#556B62] focus:outline-none focus:border-[#0B2A20]"
+              className="w-full pl-11 pr-4 py-3 rounded-2xl border border-line bg-white text-brand-dark placeholder:text-muted focus:outline-none focus:border-brand-dark"
             />
           </div>
 
           {filtered.length === 0 ? (
-            <div className="text-center py-16 text-[#556B62]">
+            <div className="text-center py-16 text-muted">
               {t('No press releases found.', 'কোনো প্রেস বিজ্ঞপ্তি পাওয়া যায়নি।')}
             </div>
           ) : (
@@ -94,8 +94,8 @@ export const PressList: React.FC<PressListProps> = ({ onNavigate, onSelectPress 
                       onClick={() => handlePageChange(n)}
                       className={`w-10 h-10 rounded-xl font-bold text-sm transition-all ${
                         n === safePage
-                          ? 'bg-[#0B2A20] text-[#D2F843]'
-                          : 'bg-white text-[#0B2A20] border border-[#E2EAE4] hover:border-[#0B2A20]'
+                          ? 'bg-brand-dark text-accent'
+                          : 'bg-white text-brand-dark border border-line hover:border-brand-dark'
                       }`}
                     >
                       {n}

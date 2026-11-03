@@ -19,17 +19,17 @@ export const TeamCard: React.FC<TeamCardProps> = ({ member, onSelect }) => {
   const researchInterests = isBn && bn ? bn.researchInterestsBn : member.researchInterests;
 
   return (
-    <div className="group rounded-3xl border border-[#E2EAE4] bg-[#FFFFFF] flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:border-[#0B2A20] overflow-hidden">
+    <div className="group rounded-3xl border border-line bg-[#FFFFFF] flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:border-brand-dark overflow-hidden">
       <div>
         {/* Photo Container with modern rounded layout */}
-        <div className="relative aspect-[4/5] overflow-hidden bg-neutral-100 border-b border-[#E2EAE4]">
+        <div className="relative aspect-[4/5] overflow-hidden bg-neutral-100 border-b border-line">
           <img
             src={member.image}
             alt={name}
             className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
             loading="lazy"
           />
-          <div className="absolute top-3 right-3 bg-[#0B2A20] text-[#D2F843] font-mono text-[10px] font-bold px-3 py-1 rounded-full tracking-wider uppercase shadow-md">
+          <div className="absolute top-3 right-3 bg-brand-dark text-accent font-mono text-[10px] font-bold px-3 py-1 rounded-full tracking-wider uppercase shadow-md">
             {isBn
               ? member.category === 'leadership'
                 ? 'পরিচালনা পরিষদ'
@@ -42,28 +42,28 @@ export const TeamCard: React.FC<TeamCardProps> = ({ member, onSelect }) => {
 
         {/* Member Details */}
         <div className="p-6 sm:p-7">
-          <div className="inline-block px-2.5 py-1 rounded-full bg-[#0B2A20]/5 text-xs font-bold uppercase tracking-wider text-[#0B2A20] mb-2">
+          <div className="inline-block px-2.5 py-1 rounded-full bg-brand-dark/5 text-xs font-bold uppercase tracking-wider text-brand-dark mb-2">
             {role}
           </div>
 
-          <h3 className="font-sans text-2xl sm:text-3xl text-[#0B2A20] font-extrabold tracking-tight mb-3">
+          <h3 className="font-sans text-2xl sm:text-3xl text-brand-dark font-extrabold tracking-tight mb-3">
             {name}
           </h3>
 
-          <p className="font-sans text-xs sm:text-sm text-[#556B62] leading-relaxed mb-6 font-normal line-clamp-3">
+          <p className="font-sans text-xs sm:text-sm text-muted leading-relaxed mb-6 font-normal line-clamp-3">
             {bio}
           </p>
 
           {/* Research Interests Tags */}
-          <div className="pt-4 border-t border-[#E2EAE4] space-y-2">
-            <div className="text-[10px] font-mono uppercase tracking-wider text-[#556B62] font-semibold">
+          <div className="pt-4 border-t border-line space-y-2">
+            <div className="text-[10px] font-mono uppercase tracking-wider text-muted font-semibold">
               {t('Primary Research Lines', 'মূল গবেষণা ক্ষেত্রসমূহ')}
             </div>
             <div className="flex flex-wrap gap-1.5">
               {researchInterests.map((interest, idx) => (
                 <span
                   key={idx}
-                  className="text-[11px] font-sans px-2.5 py-1 rounded-lg bg-[#F6F9F4] border border-[#E2EAE4] text-[#0D1F18] font-medium"
+                  className="text-[11px] font-sans px-2.5 py-1 rounded-lg bg-surface border border-line text-ink font-medium"
                 >
                   {interest}
                 </span>
@@ -77,10 +77,10 @@ export const TeamCard: React.FC<TeamCardProps> = ({ member, onSelect }) => {
       <div className="p-6 sm:p-7 pt-0">
         <button
           onClick={() => onSelect(member)}
-          className="w-full pt-4 border-t border-[#E2EAE4] flex items-center justify-between text-xs font-mono uppercase tracking-wider text-[#0B2A20] font-bold hover:text-[#195642] transition-colors cursor-pointer"
+          className="w-full pt-4 border-t border-line flex items-center justify-between text-xs font-mono uppercase tracking-wider text-brand-dark font-bold hover:text-brand transition-colors cursor-pointer"
         >
           <span>{t('View Profile', 'প্রোফাইল দেখুন')}</span>
-          <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1 text-[#0B2A20]" />
+          <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1 text-brand-dark" />
         </button>
       </div>
     </div>
@@ -103,16 +103,16 @@ export const TeamMemberModal: React.FC<{
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#0B2A20]/70 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-brand-dark/70 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
-        className="bg-[#FFFFFF] border border-[#E2EAE4] rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-10 relative shadow-2xl"
+        className="bg-[#FFFFFF] border border-line rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-10 relative shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 text-[#556B62] hover:text-[#0B2A20] font-mono text-xs px-3 py-1.5 rounded-full border border-[#E2EAE4] bg-[#F6F9F4] cursor-pointer font-bold"
+          className="absolute top-5 right-5 text-muted hover:text-brand-dark font-mono text-xs px-3 py-1.5 rounded-full border border-line bg-surface cursor-pointer font-bold"
           aria-label="Close modal"
         >
           {t('✕ CLOSE', '✕ বন্ধ করুন')}
@@ -122,25 +122,25 @@ export const TeamMemberModal: React.FC<{
           <img
             src={member.image}
             alt={name}
-            className="w-24 h-28 sm:w-32 sm:h-40 object-cover object-top rounded-2xl border border-[#E2EAE4]"
+            className="w-24 h-28 sm:w-32 sm:h-40 object-cover object-top rounded-2xl border border-line"
           />
           <div>
-            <span className="inline-block px-2.5 py-1 rounded-full bg-[#0B2A20]/5 text-xs font-bold uppercase tracking-wider text-[#0B2A20] mb-2">
+            <span className="inline-block px-2.5 py-1 rounded-full bg-brand-dark/5 text-xs font-bold uppercase tracking-wider text-brand-dark mb-2">
               {role}
             </span>
-            <h3 className="font-sans text-3xl sm:text-4xl text-[#0B2A20] mb-2 font-extrabold tracking-tight">
+            <h3 className="font-sans text-3xl sm:text-4xl text-brand-dark mb-2 font-extrabold tracking-tight">
               {name}
             </h3>
             {education && (
-              <div className="flex items-center gap-1.5 text-xs font-mono text-[#556B62] mb-2">
-                <GraduationCap className="w-3.5 h-3.5 text-[#195642]" />
+              <div className="flex items-center gap-1.5 text-xs font-mono text-muted mb-2">
+                <GraduationCap className="w-3.5 h-3.5 text-brand" />
                 <span>{education}</span>
               </div>
             )}
             {member.email && (
-              <div className="flex items-center gap-1.5 text-xs font-mono text-[#556B62]">
-                <Mail className="w-3.5 h-3.5 text-[#195642]" />
-                <a href={`mailto:${member.email}`} className="underline hover:text-[#0B2A20] font-semibold">
+              <div className="flex items-center gap-1.5 text-xs font-mono text-muted">
+                <Mail className="w-3.5 h-3.5 text-brand" />
+                <a href={`mailto:${member.email}`} className="underline hover:text-brand-dark font-semibold">
                   {member.email}
                 </a>
               </div>
@@ -148,25 +148,25 @@ export const TeamMemberModal: React.FC<{
           </div>
         </div>
 
-        <div className="space-y-6 pt-4 border-t border-[#E2EAE4]">
+        <div className="space-y-6 pt-4 border-t border-line">
           <div>
-            <h4 className="text-xs font-mono uppercase tracking-wider text-[#556B62] font-semibold mb-2">
+            <h4 className="text-xs font-mono uppercase tracking-wider text-muted font-semibold mb-2">
               {t('Biography & Background', 'জীবনী ও পটভূমি')}
             </h4>
-            <p className="font-sans text-sm text-[#0D1F18] leading-relaxed">
+            <p className="font-sans text-sm text-ink leading-relaxed">
               {fullBio}
             </p>
           </div>
 
           <div>
-            <h4 className="text-xs font-mono uppercase tracking-wider text-[#556B62] font-semibold mb-2">
+            <h4 className="text-xs font-mono uppercase tracking-wider text-muted font-semibold mb-2">
               {t('Research Domains', 'গবেষণার বিষয়সমূহ')}
             </h4>
             <div className="flex flex-wrap gap-2">
               {researchInterests.map((item, idx) => (
                 <span
                   key={idx}
-                  className="text-xs font-sans px-3 py-1 rounded-xl bg-[#F6F9F4] border border-[#E2EAE4] text-[#0D1F18] font-medium"
+                  className="text-xs font-sans px-3 py-1 rounded-xl bg-surface border border-line text-ink font-medium"
                 >
                   {item}
                 </span>
@@ -176,13 +176,13 @@ export const TeamMemberModal: React.FC<{
 
           {false && member.recentPublications && member.recentPublications.length > 0 && (
             <div>
-              <h4 className="text-xs font-mono uppercase tracking-wider text-[#556B62] font-semibold mb-2">
+              <h4 className="text-xs font-mono uppercase tracking-wider text-muted font-semibold mb-2">
                 {t('Selected Monographs & Papers', 'নির্বাচিত মনোগ্রাফ ও গবেষণাপত্র')}
               </h4>
-              <ul className="space-y-2 text-xs font-sans text-[#0D1F18]">
+              <ul className="space-y-2 text-xs font-sans text-ink">
                 {member.recentPublications.map((pub, pIdx) => (
                   <li key={pIdx} className="flex items-start gap-2">
-                    <span className="text-[#195642] font-mono">↳</span>
+                    <span className="text-brand font-mono">↳</span>
                     <span>{pub}</span>
                   </li>
                 ))}
@@ -191,7 +191,7 @@ export const TeamMemberModal: React.FC<{
           )}
 
           <div>
-            <h4 className="text-xs font-mono uppercase tracking-wider text-[#556B62] font-semibold mb-3">
+            <h4 className="text-xs font-mono uppercase tracking-wider text-muted font-semibold mb-3">
               {t('Connect', 'যোগাযোগ')}
             </h4>
             <div className="flex items-center gap-2">
@@ -200,7 +200,7 @@ export const TeamMemberModal: React.FC<{
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${name} on LinkedIn`}
-                className="w-9 h-9 rounded-xl bg-[#F6F9F4] border border-[#E2EAE4] text-[#0B2A20] flex items-center justify-center hover:bg-[#0B2A20] hover:text-[#D2F843] transition-colors"
+                className="w-9 h-9 rounded-xl bg-surface border border-line text-brand-dark flex items-center justify-center hover:bg-brand-dark hover:text-accent transition-colors"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
@@ -209,7 +209,7 @@ export const TeamMemberModal: React.FC<{
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${name} on X`}
-                className="w-9 h-9 rounded-xl bg-[#F6F9F4] border border-[#E2EAE4] text-[#0B2A20] flex items-center justify-center hover:bg-[#0B2A20] hover:text-[#D2F843] transition-colors"
+                className="w-9 h-9 rounded-xl bg-surface border border-line text-brand-dark flex items-center justify-center hover:bg-brand-dark hover:text-accent transition-colors"
               >
                 <Twitter className="w-4 h-4" />
               </a>
@@ -217,7 +217,7 @@ export const TeamMemberModal: React.FC<{
                 <a
                   href={`mailto:${member.email}`}
                   aria-label={`Email ${name}`}
-                  className="w-9 h-9 rounded-xl bg-[#F6F9F4] border border-[#E2EAE4] text-[#0B2A20] flex items-center justify-center hover:bg-[#0B2A20] hover:text-[#D2F843] transition-colors"
+                  className="w-9 h-9 rounded-xl bg-surface border border-line text-brand-dark flex items-center justify-center hover:bg-brand-dark hover:text-accent transition-colors"
                 >
                   <Mail className="w-4 h-4" />
                 </a>

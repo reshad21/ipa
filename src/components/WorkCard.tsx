@@ -17,7 +17,7 @@ export const WorkCard: React.FC<WorkCardProps> = ({ work, index, onExplore }) =>
   const localizedWork = isBn && WORK_AREAS_BN[work.id] ? WORK_AREAS_BN[work.id] : null;
 
   return (
-    <div className="rounded-3xl border border-[#E2EAE4] bg-[#FFFFFF] transition-all duration-300 hover:shadow-xl hover:border-[#0B2A20] overflow-hidden">
+    <div className="rounded-3xl border border-line bg-[#FFFFFF] transition-all duration-300 hover:shadow-xl hover:border-brand-dark overflow-hidden">
       <div className={`grid grid-cols-1 lg:grid-cols-12 ${isEven ? '' : 'lg:flex-row-reverse'}`}>
         {/* Visual Column */}
         <div
@@ -32,7 +32,7 @@ export const WorkCard: React.FC<WorkCardProps> = ({ work, index, onExplore }) =>
               className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               loading="lazy"
             />
-            <div className="absolute top-4 left-4 bg-[#0B2A20] text-[#D2F843] font-mono text-xs px-3 py-1.5 rounded-full font-bold tracking-wider uppercase shadow-md">
+            <div className="absolute top-4 left-4 bg-brand-dark text-accent font-mono text-xs px-3 py-1.5 rounded-full font-bold tracking-wider uppercase shadow-md">
               {isBn ? `গবেষণা ০${index + 1}` : `Research ${numStr}`}
             </div>
           </div>
@@ -45,39 +45,39 @@ export const WorkCard: React.FC<WorkCardProps> = ({ work, index, onExplore }) =>
           }`}
         >
           <div>
-            <div className="flex items-center justify-between text-xs font-bold text-[#0B2A20] mb-4">
+            <div className="flex items-center justify-between text-xs font-bold text-brand-dark mb-4">
               <span className="hidden">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#D2F843]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                 {t('Inquiry Domain', 'অনুসন্ধানী ক্ষেত্র')}
               </span>
-              <span className="font-mono text-[#556B62]">
+              <span className="font-mono text-muted">
                 {isBn ? `সূচক / ০${index + 1}` : `INDEX / ${numStr}`}
               </span>
             </div>
 
-            <h3 className="font-sans text-3xl sm:text-4xl text-[#0B2A20] font-extrabold tracking-tight mb-3">
+            <h3 className="font-sans text-3xl sm:text-4xl text-brand-dark font-extrabold tracking-tight mb-3">
               {localizedWork ? localizedWork.nameBn : work.name}
             </h3>
 
-            <p className="font-sans text-base sm:text-lg text-[#195642] mb-5 leading-snug font-medium">
+            <p className="font-sans text-base sm:text-lg text-brand mb-5 leading-snug font-medium">
               “{localizedWork ? localizedWork.taglineBn : work.tagline}”
             </p>
 
-            <p className="font-sans text-sm sm:text-base text-[#556B62] leading-relaxed mb-6 font-normal">
+            <p className="font-sans text-sm sm:text-base text-muted leading-relaxed mb-6 font-normal">
               {localizedWork ? localizedWork.descriptionBn : work.description}
             </p>
 
             {/* Methodological Benchmarks */}
-            <div className="mb-6 pt-5 border-t border-[#E2EAE4]">
-              <div className="text-[11px] font-bold uppercase tracking-wider text-[#0B2A20] mb-3 flex items-center gap-1.5">
-                <Layers className="w-3.5 h-3.5 text-[#195642]" />
+            <div className="mb-6 pt-5 border-t border-line">
+              <div className="text-[11px] font-bold uppercase tracking-wider text-brand-dark mb-3 flex items-center gap-1.5">
+                <Layers className="w-3.5 h-3.5 text-brand" />
                 {t('Primary Methodologies', 'প্রধান গবেষণা পদ্ধতিসমূহ')}
               </div>
               <div className="flex flex-wrap gap-2">
                 {(localizedWork ? localizedWork.methodsBn : work.methods).map((method, mIdx) => (
                   <span
                     key={mIdx}
-                    className="inline-block text-xs font-sans px-3 py-1.5 rounded-xl bg-[#F6F9F4] border border-[#E2EAE4] text-[#0D1F18] font-medium"
+                    className="inline-block text-xs font-sans px-3 py-1.5 rounded-xl bg-surface border border-line text-ink font-medium"
                   >
                     {method}
                   </span>
@@ -87,14 +87,14 @@ export const WorkCard: React.FC<WorkCardProps> = ({ work, index, onExplore }) =>
 
             {/* Sample Inquiries */}
             <div className="hidden">
-              <div className="text-[11px] font-bold uppercase tracking-wider text-[#0B2A20] mb-3 flex items-center gap-1.5">
-                <BookOpen className="w-3.5 h-3.5 text-[#195642]" />
+              <div className="text-[11px] font-bold uppercase tracking-wider text-brand-dark mb-3 flex items-center gap-1.5">
+                <BookOpen className="w-3.5 h-3.5 text-brand" />
                 {t('Sample Investigations & Datasets', 'নমুনা অনুসন্ধান ও উপাত্ত')}
               </div>
-              <ul className="space-y-2 text-xs font-sans text-[#0D1F18]">
+              <ul className="space-y-2 text-xs font-sans text-ink">
                 {(localizedWork ? localizedWork.sampleInquiriesBn : work.sampleInquiries).map((inquiry, iIdx) => (
                   <li key={iIdx} className="flex items-start gap-2">
-                    <span className="text-[#195642] font-mono mt-0.5">↳</span>
+                    <span className="text-brand font-mono mt-0.5">↳</span>
                     <span>{inquiry}</span>
                   </li>
                 ))}
@@ -102,17 +102,17 @@ export const WorkCard: React.FC<WorkCardProps> = ({ work, index, onExplore }) =>
             </div>
           </div>
 
-          <div className="pt-6 border-t border-[#E2EAE4] flex items-center justify-between">
+          <div className="pt-6 border-t border-line flex items-center justify-between">
             <span className="hidden">
               {t('Open Access Public Archive', 'উন্মুক্ত নাগরিক মহাফেজখানা')}
             </span>
             {onExplore && (
               <button
                 onClick={() => onExplore(work)}
-                className="group inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#0B2A20] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#144234] transition-all cursor-pointer"
+                className="group inline-flex items-center gap-2 px-5 py-2 rounded-full bg-brand-dark text-white text-xs font-bold uppercase tracking-wider hover:bg-brand transition-all cursor-pointer"
               >
                 <span>{t('Examine Focus Area', 'ক্ষেত্রটি বিস্তারিত দেখুন')}</span>
-                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 text-[#D2F843]" />
+                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 text-accent" />
               </button>
             )}
           </div>

@@ -55,10 +55,10 @@ const RichTextEditorField: React.FC<RichTextEditorProps> = ({
   };
 
   return (
-    <div className={`overflow-hidden rounded-xl border bg-[#F6F9F4] transition-colors ${
-      hasError ? 'border-red-500' : 'border-[#E2EAE4] focus-within:border-[#0B2A20]'
+    <div className={`overflow-hidden rounded-xl border bg-surface transition-colors ${
+      hasError ? 'border-red-500' : 'border-line focus-within:border-brand-dark'
     }`}>
-      <div className="flex items-center gap-1 border-b border-[#E2EAE4] px-3 py-2">
+      <div className="flex items-center gap-1 border-b border-line px-3 py-2">
         {[
           ['bold', 'B'],
           ['italic', 'I'],
@@ -71,7 +71,7 @@ const RichTextEditorField: React.FC<RichTextEditorProps> = ({
             onMouseDown={(event) => event.preventDefault()}
             onClick={() => format(command)}
             disabled={disabled}
-            className="rounded px-2 py-1 text-xs font-semibold text-[#0B2A20] hover:bg-[#0B2A20]/10 disabled:opacity-50"
+            className="rounded px-2 py-1 text-xs font-semibold text-brand-dark hover:bg-brand-dark/10 disabled:opacity-50"
             aria-label={label}
           >
             {label}
@@ -87,7 +87,7 @@ const RichTextEditorField: React.FC<RichTextEditorProps> = ({
         data-placeholder={placeholder}
         onInput={(event) => onChange(event.currentTarget.innerHTML)}
         style={{ minHeight }}
-        className="rich-text-editor w-full resize-y overflow-y-auto px-4 py-3 text-sm text-[#0D1F18] outline-none empty:before:pointer-events-none empty:before:text-[#556B62]/60 empty:before:content-[attr(data-placeholder)]"
+        className="rich-text-editor w-full resize-y overflow-y-auto px-4 py-3 text-sm text-ink outline-none empty:before:pointer-events-none empty:before:text-muted/60 empty:before:content-[attr(data-placeholder)]"
       />
     </div>
   );

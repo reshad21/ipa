@@ -130,18 +130,18 @@ export const FAQSection: React.FC = () => {
   });
 
   return (
-    <section className="py-20 sm:py-28 border-b border-[#E2EAE4] bg-[#F6F9F4]" id="faqs">
+    <section className="py-20 sm:py-28 border-b border-line bg-surface" id="faqs">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section Heading */}
         <div className="max-w-3xl mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0B2A20]/5 text-[#0B2A20] text-xs font-bold uppercase tracking-wider border border-[#0B2A20]/10 mb-4">
-            <span className="w-2 h-2 rounded-full bg-[#D2F843] shadow-[0_0_6px_#D2F843]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-dark/5 text-brand-dark text-xs font-bold uppercase tracking-wider border border-brand-dark/10 mb-4">
+            <span className="w-2 h-2 rounded-full bg-accent shadow-[0_0_6px_#f5b82e]" />
             <span>{t('KNOWLEDGE BASE & PROTOCOLS', 'উন্মুক্ত প্রশ্নোত্তর ও তথ্যভাণ্ডার')}</span>
           </div>
-          <h2 className="font-sans text-3xl sm:text-5xl text-[#0B2A20] font-extrabold tracking-tight mb-4">
+          <h2 className="font-sans text-3xl sm:text-5xl text-brand-dark font-extrabold tracking-tight mb-4">
             {t('Frequently Asked Questions', 'সাধারণ জিজ্ঞাসাসমূহ (FAQ)')}
           </h2>
-          <p className="text-sm sm:text-base text-[#556B62] font-sans leading-relaxed">
+          <p className="text-sm sm:text-base text-muted font-sans leading-relaxed">
             {t(
               'Essential guidelines regarding our research standards, open datasets, peer review protocols, and public inquiry workflows.',
               'আমাদের গবেষণার মানদণ্ড, উন্মুক্ত ডেটাসেট ব্যবহার, পিয়ার-রিভিউ প্রোটোকল ও তথ্য অনুসন্ধানের নির্দেশিকা।'
@@ -157,8 +157,8 @@ export const FAQSection: React.FC = () => {
               onClick={() => setActiveCategory('all')}
               className={`px-4 py-2 rounded-full border transition-all cursor-pointer font-bold uppercase tracking-wider whitespace-nowrap ${
                 activeCategory === 'all'
-                  ? 'bg-[#0B2A20] text-[#D2F843] border-[#0B2A20] shadow-sm'
-                  : 'bg-white text-[#556B62] border-[#E2EAE4] hover:border-[#0B2A20]'
+                  ? 'bg-brand-dark text-accent border-brand-dark shadow-sm'
+                  : 'bg-white text-muted border-line hover:border-brand-dark'
               }`}
             >
               {t('All Topics', 'সকল বিষয়')} ({FAQ_DATA.length})
@@ -167,8 +167,8 @@ export const FAQSection: React.FC = () => {
               onClick={() => setActiveCategory('resources')}
               className={`px-4 py-2 rounded-full border transition-all cursor-pointer font-bold uppercase tracking-wider whitespace-nowrap ${
                 activeCategory === 'resources'
-                  ? 'bg-[#0B2A20] text-[#D2F843] border-[#0B2A20] shadow-sm'
-                  : 'bg-white text-[#556B62] border-[#E2EAE4] hover:border-[#0B2A20]'
+                  ? 'bg-brand-dark text-accent border-brand-dark shadow-sm'
+                  : 'bg-white text-muted border-line hover:border-brand-dark'
               }`}
             >
               {t('Public Resources', 'উন্মুক্ত রিসোর্স')}
@@ -177,8 +177,8 @@ export const FAQSection: React.FC = () => {
               onClick={() => setActiveCategory('methodology')}
               className={`px-4 py-2 rounded-full border transition-all cursor-pointer font-bold uppercase tracking-wider whitespace-nowrap ${
                 activeCategory === 'methodology'
-                  ? 'bg-[#0B2A20] text-[#D2F843] border-[#0B2A20] shadow-sm'
-                  : 'bg-white text-[#556B62] border-[#E2EAE4] hover:border-[#0B2A20]'
+                  ? 'bg-brand-dark text-accent border-brand-dark shadow-sm'
+                  : 'bg-white text-muted border-line hover:border-brand-dark'
               }`}
             >
               {t('Methodology & Audits', 'পদ্ধতি ও অডিট')}
@@ -187,8 +187,8 @@ export const FAQSection: React.FC = () => {
               onClick={() => setActiveCategory('ethics')}
               className={`px-4 py-2 rounded-full border transition-all cursor-pointer font-bold uppercase tracking-wider whitespace-nowrap ${
                 activeCategory === 'ethics'
-                  ? 'bg-[#0B2A20] text-[#D2F843] border-[#0B2A20] shadow-sm'
-                  : 'bg-white text-[#556B62] border-[#E2EAE4] hover:border-[#0B2A20]'
+                  ? 'bg-brand-dark text-accent border-brand-dark shadow-sm'
+                  : 'bg-white text-muted border-line hover:border-brand-dark'
               }`}
             >
               {t('Ethics & Sources', 'নৈতিকতা ও গোপনীয়তা')}
@@ -197,8 +197,8 @@ export const FAQSection: React.FC = () => {
               onClick={() => setActiveCategory('partnerships')}
               className={`px-4 py-2 rounded-full border transition-all cursor-pointer font-bold uppercase tracking-wider whitespace-nowrap ${
                 activeCategory === 'partnerships'
-                  ? 'bg-[#0B2A20] text-[#D2F843] border-[#0B2A20] shadow-sm'
-                  : 'bg-white text-[#556B62] border-[#E2EAE4] hover:border-[#0B2A20]'
+                  ? 'bg-brand-dark text-accent border-brand-dark shadow-sm'
+                  : 'bg-white text-muted border-line hover:border-brand-dark'
               }`}
             >
               {t('Partnerships', 'প্রাতিষ্ঠানিক অংশীদারিত্ব')}
@@ -207,18 +207,18 @@ export const FAQSection: React.FC = () => {
 
           {/* Search Input */}
           <div className="hidden">
-            <Search className="w-4 h-4 text-[#556B62] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+            <Search className="w-4 h-4 text-muted absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder={t('Search methodology or datasets...', 'পদ্ধতি বা ডেটাসেট অনুসন্ধান...')}
-              className="w-full pl-10 pr-4 py-2.5 rounded-full bg-white border border-[#E2EAE4] text-xs font-sans text-[#0D1F18] placeholder:text-[#556B62]/60 focus:border-[#0B2A20] outline-none transition-colors shadow-2xs"
+              className="w-full pl-10 pr-4 py-2.5 rounded-full bg-white border border-line text-xs font-sans text-ink placeholder:text-muted/60 focus:border-brand-dark outline-none transition-colors shadow-2xs"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-mono text-[#556B62] hover:text-[#0B2A20] cursor-pointer"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-mono text-muted hover:text-brand-dark cursor-pointer"
               >
                 {t('Clear', 'মুছুন')}
               </button>
@@ -229,12 +229,12 @@ export const FAQSection: React.FC = () => {
         {/* Accordion List */}
         <div className="space-y-4">
           {filteredFaqs.length === 0 ? (
-            <div className="bg-white rounded-3xl border border-[#E2EAE4] p-10 text-center space-y-3">
-              <HelpCircle className="w-10 h-10 text-[#556B62] mx-auto opacity-50" />
-              <h4 className="font-sans font-bold text-lg text-[#0B2A20]">
+            <div className="bg-white rounded-3xl border border-line p-10 text-center space-y-3">
+              <HelpCircle className="w-10 h-10 text-muted mx-auto opacity-50" />
+              <h4 className="font-sans font-bold text-lg text-brand-dark">
                 {t('No matching inquiries found', 'কোনো প্রাসঙ্গিক প্রশ্ন পাওয়া যায়নি')}
               </h4>
-              <p className="text-xs font-sans text-[#556B62] max-w-md mx-auto">
+              <p className="text-xs font-sans text-muted max-w-md mx-auto">
                 {t(
                   `We couldn't find questions matching "${searchQuery}". Try a different keyword or contact our research desk directly.`,
                   `"${searchQuery}" এর সাথে সম্পর্কিত কোনো তথ্য পাওয়া যায়নি। অন্য কোনো শব্দ দিয়ে খুঁজুন অথবা আমাদের সাথে সরাসরি যোগাযোগ করুন।`
@@ -245,7 +245,7 @@ export const FAQSection: React.FC = () => {
                   setSearchQuery('');
                   setActiveCategory('all');
                 }}
-                className="px-4 py-2 rounded-full bg-[#0B2A20] text-[#D2F843] text-xs font-mono font-bold uppercase tracking-wider hover:bg-[#195642] transition-colors cursor-pointer"
+                className="px-4 py-2 rounded-full bg-brand-dark text-accent text-xs font-mono font-bold uppercase tracking-wider hover:bg-brand transition-colors cursor-pointer"
               >
                 {t('Reset Filters', 'ফিল্টার রিসেট')}
               </button>
@@ -259,8 +259,8 @@ export const FAQSection: React.FC = () => {
                   key={faq.id}
                   className={`rounded-3xl border transition-all duration-200 overflow-hidden ${
                     isOpen
-                      ? 'bg-white border-[#0B2A20] shadow-md'
-                      : 'bg-white/90 border-[#E2EAE4] hover:border-[#0B2A20]/40 hover:bg-white'
+                      ? 'bg-white border-brand-dark shadow-md'
+                      : 'bg-white/90 border-line hover:border-brand-dark/40 hover:bg-white'
                   }`}
                 >
                   {/* Question Button Trigger */}
@@ -270,16 +270,16 @@ export const FAQSection: React.FC = () => {
                     className="w-full text-left px-6 sm:px-8 py-5 sm:py-6 flex items-start sm:items-center justify-between gap-4 cursor-pointer select-none group"
                   >
                     <div className="flex items-start sm:items-center gap-4 flex-1">
-                      <span className="w-7 h-7 rounded-xl bg-[#0B2A20]/5 text-[#0B2A20] font-mono text-xs font-bold flex items-center justify-center shrink-0 mt-0.5 sm:mt-0 group-hover:bg-[#0B2A20] group-hover:text-[#D2F843] transition-colors">
+                      <span className="w-7 h-7 rounded-xl bg-brand-dark/5 text-brand-dark font-mono text-xs font-bold flex items-center justify-center shrink-0 mt-0.5 sm:mt-0 group-hover:bg-brand-dark group-hover:text-accent transition-colors">
                         0{index + 1}
                       </span>
                       <div className="space-y-1">
                         <div className="hidden">
-                          <span className="text-[10px] font-mono tracking-wider uppercase text-[#556B62] font-semibold">
+                          <span className="text-[10px] font-mono tracking-wider uppercase text-muted font-semibold">
                             {faq.categoryLabel}
                           </span>
                         </div>
-                        <h3 className="font-sans font-bold text-base sm:text-lg text-[#0B2A20] group-hover:text-[#195642] transition-colors leading-snug">
+                        <h3 className="font-sans font-bold text-base sm:text-lg text-brand-dark group-hover:text-brand transition-colors leading-snug">
                           {faq.question}
                         </h3>
                       </div>
@@ -288,13 +288,13 @@ export const FAQSection: React.FC = () => {
                     <div
                       className={`w-9 h-9 rounded-full flex items-center justify-center shrink-0 border transition-all ${
                         isOpen
-                          ? 'bg-[#0B2A20] text-[#D2F843] border-[#0B2A20]'
-                          : 'bg-[#F6F9F4] text-[#556B62] border-[#E2EAE4] group-hover:border-[#0B2A20]'
+                          ? 'bg-brand-dark text-accent border-brand-dark'
+                          : 'bg-surface text-muted border-line group-hover:border-brand-dark'
                       }`}
                     >
                       <ChevronDown
                         className={`w-4 h-4 transition-transform duration-300 ${
-                          isOpen ? 'rotate-180 text-[#D2F843]' : ''
+                          isOpen ? 'rotate-180 text-accent' : ''
                         }`}
                       />
                     </div>
@@ -311,20 +311,20 @@ export const FAQSection: React.FC = () => {
                         transition={{ duration: 0.25, ease: 'easeInOut' }}
                         className="overflow-hidden"
                       >
-                        <div className="px-6 sm:px-8 pb-7 pt-2 border-t border-[#E2EAE4]/60 ml-0 sm:ml-11">
-                          <p className="font-sans text-sm sm:text-base text-[#556B62] leading-relaxed mb-5">
+                        <div className="px-6 sm:px-8 pb-7 pt-2 border-t border-line/60 ml-0 sm:ml-11">
+                          <p className="font-sans text-sm sm:text-base text-muted leading-relaxed mb-5">
                             {faq.answer}
                           </p>
 
                           {faq.highlights && faq.highlights.length > 0 && (
-                            <div className="p-4 rounded-2xl bg-[#F6F9F4] border border-[#E2EAE4] space-y-2">
-                              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#0B2A20] block">
+                            <div className="p-4 rounded-2xl bg-surface border border-line space-y-2">
+                              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-brand-dark block">
                                 {t('Key Institutional Protocol:', 'মূল প্রাতিষ্ঠানিক প্রটোকল:')}
                               </span>
-                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-sans text-[#0D1F18]">
+                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-sans text-ink">
                                 {faq.highlights.map((highlight, idx) => (
                                   <div key={idx} className="flex items-center gap-2">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-[#195642] shrink-0" />
+                                    <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
                                     <span>{highlight}</span>
                                   </div>
                                 ))}
@@ -344,14 +344,14 @@ export const FAQSection: React.FC = () => {
         {/* Bottom Help Banner */}
         <div className="hidden">
           <div className="flex items-center gap-4 text-left">
-            <div className="w-12 h-12 rounded-2xl bg-[#0B2A20] text-[#D2F843] flex items-center justify-center shrink-0 shadow-sm">
+            <div className="w-12 h-12 rounded-2xl bg-brand-dark text-accent flex items-center justify-center shrink-0 shadow-sm">
               <Sparkles className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="font-sans font-bold text-lg text-[#0B2A20]">
+              <h4 className="font-sans font-bold text-lg text-brand-dark">
                 {t('Need custom methodology advice or dataset access?', 'নির্দিষ্ট পদ্ধতিগত পরামর্শ বা ডেটাসেট প্রয়োজন?')}
               </h4>
-              <p className="text-xs sm:text-sm font-sans text-[#556B62] mt-0.5">
+              <p className="text-xs sm:text-sm font-sans text-muted mt-0.5">
                 {t(
                   'Our methodology desk responds to peer researchers and investigative proposals within two business days.',
                   'আমাদের গবেষণা ডেস্ক দুই কর্মদিবসের মধ্যে গবেষক ও অনুসন্ধানী প্রস্তাবসমূহের উত্তর প্রদান করে থাকে।'
@@ -371,7 +371,7 @@ export const FAQSection: React.FC = () => {
                 window.scrollTo({ top: 400, behavior: 'smooth' });
               }
             }}
-            className="px-6 py-3 rounded-full bg-[#0B2A20] text-[#D2F843] font-mono text-xs font-bold uppercase tracking-wider hover:bg-[#195642] transition-colors whitespace-nowrap shadow-sm cursor-pointer shrink-0"
+            className="px-6 py-3 rounded-full bg-brand-dark text-accent font-mono text-xs font-bold uppercase tracking-wider hover:bg-brand transition-colors whitespace-nowrap shadow-sm cursor-pointer shrink-0"
           >
             {t('Submit Research Inquiry ↑', 'গবেষণার তথ্য পাঠান ↑')}
           </a>

@@ -60,7 +60,7 @@ export const VideoHighlights: React.FC = () => {
   return (
     <section className="bg-white py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
-        <h2 className="text-center font-bold text-[#0B3A7A] text-3xl md:text-4xl mb-8 md:mb-12">
+        <h2 className="text-center font-bold text-brand-dark text-3xl md:text-4xl mb-8 md:mb-12">
           Video Highlights
         </h2>
 
@@ -71,7 +71,7 @@ export const VideoHighlights: React.FC = () => {
               type="button"
               onClick={() => setActiveVideo(video)}
               aria-label={`Play video: ${video.title}`}
-              className="group text-left rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0B3A7A]"
+              className="group text-left rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-dark"
             >
               <div className="relative aspect-video overflow-hidden bg-gray-100">
                 <img
@@ -87,7 +87,7 @@ export const VideoHighlights: React.FC = () => {
                   <Play className="w-5 h-5 text-black fill-black ml-0.5" />
                 </div>
               </div>
-              <div className="bg-[#1E2D4D] text-white p-5 min-h-[108px] flex items-start">
+              <div className="bg-brand-deep text-white p-5 min-h-[108px] flex items-start">
                 <h3 className="font-medium text-lg line-clamp-2">{video.title}</h3>
               </div>
             </button>

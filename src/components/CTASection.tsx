@@ -11,18 +11,18 @@ export const CTASection: React.FC<CTASectionProps> = ({ onNavigate }) => {
   const { t } = useLanguage();
 
   return (
-    <section className="py-20 sm:py-28 bg-[#F6F9F4] relative overflow-hidden">
+    <section className="py-20 sm:py-28 bg-surface relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Modern Rounded Bento Container with Deep Green and Lime accents */}
-        <div className="relative rounded-[2.5rem] bg-[#0B2A20] text-white p-8 sm:p-12 md:p-16 lg:p-20 overflow-hidden shadow-2xl border border-[#174837]">
+        <div className="relative rounded-[2.5rem] bg-brand-deep text-white p-8 sm:p-12 md:p-16 lg:p-20 overflow-hidden shadow-2xl border border-brand-dark">
           {/* Ambient Glow Effects */}
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#16513E]/50 rounded-full blur-3xl pointer-events-none -mr-32 -mt-32" />
-          <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-[#D2F843]/15 rounded-full blur-3xl pointer-events-none -ml-20 -mb-20" />
-          <div className="absolute inset-0 bg-[radial-gradient(#1B4E3E_1px,transparent_1px)] [background-size:24px_24px] opacity-25 pointer-events-none" />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-3xl pointer-events-none -mr-32 -mt-32" />
+          <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-accent/15 rounded-full blur-3xl pointer-events-none -ml-20 -mb-20" />
+          <div className="absolute inset-0 bg-[radial-gradient(#0a4a8f_1px,transparent_1px)] [background-size:24px_24px] opacity-25 pointer-events-none" />
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             <div className="lg:col-span-8 space-y-6">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white/10 text-[#D2F843] border border-white/15 backdrop-blur-md">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white/10 text-accent border border-white/15 backdrop-blur-md">
                 <Sparkles className="w-3.5 h-3.5 fill-current" />
                 <span>{t('Institutional Collaboration & Inquiry', 'প্রাতিষ্ঠানিক সহযোগিতা ও অনুসন্ধান')}</span>
               </div>
@@ -45,7 +45,7 @@ export const CTASection: React.FC<CTASectionProps> = ({ onNavigate }) => {
                   onNavigate('contact');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-xs font-bold uppercase tracking-wider bg-[#D2F843] text-[#0B2A20] hover:bg-[#bef024] hover:shadow-xl hover:shadow-[#D2F843]/30 hover:scale-105 transition-all cursor-pointer shadow-lg"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-xs font-bold uppercase tracking-wider bg-accent text-brand-dark hover:bg-brand-dark hover:shadow-xl hover:shadow-[#f5b82e]/30 hover:scale-105 transition-all cursor-pointer shadow-lg"
               >
                 <span>{t('Get in Touch', 'যোগাযোগ করুন')}</span>
                 <ArrowRight className="w-4 h-4" />

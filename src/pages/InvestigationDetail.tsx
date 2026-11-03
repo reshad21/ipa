@@ -111,9 +111,9 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
   };
 
   return (
-    <div className="bg-[#F6F9F4] text-[#0D1F18] min-h-screen">
+    <div className="bg-surface text-ink min-h-screen">
       {/* Top Header & Breadcrumbs Bar */}
-      <div className="bg-[#0B2A20] text-white border-b border-[#144234] pt-8 pb-6">
+      <div className="bg-brand-dark text-white border-b border-brand pt-8 pb-6">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           {/* Breadcrumbs */}
           <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
@@ -123,19 +123,19 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
                   onNavigate('work');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className="text-white/60 hover:text-[#D2F843] transition-colors flex items-center gap-1.5 cursor-pointer"
+                className="text-white/60 hover:text-accent transition-colors flex items-center gap-1.5 cursor-pointer"
               >
                 <ArrowLeft className="w-3.5 h-3.5" />
                 <span>{t('All Investigations', 'সকল গবেষণাসমূহ')}</span>
               </button>
               <span className="text-white/30">/</span>
-              <span className="text-[#D2F843] font-bold">
+              <span className="text-accent font-bold">
                 {t('Research', 'গবেষণা')} {currentInvestigation.beatNumber}: {currentInvestigation.name}
               </span>
             </div>
 
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-mono text-[#D2F843] border border-white/15">
-              <span className="w-2 h-2 rounded-full bg-[#D2F843] animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-mono text-accent border border-white/15">
+              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
               <span>{currentInvestigation.status}</span>
             </div>
           </div>
@@ -155,11 +155,11 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
                   }}
                   className={`px-4 py-2 rounded-full text-xs font-mono font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap shrink-0 flex items-center gap-2 ${
                     isCurrent
-                      ? 'bg-[#D2F843] text-[#0B2A20] shadow-md scale-[1.02]'
+                      ? 'bg-accent text-brand-dark shadow-md scale-[1.02]'
                       : 'bg-white/10 text-white/80 hover:bg-white/20 hover:text-white border border-white/10'
                   }`}
                 >
-                  <span className={isCurrent ? 'text-[#0B2A20]' : 'text-[#D2F843]'}>
+                  <span className={isCurrent ? 'text-brand-dark' : 'text-accent'}>
                     {beat.beatNumber}
                   </span>
                   <span>{beatName}</span>
@@ -185,23 +185,23 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
                 {currentInvestigation.name}
               </h1>
 
-              <p className="font-sans text-lg sm:text-2xl text-[#D2F843] font-medium leading-relaxed mb-6">
+              <p className="font-sans text-lg sm:text-2xl text-accent font-medium leading-relaxed mb-6">
                 “{currentInvestigation.tagline}”
               </p>
 
               <div className="flex flex-wrap items-center gap-6 text-xs font-mono text-white/70">
                 <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4 text-[#D2F843]" />
+                  <Calendar className="w-4 h-4 text-accent" />
                   <span>
                     {t('Timeframe', 'সময়কাল')}: {currentInvestigation.timeframe}
                   </span>
                 </div>
                 <div className="hidden">
-                  <BookOpen className="w-4 h-4 text-[#D2F843]" />
+                  <BookOpen className="w-4 h-4 text-accent" />
                   <span>{currentInvestigation.outputsCount}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Users className="w-4 h-4 text-[#D2F843]" />
+                  <Users className="w-4 h-4 text-accent" />
                   <span>
                     {t('Lead Fellows', 'প্রধান গবেষকবৃন্দ')}: {currentInvestigation.leadFellows.join(', ')}
                   </span>
@@ -213,7 +213,7 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
               <div className="hidden">
                 <button
                   onClick={() => setIsDatasetModalOpen(true)}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#D2F843] text-[#0B2A20] hover:bg-[#bef024] text-xs font-bold uppercase tracking-wider transition-all cursor-pointer shadow-lg hover:shadow-[#D2F843]/30"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-accent text-brand-dark hover:bg-brand-dark text-xs font-bold uppercase tracking-wider transition-all cursor-pointer shadow-lg hover:shadow-[#f5b82e]/30"
                 >
                   <span>{t('Request Full Dataset', 'সম্পূর্ণ ডেটাসেটের জন্য আবেদন')}</span>
                   <ArrowRight className="w-4 h-4" />
@@ -223,12 +223,12 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
               {/* Social Media Sharing Group */}
               <div className="pt-3 border-t border-white/15 flex flex-col gap-2">
                 <div className="flex items-center justify-between text-[11px] font-mono text-white/70">
-                  <span className="flex items-center gap-1.5 uppercase font-bold tracking-wider text-[#D2F843]">
-                    <Share2 className="w-3 h-3 text-[#D2F843]" />
+                  <span className="flex items-center gap-1.5 uppercase font-bold tracking-wider text-accent">
+                    <Share2 className="w-3 h-3 text-accent" />
                     {t('Share Insights', 'গবেষণা শেয়ার করুন')}
                   </span>
                   {copiedLink && (
-                    <span className="text-[#D2F843] text-[10px] font-bold">
+                    <span className="text-accent text-[10px] font-bold">
                       {t('Link Copied!', 'লিংক কপি হয়েছে!')}
                     </span>
                   )}
@@ -240,7 +240,7 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
                     rel="noopener noreferrer"
                     title="Share research on X"
                     aria-label="Share research on X"
-                    className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-full bg-white/10 hover:bg-white/20 hover:text-[#D2F843] border border-white/15 text-xs font-mono font-bold transition-all text-white/90"
+                    className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-full bg-white/10 hover:bg-white/20 hover:text-accent border border-white/15 text-xs font-mono font-bold transition-all text-white/90"
                   >
                     <Twitter className="w-3.5 h-3.5" />
                     <span>X</span>
@@ -251,7 +251,7 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
                     rel="noopener noreferrer"
                     title="Share research on LinkedIn"
                     aria-label="Share research on LinkedIn"
-                    className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-full bg-white/10 hover:bg-white/20 hover:text-[#D2F843] border border-white/15 text-xs font-mono font-bold transition-all text-white/90"
+                    className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-full bg-white/10 hover:bg-white/20 hover:text-accent border border-white/15 text-xs font-mono font-bold transition-all text-white/90"
                   >
                     <Linkedin className="w-3.5 h-3.5" />
                     <span>LI</span>
@@ -262,7 +262,7 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
                     rel="noopener noreferrer"
                     title="Share research on Facebook"
                     aria-label="Share research on Facebook"
-                    className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-full bg-white/10 hover:bg-white/20 hover:text-[#D2F843] border border-white/15 text-xs font-mono font-bold transition-all text-white/90"
+                    className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-full bg-white/10 hover:bg-white/20 hover:text-accent border border-white/15 text-xs font-mono font-bold transition-all text-white/90"
                   >
                     <Facebook className="w-3.5 h-3.5" />
                     <span>FB</span>
@@ -271,9 +271,9 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
                     onClick={handleCopyLink}
                     title="Copy direct link to research"
                     aria-label="Copy direct link to research"
-                    className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-full bg-white/10 hover:bg-white/20 hover:text-[#D2F843] border border-white/15 text-xs font-mono font-bold transition-all text-white/90 cursor-pointer"
+                    className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-full bg-white/10 hover:bg-white/20 hover:text-accent border border-white/15 text-xs font-mono font-bold transition-all text-white/90 cursor-pointer"
                   >
-                    {copiedLink ? <CheckCircle2 className="w-3.5 h-3.5 text-[#D2F843]" /> : <Link2 className="w-3.5 h-3.5" />}
+                    {copiedLink ? <CheckCircle2 className="w-3.5 h-3.5 text-accent" /> : <Link2 className="w-3.5 h-3.5" />}
                     <span>Copy</span>
                   </button>
                 </div>
@@ -292,8 +292,8 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
               onClick={() => setActiveTab('overview')}
               className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2 ${
                 activeTab === 'overview'
-                  ? 'bg-[#0B2A20] text-[#D2F843] shadow-md'
-                  : 'bg-white text-[#556B62] border border-[#E2EAE4] hover:border-[#0B2A20]'
+                  ? 'bg-brand-dark text-accent shadow-md'
+                  : 'bg-white text-muted border border-line hover:border-brand-dark'
               }`}
             >
               <BookOpen className="w-3.5 h-3.5" />
@@ -304,8 +304,8 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
               onClick={() => setActiveTab('methodology')}
               className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2 ${
                 activeTab === 'methodology'
-                  ? 'bg-[#0B2A20] text-[#D2F843] shadow-md'
-                  : 'bg-white text-[#556B62] border border-[#E2EAE4] hover:border-[#0B2A20]'
+                  ? 'bg-brand-dark text-accent shadow-md'
+                  : 'bg-white text-muted border border-line hover:border-brand-dark'
               }`}
             >
               <Layers className="w-3.5 h-3.5" />
@@ -316,8 +316,8 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
               onClick={() => setActiveTab('cases')}
               className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2 ${
                 activeTab === 'cases'
-                  ? 'bg-[#0B2A20] text-[#D2F843] shadow-md'
-                  : 'bg-white text-[#556B62] border border-[#E2EAE4] hover:border-[#0B2A20]'
+                  ? 'bg-brand-dark text-accent shadow-md'
+                  : 'bg-white text-muted border border-line hover:border-brand-dark'
               }`}
             >
               <Sparkles className="w-3.5 h-3.5" />
@@ -328,8 +328,8 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
               onClick={() => setActiveTab('publications')}
               className={`hidden px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2 ${
                 activeTab === 'publications'
-                  ? 'bg-[#0B2A20] text-[#D2F843] shadow-md'
-                  : 'bg-white text-[#556B62] border border-[#E2EAE4] hover:border-[#0B2A20]'
+                  ? 'bg-brand-dark text-accent shadow-md'
+                  : 'bg-white text-muted border border-line hover:border-brand-dark'
               }`}
             >
               <FileText className="w-3.5 h-3.5" />
@@ -348,16 +348,16 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
               className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start"
             >
               <div className="lg:col-span-8 space-y-8">
-                <div className="bg-white p-8 sm:p-10 rounded-3xl border border-[#E2EAE4] shadow-sm">
-                  <h2 className="text-xs font-bold uppercase tracking-widest text-[#0B2A20] mb-5 flex items-center gap-2">
-                    <Layers className="w-4 h-4 text-[#195642]" />
+                <div className="bg-white p-8 sm:p-10 rounded-3xl border border-line shadow-sm">
+                  <h2 className="text-xs font-bold uppercase tracking-widest text-brand-dark mb-5 flex items-center gap-2">
+                    <Layers className="w-4 h-4 text-brand" />
                     {t('Primary Methodologies', 'প্রধান গবেষণা পদ্ধতি')}
                   </h2>
                   <div className="flex flex-wrap gap-2.5">
                     {currentWorkArea?.methods.map((method) => (
                       <span
                         key={method}
-                        className="px-3.5 py-2 rounded-xl bg-[#F6F9F4] border border-[#E2EAE4] text-sm text-[#0D1F18] font-medium"
+                        className="px-3.5 py-2 rounded-xl bg-surface border border-line text-sm text-ink font-medium"
                       >
                         {method}
                       </span>
@@ -365,12 +365,12 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
                   </div>
                 </div>
 
-                <div className="bg-white p-8 sm:p-10 rounded-3xl border border-[#E2EAE4] shadow-sm">
-                  <h2 className="text-xs font-bold uppercase tracking-widest text-[#0B2A20] mb-4 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[#D2F843]" />
+                <div className="bg-white p-8 sm:p-10 rounded-3xl border border-line shadow-sm">
+                  <h2 className="text-xs font-bold uppercase tracking-widest text-brand-dark mb-4 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-accent" />
                     {t('Research Narrative & Institutional Rationale', 'গবেষণার প্রেক্ষিত ও প্রাতিষ্ঠানিক উদ্দেশ্য')}
                   </h2>
-                  <div className="space-y-4 text-base sm:text-lg text-[#0D1F18] leading-relaxed font-normal">
+                  <div className="space-y-4 text-base sm:text-lg text-ink leading-relaxed font-normal">
                     {currentInvestigation.overview.map((para, pIdx) => (
                       <p key={pIdx}>{para}</p>
                     ))}
@@ -391,20 +391,20 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
 
                 {/* Core Research Questions */}
                 <div className="hidden">
-                  <h3 className="text-xs font-bold uppercase tracking-widest text-[#0B2A20] mb-6 flex items-center gap-2">
-                    <HelpCircle className="w-4 h-4 text-[#195642]" />
+                  <h3 className="text-xs font-bold uppercase tracking-widest text-brand-dark mb-6 flex items-center gap-2">
+                    <HelpCircle className="w-4 h-4 text-brand" />
                     {t('Guiding Empirical Inquiries', 'মূল গবেষণামূলক প্রশ্নসমূহ')}
                   </h3>
                   <div className="space-y-4">
                     {currentInvestigation.keyQuestions.map((q, qIdx) => (
                       <div
                         key={qIdx}
-                        className="p-4 rounded-2xl bg-[#F6F9F4] border border-[#E2EAE4] flex items-start gap-3.5"
+                        className="p-4 rounded-2xl bg-surface border border-line flex items-start gap-3.5"
                       >
-                        <span className="w-7 h-7 rounded-xl bg-[#0B2A20] text-[#D2F843] text-xs font-mono font-bold flex items-center justify-center shrink-0">
+                        <span className="w-7 h-7 rounded-xl bg-brand-dark text-accent text-xs font-mono font-bold flex items-center justify-center shrink-0">
                           Q{qIdx + 1}
                         </span>
-                        <p className="font-sans text-sm sm:text-base font-semibold text-[#0B2A20] leading-snug">
+                        <p className="font-sans text-sm sm:text-base font-semibold text-brand-dark leading-snug">
                           {q}
                         </p>
                       </div>
@@ -415,20 +415,20 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
 
               {/* Sidebar with Image & Fellows */}
               <div className="lg:col-span-4 space-y-6">
-                <div className="rounded-3xl overflow-hidden border border-[#E2EAE4] shadow-md bg-white">
+                <div className="rounded-3xl overflow-hidden border border-line shadow-md bg-white">
                   <img
                     src={currentInvestigation.image}
                     alt={currentInvestigation.name}
                     className="w-full aspect-[4/3] object-cover"
                   />
                   <div className="p-6">
-                    <span className="text-xs font-mono uppercase tracking-wider text-[#556B62] block mb-1">
+                    <span className="text-xs font-mono uppercase tracking-wider text-muted block mb-1">
                       {t('Visual Archive Reference', 'ভিজ্যুয়াল আর্কাইভ রেফারেন্স')}
                     </span>
-                    <h4 className="font-sans text-base font-bold text-[#0B2A20]">
+                    <h4 className="font-sans text-base font-bold text-brand-dark">
                       {t('Field Photography & Observational Records', 'মাঠপর্যায়ের আলোকচিত্র ও তথ্য নথি')}
                     </h4>
-                    <p className="text-xs text-[#556B62] mt-2">
+                    <p className="text-xs text-muted mt-2">
                       {t(
                         'All photographic and evidentiary materials are cataloged under institutional open research licenses.',
                         'সকল আলোকচিত্র ও প্রামাণ্য নথি উন্মুক্ত গবেষণা লাইসেন্সের অধীনে সংরক্ষিত।'
@@ -438,7 +438,7 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
                 </div>
 
                 <div className="hidden">
-                  <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#D2F843]">
+                  <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-accent">
                     <ShieldCheck className="w-4 h-4" />
                     <span>{t('Academic Standards', 'একাডেমিক মানদণ্ড')}</span>
                   </div>
@@ -456,7 +456,7 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
                     className="w-full py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-xs font-mono font-bold uppercase tracking-wider text-white transition-colors cursor-pointer border border-white/20 flex items-center justify-center gap-2"
                   >
                     <span>{t('View Research Directorate', 'গবেষক পরিষদ দেখুন')}</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#D2F843]" />
+                    <ArrowRight className="w-3.5 h-3.5 text-accent" />
                   </button>
                 </div>
               </div>
@@ -471,15 +471,15 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
               transition={{ duration: 0.3 }}
               className="space-y-6"
             >
-              <div className="bg-white p-8 sm:p-10 rounded-3xl border border-[#E2EAE4] shadow-sm mb-8">
+              <div className="bg-white p-8 sm:p-10 rounded-3xl border border-line shadow-sm mb-8">
                 <div className="max-w-3xl">
-                  <span className="text-xs font-mono uppercase tracking-widest text-[#195642] font-bold block mb-2">
+                  <span className="text-xs font-mono uppercase tracking-widest text-brand font-bold block mb-2">
                     {t('Systematic Framework', 'পদ্ধতিগত কাঠামো')}
                   </span>
-                  <h2 className="font-sans text-3xl font-extrabold text-[#0B2A20] tracking-tight mb-4">
+                  <h2 className="font-sans text-3xl font-extrabold text-brand-dark tracking-tight mb-4">
                     {t('Data Collection & Validation Protocols', 'উপাত্ত সংগ্রহ ও যাচাইকরণ প্রটোকল')}
                   </h2>
-                  <p className="text-sm sm:text-base text-[#556B62] leading-relaxed">
+                  <p className="text-sm sm:text-base text-muted leading-relaxed">
                     {t(
                       'Our methodological frameworks combine computational data harvesting, psychometric citizen panels, and ethnographic newsroom field audits to prevent systemic bias.',
                       'আমাদের গবেষণাপদ্ধতি কম্পিউটারাইজড ডেটা আহরণ, নাগরিক প্যানেল এবং নিউজরুম অডিটের সমন্বয়ে পরিচালিত।'
@@ -492,33 +492,33 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
                 {currentInvestigation.methodologyDetails.map((method, mIdx) => (
                   <div
                     key={mIdx}
-                    className="bg-white p-7 rounded-3xl border border-[#E2EAE4] shadow-sm flex flex-col justify-between"
+                    className="bg-white p-7 rounded-3xl border border-line shadow-sm flex flex-col justify-between"
                   >
                     <div>
                       <div className="flex items-center justify-between mb-4">
-                        <span className="w-8 h-8 rounded-xl bg-[#0B2A20] text-[#D2F843] font-mono text-xs font-bold flex items-center justify-center">
+                        <span className="w-8 h-8 rounded-xl bg-brand-dark text-accent font-mono text-xs font-bold flex items-center justify-center">
                           0{mIdx + 1}
                         </span>
-                        <span className="text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-full bg-[#F6F9F4] text-[#0B2A20] font-bold border border-[#E2EAE4]">
+                        <span className="text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-full bg-surface text-brand-dark font-bold border border-line">
                           {method.frequency}
                         </span>
                       </div>
 
-                      <h3 className="font-sans text-xl font-bold text-[#0B2A20] mb-2">
+                      <h3 className="font-sans text-xl font-bold text-brand-dark mb-2">
                         {method.title}
                       </h3>
 
-                      <div className="mb-4 text-xs font-mono text-[#195642] font-semibold">
+                      <div className="mb-4 text-xs font-mono text-brand font-semibold">
                         {t('Protocol', 'প্রটোকল')}: {method.protocol}
                       </div>
 
-                      <p className="text-xs sm:text-sm text-[#556B62] leading-relaxed">
+                      <p className="text-xs sm:text-sm text-muted leading-relaxed">
                         {method.description}
                       </p>
                     </div>
 
-                    <div className="mt-6 pt-4 border-t border-[#E2EAE4] flex items-center gap-2 text-xs font-mono text-[#0B2A20]">
-                      <CheckCircle2 className="w-4 h-4 text-[#195642]" />
+                    <div className="mt-6 pt-4 border-t border-line flex items-center gap-2 text-xs font-mono text-brand-dark">
+                      <CheckCircle2 className="w-4 h-4 text-brand" />
                       <span>{t('Audited for Replicability', 'যাচাইকৃত ও বিজ্ঞানসম্মত')}</span>
                     </div>
                   </div>
@@ -539,33 +539,33 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
                 {currentInvestigation.caseStudies.map((cs, cIdx) => (
                   <div
                     key={cIdx}
-                    className="bg-white p-8 sm:p-10 rounded-3xl border border-[#E2EAE4] shadow-sm flex flex-col justify-between"
+                    className="bg-white p-8 sm:p-10 rounded-3xl border border-line shadow-sm flex flex-col justify-between"
                   >
                     <div>
                       <div className="flex items-center justify-between mb-4">
-                        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0B2A20]/5 text-[#0B2A20] text-xs font-bold uppercase tracking-wider">
-                          <Sparkles className="w-3.5 h-3.5 text-[#195642]" />
+                        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-dark/5 text-brand-dark text-xs font-bold uppercase tracking-wider">
+                          <Sparkles className="w-3.5 h-3.5 text-brand" />
                           {t('Case Study', 'কেস স্টাডি')} 0{cIdx + 1}
                         </span>
-                        <span className="font-mono text-xs text-[#556B62] font-bold">
+                        <span className="font-mono text-xs text-muted font-bold">
                           {cs.year}
                         </span>
                       </div>
 
-                      <h3 className="font-sans text-2xl font-extrabold text-[#0B2A20] tracking-tight mb-4">
+                      <h3 className="font-sans text-2xl font-extrabold text-brand-dark tracking-tight mb-4">
                         {cs.title}
                       </h3>
 
-                      <p className="text-sm sm:text-base text-[#556B62] leading-relaxed mb-6">
+                      <p className="text-sm sm:text-base text-muted leading-relaxed mb-6">
                         {cs.summary}
                       </p>
                     </div>
 
-                    <div className="p-4 rounded-2xl bg-[#F6F9F4] border border-[#E2EAE4]">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-[#0B2A20] block mb-1">
+                    <div className="p-4 rounded-2xl bg-surface border border-line">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-brand-dark block mb-1">
                         {t('Empirical Impact & Citations:', 'গবেষণার প্রভাব ও তথ্যসূত্র:')}
                       </span>
-                      <p className="text-xs text-[#195642] font-semibold leading-relaxed">
+                      <p className="text-xs text-brand font-semibold leading-relaxed">
                         {cs.impact}
                       </p>
                     </div>
@@ -583,11 +583,11 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
               transition={{ duration: 0.3 }}
               className="hidden"
             >
-              <div className="bg-white p-8 sm:p-10 rounded-3xl border border-[#E2EAE4] shadow-sm mb-6">
-                <h2 className="font-sans text-2xl font-extrabold text-[#0B2A20] mb-2">
+              <div className="bg-white p-8 sm:p-10 rounded-3xl border border-line shadow-sm mb-6">
+                <h2 className="font-sans text-2xl font-extrabold text-brand-dark mb-2">
                   {t('Open Research Archive & Datasets', 'উন্মুক্ত গবেষণা আর্কাইভ ও ডেটাসেট')}
                 </h2>
-                <p className="text-sm text-[#556B62]">
+                <p className="text-sm text-muted">
                   {t(
                     'IPA releases monographs, peer-reviewed methodology guidelines, and raw microdata under Creative Commons Attribution 4.0 International Licenses.',
                     'আইপিএ তার মনোগ্রাফ, নির্দেশিকা এবং মূল ডেটাসেট ক্রিয়েটিভ কমন্স অ্যাট্রিবিউশন লাইসেন্সের অধীনে উন্মুক্ত করে।'
@@ -598,19 +598,19 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
               {currentInvestigation.publications.map((pub, pIdx) => (
                 <div
                   key={pIdx}
-                  className="bg-white p-6 sm:p-8 rounded-2xl border border-[#E2EAE4] shadow-sm hover:border-[#0B2A20] transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6"
+                  className="bg-white p-6 sm:p-8 rounded-2xl border border-line shadow-sm hover:border-brand-dark transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6"
                 >
                   <div className="space-y-2 flex-1">
                     <div className="flex items-center gap-3">
-                      <span className="px-3 py-1 rounded-full bg-[#0B2A20] text-[#D2F843] text-[10px] font-mono font-bold uppercase tracking-wider">
+                      <span className="px-3 py-1 rounded-full bg-brand-dark text-accent text-[10px] font-mono font-bold uppercase tracking-wider">
                         {pub.type}
                       </span>
-                      <span className="text-xs font-mono text-[#556B62]">
+                      <span className="text-xs font-mono text-muted">
                         {pub.date} · {pub.pagesOrSize}
                       </span>
                     </div>
 
-                    <h3 className="font-sans text-xl font-bold text-[#0B2A20]">
+                    <h3 className="font-sans text-xl font-bold text-brand-dark">
                       {pub.title}
                     </h3>
                   </div>
@@ -618,7 +618,7 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
                   <div className="hidden">
                     <button
                       onClick={() => setIsDatasetModalOpen(true)}
-                      className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#0B2A20] text-[#D2F843] hover:bg-[#195642] text-xs font-mono font-bold uppercase tracking-wider transition-colors cursor-pointer shadow-sm"
+                      className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-brand-dark text-accent hover:bg-brand text-xs font-mono font-bold uppercase tracking-wider transition-colors cursor-pointer shadow-sm"
                     >
                       <Download className="w-3.5 h-3.5" />
                       <span>{t('Access File', 'ফাইল দেখুন')}</span>
@@ -630,16 +630,16 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
           )}
 
           {/* Social Media Sharing Banner */}
-          <div className="my-12 p-6 sm:p-8 rounded-3xl bg-white border border-[#E2EAE4] shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="my-12 p-6 sm:p-8 rounded-3xl bg-white border border-line shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="space-y-1.5 max-w-xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0B2A20]/5 text-[#0B2A20] text-xs font-mono font-bold uppercase tracking-wider">
-                <Share2 className="w-3.5 h-3.5 text-[#0B2A20]" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-dark/5 text-brand-dark text-xs font-mono font-bold uppercase tracking-wider">
+                <Share2 className="w-3.5 h-3.5 text-brand-dark" />
                 <span>{t('Disseminate Research Findings', 'গবেষণার ফলাফল ছড়িয়ে দিন')}</span>
               </div>
-              <h3 className="font-sans text-xl sm:text-2xl font-extrabold text-[#0B2A20] tracking-tight">
+              <h3 className="font-sans text-xl sm:text-2xl font-extrabold text-brand-dark tracking-tight">
                 {t('Share this Research on Social Media', 'সোশ্যাল মিডিয়ায় এই গবেষণাটি শেয়ার করুন')}
               </h3>
-              <p className="text-xs sm:text-sm text-[#556B62] leading-relaxed">
+              <p className="text-xs sm:text-sm text-muted leading-relaxed">
                 {t(
                   'Help circulate empirical insights on media resilience, newsroom autonomy, and information ecosystems across your networks on X, LinkedIn, and Facebook.',
                   'গণমাধ্যমের স্বাধীনতা, স্থায়িত্ব ও তথ্যের সত্যতা সম্পর্কিত এই গবেষণাটি আপনার পরিচিত মহলে ছড়িয়ে দিয়ে সচেতনতা সৃষ্টি করুন।'
@@ -680,11 +680,11 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
 
               <button
                 onClick={handleCopyLink}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#F6F9F4] hover:bg-[#E2EAE4] border border-[#E2EAE4] text-[#0B2A20] text-xs font-mono font-bold uppercase tracking-wider transition-all cursor-pointer shadow-sm"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-surface hover:bg-line border border-line text-brand-dark text-xs font-mono font-bold uppercase tracking-wider transition-all cursor-pointer shadow-sm"
               >
                 {copiedLink ? (
                   <>
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#0B2A20]" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-brand-dark" />
                     <span>{t('Link Copied!', 'লিংক কপি হয়েছে!')}</span>
                   </>
                 ) : (
@@ -704,20 +704,20 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
           />
 
           {/* Bottom Navigation Strip */}
-          <div className="mt-16 pt-12 border-t border-[#E2EAE4] flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="mt-16 pt-12 border-t border-line flex flex-col sm:flex-row items-center justify-between gap-6">
             <button
               onClick={() => {
                 onNavigate('work');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#0B2A20] hover:text-[#195642] transition-colors cursor-pointer"
+              className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-brand-dark hover:text-brand transition-colors cursor-pointer"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>{t('Back to All Areas of Investigation', 'সকল গবেষণা ক্ষেত্রে ফিরে যান')}</span>
             </button>
 
             <div className="flex items-center gap-3">
-              <span className="text-xs font-mono text-[#556B62]">{t('Next Research:', 'পরবর্তী গবেষণা:')}</span>
+              <span className="text-xs font-mono text-muted">{t('Next Research:', 'পরবর্তী গবেষণা:')}</span>
               {(() => {
                 const currentIndex = allResearch.findIndex((b) => b.id === currentInvestigation.id);
                 const nextResearch = allResearch[(currentIndex + 1) % allResearch.length];
@@ -729,7 +729,7 @@ export const InvestigationDetail: React.FC<InvestigationDetailProps> = ({
                       onSelectInvestigation(nextResearch.id);
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                     }}
-                    className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#0B2A20] text-[#D2F843] hover:bg-[#195642] text-xs font-mono font-bold uppercase tracking-wider transition-colors cursor-pointer shadow-sm"
+                    className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-brand-dark text-accent hover:bg-brand text-xs font-mono font-bold uppercase tracking-wider transition-colors cursor-pointer shadow-sm"
                   >
                     <span>{nextName}</span>
                     <ArrowRight className="w-3.5 h-3.5" />

@@ -185,18 +185,18 @@ export const RelatedInsightsCarousel: React.FC<RelatedInsightsCarouselProps> = (
   if (suggestedTopics.length === 0) return null;
 
   return (
-    <section className="mt-16 pt-12 border-t border-[#E2EAE4]" id="related-insights">
+    <section className="mt-16 pt-12 border-t border-line" id="related-insights">
       {/* Header & Controls */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0B2A20]/5 text-[#0B2A20] text-xs font-mono font-bold uppercase tracking-wider border border-[#0B2A20]/10 mb-3">
-            <Compass className="w-3.5 h-3.5 text-[#195642]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-dark/5 text-brand-dark text-xs font-mono font-bold uppercase tracking-wider border border-brand-dark/10 mb-3">
+            <Compass className="w-3.5 h-3.5 text-brand" />
             <span>{t('CROSS-DISCIPLINARY DISCOVERY', 'আন্তঃবিষয়ক গবেষণা অন্বেষণ')}</span>
           </div>
-          <h2 className="font-sans text-2xl sm:text-3xl font-extrabold text-[#0B2A20] tracking-tight">
+          <h2 className="font-sans text-2xl sm:text-3xl font-extrabold text-brand-dark tracking-tight">
             {t('Related Insights', 'সম্পর্কিত গবেষণাসমূহ')}
           </h2>
-          <p className="text-sm font-sans text-[#556B62] mt-1 max-w-2xl">
+          <p className="text-sm font-sans text-muted mt-1 max-w-2xl">
             {t(
               'Two highly relevant research beats with intersecting methodology, shared data registries, and complementary empirical findings.',
               'পারস্পরিক সম্পর্কযুক্ত দুটি প্রধান গবেষণা ক্ষেত্র যা একই ধরনের ডেটাসেট ও পদ্ধতির সাথে সম্পৃক্ত।'
@@ -207,26 +207,26 @@ export const RelatedInsightsCarousel: React.FC<RelatedInsightsCarouselProps> = (
         {/* Carousel Controls */}
         <div className="flex items-center gap-3 self-start md:self-end">
           {/* Slide Indicator Badge */}
-          <div className="px-3 py-1.5 rounded-full bg-white border border-[#E2EAE4] text-xs font-mono font-bold text-[#0B2A20] shadow-2xs">
-            <span className="text-[#195642]">{t('Insight', 'গবেষণা')} 0{currentIndex + 1}</span>
-            <span className="text-[#556B62]/50 mx-1.5">/</span>
-            <span className="text-[#556B62]">0{suggestedTopics.length}</span>
+          <div className="px-3 py-1.5 rounded-full bg-white border border-line text-xs font-mono font-bold text-brand-dark shadow-2xs">
+            <span className="text-brand">{t('Insight', 'গবেষণা')} 0{currentIndex + 1}</span>
+            <span className="text-muted/50 mx-1.5">/</span>
+            <span className="text-muted">0{suggestedTopics.length}</span>
           </div>
 
           {/* Prev / Next Carousel Navigation */}
-          <div className="flex items-center gap-1.5 bg-white p-1 rounded-full border border-[#E2EAE4] shadow-2xs">
+          <div className="flex items-center gap-1.5 bg-white p-1 rounded-full border border-line shadow-2xs">
             <button
               onClick={handlePrev}
               aria-label="Previous related insight"
-              className="w-8 h-8 rounded-full flex items-center justify-center text-[#0B2A20] hover:bg-[#0B2A20] hover:text-[#D2F843] transition-colors cursor-pointer"
+              className="w-8 h-8 rounded-full flex items-center justify-center text-brand-dark hover:bg-brand-dark hover:text-accent transition-colors cursor-pointer"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
-            <div className="w-px h-4 bg-[#E2EAE4]" />
+            <div className="w-px h-4 bg-line" />
             <button
               onClick={handleNext}
               aria-label="Next related insight"
-              className="w-8 h-8 rounded-full flex items-center justify-center text-[#0B2A20] hover:bg-[#0B2A20] hover:text-[#D2F843] transition-colors cursor-pointer"
+              className="w-8 h-8 rounded-full flex items-center justify-center text-brand-dark hover:bg-brand-dark hover:text-accent transition-colors cursor-pointer"
             >
               <ChevronRight className="w-4 h-4" />
             </button>
@@ -246,14 +246,14 @@ export const RelatedInsightsCarousel: React.FC<RelatedInsightsCarouselProps> = (
               onClick={() => setCurrentIndex(idx)}
               className={`rounded-3xl border transition-all duration-300 p-6 sm:p-7 flex flex-col justify-between cursor-pointer group relative overflow-hidden ${
                 isFeatured
-                  ? 'bg-white border-[#0B2A20] shadow-md ring-1 ring-[#0B2A20]/20'
-                  : 'bg-white/80 border-[#E2EAE4] hover:border-[#0B2A20]/50 hover:bg-white'
+                  ? 'bg-white border-brand-dark shadow-md ring-1 ring-brand-dark/20'
+                  : 'bg-white/80 border-line hover:border-brand-dark/50 hover:bg-white'
               }`}
             >
               {/* Subtle Active Corner Accent */}
               {isFeatured && (
                 <div className="absolute top-0 right-0 w-16 h-16 pointer-events-none overflow-hidden">
-                  <div className="absolute transform rotate-45 bg-[#0B2A20] text-[#D2F843] text-[9px] font-mono font-bold py-0.5 right-[-35px] top-[18px] w-[120px] text-center tracking-widest uppercase shadow-xs">
+                  <div className="absolute transform rotate-45 bg-brand-dark text-accent text-[9px] font-mono font-bold py-0.5 right-[-35px] top-[18px] w-[120px] text-center tracking-widest uppercase shadow-xs">
                     ACTIVE
                   </div>
                 </div>
@@ -261,58 +261,58 @@ export const RelatedInsightsCarousel: React.FC<RelatedInsightsCarouselProps> = (
 
               <div>
                 {/* Image & Badges */}
-                <div className="relative rounded-2xl overflow-hidden aspect-16/9 mb-5 bg-[#0B2A20]/10 border border-[#E2EAE4]">
+                <div className="relative rounded-2xl overflow-hidden aspect-16/9 mb-5 bg-brand-dark/10 border border-line">
                   <img
                     src={details.image}
                     alt={details.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B2A20]/80 via-[#0B2A20]/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/20 to-transparent" />
 
                   {/* Research Pill & Relationship Badge */}
                   <div className="absolute top-3 left-3 flex flex-wrap items-center gap-2">
-                    <span className="px-2.5 py-1 rounded-full bg-[#0B2A20]/90 backdrop-blur-xs text-[#D2F843] text-[10px] font-mono font-bold uppercase tracking-wider border border-[#D2F843]/30">
+                    <span className="px-2.5 py-1 rounded-full bg-brand-dark/90 backdrop-blur-xs text-accent text-[10px] font-mono font-bold uppercase tracking-wider border border-accent/30">
                       Research {details.beatNumber}
                     </span>
-                    <span className="px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-xs text-[#0B2A20] text-[10px] font-mono font-bold uppercase tracking-wider border border-white">
+                    <span className="px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-xs text-brand-dark text-[10px] font-mono font-bold uppercase tracking-wider border border-white">
                       {item.relationshipBadge}
                     </span>
                   </div>
 
                   {/* Status Indicator */}
-                  <div className="absolute bottom-3 left-3 flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#0B2A20]/70 backdrop-blur-xs text-[10px] font-mono text-white/90 border border-white/10">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#D2F843]" />
+                  <div className="absolute bottom-3 left-3 flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-brand-dark/70 backdrop-blur-xs text-[10px] font-mono text-white/90 border border-white/10">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                     <span>{details.status}</span>
                   </div>
                 </div>
 
                 {/* Title & Tagline */}
-                <h3 className="font-sans text-xl font-bold text-[#0B2A20] group-hover:text-[#195642] transition-colors flex items-center justify-between gap-2 mb-2">
+                <h3 className="font-sans text-xl font-bold text-brand-dark group-hover:text-brand transition-colors flex items-center justify-between gap-2 mb-2">
                   <span>{details.name}</span>
-                  <ArrowUpRight className="w-4 h-4 text-[#556B62] group-hover:text-[#0B2A20] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0" />
+                  <ArrowUpRight className="w-4 h-4 text-muted group-hover:text-brand-dark transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0" />
                 </h3>
 
-                <p className="text-xs sm:text-sm font-sans text-[#556B62] line-clamp-2 mb-4 leading-relaxed">
+                <p className="text-xs sm:text-sm font-sans text-muted line-clamp-2 mb-4 leading-relaxed">
                   {details.tagline}
                 </p>
 
                 {/* Relevance Rationale Card */}
-                <div className="p-3.5 rounded-2xl bg-[#F6F9F4] border border-[#E2EAE4] space-y-1.5 mb-5">
-                  <div className="flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-[#0B2A20]">
-                    <Sparkles className="w-3 h-3 text-[#195642]" />
+                <div className="p-3.5 rounded-2xl bg-surface border border-line space-y-1.5 mb-5">
+                  <div className="flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-brand-dark">
+                    <Sparkles className="w-3 h-3 text-brand" />
                     <span>Why This Insight Matters:</span>
                   </div>
-                  <p className="text-xs font-sans text-[#0D1F18] leading-relaxed">
+                  <p className="text-xs font-sans text-ink leading-relaxed">
                     {item.relevanceRationale}
                   </p>
                 </div>
               </div>
 
               {/* Footer Meta & Button */}
-              <div className="pt-4 border-t border-[#E2EAE4] flex items-center justify-between gap-4">
-                <div className="text-xs font-mono text-[#556B62] flex items-center gap-1.5">
-                  <BookOpen className="w-3.5 h-3.5 text-[#195642]" />
+              <div className="pt-4 border-t border-line flex items-center justify-between gap-4">
+                <div className="text-xs font-mono text-muted flex items-center gap-1.5">
+                  <BookOpen className="w-3.5 h-3.5 text-brand" />
                   <span>{details.outputsCount}</span>
                 </div>
 
@@ -321,7 +321,7 @@ export const RelatedInsightsCarousel: React.FC<RelatedInsightsCarouselProps> = (
                     e.stopPropagation();
                     handleSelectTopic(details.id);
                   }}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0B2A20] text-[#D2F843] group-hover:bg-[#195642] text-xs font-mono font-bold uppercase tracking-wider transition-all shadow-xs cursor-pointer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-dark text-accent group-hover:bg-brand text-xs font-mono font-bold uppercase tracking-wider transition-all shadow-xs cursor-pointer"
                 >
                   <span>{t('Explore Research', 'গবেষণাটি দেখুন')}</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
@@ -347,62 +347,62 @@ export const RelatedInsightsCarousel: React.FC<RelatedInsightsCarouselProps> = (
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: direction === 'right' ? -30 : 30 }}
                 transition={{ duration: 0.28, ease: 'easeInOut' }}
-                className="rounded-3xl border border-[#0B2A20] bg-white p-6 shadow-md"
+                className="rounded-3xl border border-brand-dark bg-white p-6 shadow-md"
               >
                 {/* Image */}
-                <div className="relative rounded-2xl overflow-hidden aspect-16/9 mb-5 bg-[#0B2A20]/10 border border-[#E2EAE4]">
+                <div className="relative rounded-2xl overflow-hidden aspect-16/9 mb-5 bg-brand-dark/10 border border-line">
                   <img
                     src={details.image}
                     alt={details.name}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B2A20]/80 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent" />
 
                   {/* Research Pill & Relationship Badge */}
                   <div className="absolute top-3 left-3 flex flex-wrap items-center gap-2">
-                    <span className="px-2.5 py-1 rounded-full bg-[#0B2A20]/90 backdrop-blur-xs text-[#D2F843] text-[10px] font-mono font-bold uppercase tracking-wider border border-[#D2F843]/30">
+                    <span className="px-2.5 py-1 rounded-full bg-brand-dark/90 backdrop-blur-xs text-accent text-[10px] font-mono font-bold uppercase tracking-wider border border-accent/30">
                       Research {details.beatNumber}
                     </span>
-                    <span className="px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-xs text-[#0B2A20] text-[10px] font-mono font-bold uppercase tracking-wider border border-white">
+                    <span className="px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-xs text-brand-dark text-[10px] font-mono font-bold uppercase tracking-wider border border-white">
                       {currentItem.relationshipBadge}
                     </span>
                   </div>
 
-                  <div className="absolute bottom-3 left-3 flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#0B2A20]/70 backdrop-blur-xs text-[10px] font-mono text-white/90 border border-white/10">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#D2F843]" />
+                  <div className="absolute bottom-3 left-3 flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-brand-dark/70 backdrop-blur-xs text-[10px] font-mono text-white/90 border border-white/10">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                     <span>{details.status}</span>
                   </div>
                 </div>
 
                 {/* Title & Tagline */}
-                <h3 className="font-sans text-xl font-bold text-[#0B2A20] mb-2">
+                <h3 className="font-sans text-xl font-bold text-brand-dark mb-2">
                   {details.name}
                 </h3>
-                <p className="text-xs font-sans text-[#556B62] mb-4 leading-relaxed">
+                <p className="text-xs font-sans text-muted mb-4 leading-relaxed">
                   {details.tagline}
                 </p>
 
                 {/* Relevance Rationale Card */}
-                <div className="p-3.5 rounded-2xl bg-[#F6F9F4] border border-[#E2EAE4] space-y-1.5 mb-5">
-                  <div className="flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-[#0B2A20]">
-                    <Sparkles className="w-3 h-3 text-[#195642]" />
+                <div className="p-3.5 rounded-2xl bg-surface border border-line space-y-1.5 mb-5">
+                  <div className="flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-brand-dark">
+                    <Sparkles className="w-3 h-3 text-brand" />
                     <span>Cross-Disciplinary Rationale:</span>
                   </div>
-                  <p className="text-xs font-sans text-[#0D1F18] leading-relaxed">
+                  <p className="text-xs font-sans text-ink leading-relaxed">
                     {currentItem.relevanceRationale}
                   </p>
                 </div>
 
                 {/* Footer Meta & Button */}
-                <div className="pt-4 border-t border-[#E2EAE4] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
-                  <div className="text-xs font-mono text-[#556B62] flex items-center gap-1.5">
-                    <BookOpen className="w-3.5 h-3.5 text-[#195642]" />
+                <div className="pt-4 border-t border-line flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+                  <div className="text-xs font-mono text-muted flex items-center gap-1.5">
+                    <BookOpen className="w-3.5 h-3.5 text-brand" />
                     <span>{details.outputsCount}</span>
                   </div>
 
                   <button
                     onClick={() => handleSelectTopic(details.id)}
-                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-[#0B2A20] text-[#D2F843] text-xs font-mono font-bold uppercase tracking-wider transition-all shadow-xs cursor-pointer hover:bg-[#195642]"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-brand-dark text-accent text-xs font-mono font-bold uppercase tracking-wider transition-all shadow-xs cursor-pointer hover:bg-brand"
                   >
                     <span>{t('Explore Investigation', 'গবেষণা অন্বেষণ করুন')}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -425,8 +425,8 @@ export const RelatedInsightsCarousel: React.FC<RelatedInsightsCarouselProps> = (
               aria-label={`Jump to related insight ${idx + 1}`}
               className={`h-2 rounded-full transition-all cursor-pointer ${
                 idx === currentIndex
-                  ? 'w-7 bg-[#0B2A20]'
-                  : 'w-2 bg-[#E2EAE4] hover:bg-[#0B2A20]/40'
+                  ? 'w-7 bg-brand-dark'
+                  : 'w-2 bg-line hover:bg-brand-dark/40'
               }`}
             />
           ))}
