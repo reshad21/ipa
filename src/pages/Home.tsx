@@ -21,6 +21,7 @@ import { APPROACH_STEPS } from '../data/approach';
 import { CTASection } from '../components/CTASection';
 import { useLanguage } from '../context/LanguageContext';
 import { APPROACH_STEPS_BN, TEAM_MEMBERS_BN } from '../data/translations';
+import VideoHighlights from '../components/VideoHighlights';
 
 interface HomeProps {
   onNavigate: (page: PageId) => void;
@@ -770,6 +771,9 @@ export const Home: React.FC<HomeProps> = ({
 
       {/* 15. FINAL CTA */}
       <CTASection onNavigate={onNavigate} />
+
+      {/* 16. Video Highlights */}
+      <VideoHighlights/>
     </div>
   );
 };
