@@ -39,7 +39,7 @@ export const CTASection: React.FC<CTASectionProps> = ({ onNavigate }) => {
               </p>
             </div>
 
-            <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-4 items-start lg:items-end justify-center">
+            <div className="lg:col-span-4 flex flex-row flex-wrap gap-3 items-start lg:items-end justify-start lg:justify-end">
               <button
                 onClick={() => {
                   onNavigate('contact');

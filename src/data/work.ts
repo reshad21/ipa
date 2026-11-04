@@ -54,7 +54,7 @@ export const WORK_AREAS: WorkCategory[] = [
       'How Voters Navigate Contradictory Claims on Social Platforms During General Elections',
       'Socioeconomic Factors in Rural vs. Urban Digital Information Access',
     ],
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80',
     outputsCount: '12 Nationwide Polls',
   },
   {
@@ -68,7 +68,7 @@ export const WORK_AREAS: WorkCategory[] = [
       'Civic Deliberation in the Age of Coordinated Disinformation Campaigns',
       'Public Service Media Funding Models: Global Precedents and Regional Applications',
     ],
-    image: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=1200&q=80',
     outputsCount: '19 Research Monographs',
   },
   {
